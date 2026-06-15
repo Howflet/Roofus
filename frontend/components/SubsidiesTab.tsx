@@ -53,13 +53,13 @@ export default function SubsidiesTab({ buildingId }: SubsidiesTabProps) {
 
   // Calculate totals
   const totalOnetime =
-    (dr.vpp_utility.estimated_onetime_value ?? 0) +
-    (eff.gp_multifamily.total_property_max ?? 0) +
-    (eff.gefa_her.total_property_estimate ?? 0);
+    (dr?.vpp_utility?.estimated_onetime_value ?? 0) +
+    (eff?.gp_multifamily?.total_property_max ?? 0) +
+    (eff?.gefa_her?.total_property_estimate ?? 0);
 
   const totalAnnual =
-    (dr.vpp_consumer.estimated_annual_value ?? 0) +
-    (dr.tempcheck.total_property_value ?? 0);
+    (dr?.vpp_consumer?.estimated_annual_value ?? 0) +
+    (dr?.tempcheck?.total_property_value ?? 0);
 
   return (
     <div className={styles.container}>

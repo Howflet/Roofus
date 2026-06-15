@@ -5,7 +5,7 @@ import styles from "./DemandResponseCard.module.css";
 
 interface DemandResponseCardProps {
   name: string;
-  program: ProgramDetail;
+  program?: ProgramDetail;
 }
 
 function getStatusInfo(eligible: boolean | string): {
@@ -30,6 +30,8 @@ export default function DemandResponseCard({
   name,
   program,
 }: DemandResponseCardProps) {
+  if (!program) return null;
+
   const { icon, borderClass } = getStatusInfo(program.eligible);
 
   // Build value summary lines
