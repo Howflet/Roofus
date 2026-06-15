@@ -103,9 +103,6 @@ class ProgramDetail(BaseModel):
 
 
 class DemandResponsePrograms(BaseModel):
-    vpp_consumer: ProgramDetail = Field(default_factory=ProgramDetail)
-    vpp_utility: ProgramDetail = Field(default_factory=ProgramDetail)
-    tempcheck: ProgramDetail = Field(default_factory=ProgramDetail)
     cl1_aggregated: ProgramDetail = Field(default_factory=ProgramDetail)
     dpec5_aggregated: ProgramDetail = Field(default_factory=ProgramDetail)
 
