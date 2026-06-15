@@ -78,11 +78,10 @@ export default function ScoreGauge({ score, size = 160 }: ScoreGaugeProps) {
           stroke={scoreColor}
           strokeWidth={strokeWidth}
           strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={mounted ? circumference - fillLength : circumference}
           transform={`rotate(${startAngle} ${center} ${center})`}
-          className={styles.fillArc}
           style={{
-            strokeDasharray: circumference,
-            strokeDashoffset: mounted ? circumference - fillLength : circumference,
             filter: `drop-shadow(0 0 6px ${scoreColor})`,
             transition: "stroke-dashoffset 800ms cubic-bezier(0.33, 1, 0.68, 1)",
           }}

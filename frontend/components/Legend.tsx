@@ -96,6 +96,14 @@ export default function Legend({ stats, hiddenTiers, onToggleTier }: LegendProps
         <div className={styles.totalDivider} />
         <span>Total: {total.toLocaleString()} buildings</span>
       </div>
+
+      {/* Grid info */}
+      <div className={styles.gridInfo}>
+        <div className={styles.gridItem}>
+          <div className={styles.dashedBox} />
+          <span className={styles.gridLabel}>Aggregation Grids (0.5mi)</span>
+        </div>
+      </div>
     </div>
   );
 }

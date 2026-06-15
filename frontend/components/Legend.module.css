@@ -1,6 +1,6 @@
 .legend {
   position: fixed;
-  bottom: 24px;
+  bottom: 40px;
   left: 16px;
   width: var(--legend-width);
   padding: 16px;
@@ -123,7 +123,7 @@
 /* Collapsed pill */
 .collapsedPill {
   position: fixed;
-  bottom: 24px;
+  bottom: 40px;
   left: 16px;
   z-index: 150;
   display: flex;
@@ -164,13 +164,40 @@
   .legend {
     width: auto;
     max-width: 200px;
-    bottom: 16px;
+    bottom: 24px;
     left: 12px;
     padding: 12px;
   }
 
   .collapsedPill {
-    bottom: 16px;
+    bottom: 24px;
     left: 12px;
   }
+}
+
+/* Grid info */
+.gridInfo {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashedBox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px dashed var(--text-primary);
+  opacity: 0.8;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.gridLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
 }

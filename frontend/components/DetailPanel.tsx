@@ -13,16 +13,13 @@ import styles from "./DetailPanel.module.css";
 interface DetailPanelProps {
   building: BuildingProperties;
   onClose: () => void;
-  persona?: Persona;
 }
 
 type TabKey = "revenue" | "subsidies";
 
-export default function DetailPanel({ building, onClose, persona = "developer" }: DetailPanelProps) {
+export default function DetailPanel({ building, onClose }: DetailPanelProps) {
   const panelRef = useRef<HTMLDivElement>(null);
-  const [activeTab, setActiveTab] = useState<TabKey>(
-    persona === "owner" ? "subsidies" : "revenue"
-  );
+  const [activeTab, setActiveTab] = useState<TabKey>("revenue");
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -36,10 +33,6 @@ export default function DetailPanel({ building, onClose, persona = "developer" }
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
-  // Update default tab when persona changes
-  useEffect(() => {
-    setActiveTab(persona === "owner" ? "subsidies" : "revenue");
-  }, [persona]);
 
   const factors = getBuildingScoreFactors(building);
 

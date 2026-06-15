@@ -7,8 +7,8 @@ import styles from "./Header.module.css";
 interface HeaderProps {
   stats: BuildingStats | null;
   onApplyFilters: (filters: FilterState) => void;
-  persona: Persona;
-  onPersonaChange: (persona: Persona) => void;
+  showGrids: boolean;
+  onToggleGrids: (show: boolean) => void;
 }
 
 export interface FilterState {
@@ -47,7 +47,7 @@ function AnimatedNumber({ value, duration = 800 }: { value: number; duration?: n
   return <>{display.toLocaleString()}</>;
 }
 
-export default function Header({ stats, onApplyFilters, persona, onPersonaChange }: HeaderProps) {
+export default function Header({ stats, onApplyFilters, showGrids, onToggleGrids }: HeaderProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [leafHover, setLeafHover] = useState(false);
@@ -124,19 +124,19 @@ export default function Header({ stats, onApplyFilters, persona, onPersonaChange
 
       {/* Right: Persona Toggle + Controls */}
       <div className={styles.controls} ref={dropdownRef}>
-        {/* Persona Toggle */}
-        <div className={styles.personaToggle} id="persona-toggle">
+        {/* Grid Toggle */}
+        <div className={styles.personaToggle} id="grid-toggle">
           <button
-            className={`${styles.personaBtn} ${persona === "developer" ? styles.personaBtnActive : ""}`}
-            onClick={() => onPersonaChange("developer")}
+            className={`${styles.personaBtn} ${showGrids ? styles.personaBtnActive : ""}`}
+            onClick={() => onToggleGrids(true)}
           >
-            🌱 Developer
+            Show Grids
           </button>
           <button
-            className={`${styles.personaBtn} ${persona === "owner" ? styles.personaBtnActive : ""}`}
-            onClick={() => onPersonaChange("owner")}
+            className={`${styles.personaBtn} ${!showGrids ? styles.personaBtnActive : ""}`}
+            onClick={() => onToggleGrids(false)}
           >
-            🏢 Owner
+            Hide Grids
           </button>
         </div>
 

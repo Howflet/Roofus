@@ -34,7 +34,7 @@ interface MapViewProps {
   hiddenTiers: Set<string>;
   onSelectBuilding: (building: BuildingProperties | null) => void;
   grids: GridCollection | null;
-  persona: Persona;
+  showGrids: boolean;
 }
 
 interface TooltipData {
@@ -65,7 +65,7 @@ export default function MapView({
   hiddenTiers,
   onSelectBuilding,
   grids,
-  persona,
+  showGrids,
 }: MapViewProps) {
   const mapRef = useRef<MapRef>(null);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
@@ -209,10 +209,10 @@ export default function MapView({
       >
         <NavigationControl position="bottom-right" showCompass={false} />
 
-        {/* Aggregation grid layer — only in owner mode */}
+        {/* Aggregation grid layer */}
         <AggregationGridLayer
           grids={grids}
-          visible={persona === "owner"}
+          visible={showGrids}
         />
 
         {filteredBuildings && (

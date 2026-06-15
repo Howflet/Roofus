@@ -16,15 +16,7 @@ export default function Home() {
   const [selectedBuilding, setSelectedBuilding] = useState<BuildingProperties | null>(null);
   const [hiddenTiers, setHiddenTiers] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
-  const [persona, setPersona] = useState<Persona>("developer");
-
-  // Restore persona from localStorage
-  useEffect(() => {
-    const stored = localStorage.getItem("roofus-persona");
-    if (stored === "developer" || stored === "owner") {
-      setPersona(stored);
-    }
-  }, []);
+  const [showGrids, setShowGrids] = useState<boolean>(true);
 
   // Load initial data
   useEffect(() => {
@@ -46,10 +38,9 @@ export default function Home() {
     load();
   }, []);
 
-  // Handle persona change
-  const handlePersonaChange = useCallback((newPersona: Persona) => {
-    setPersona(newPersona);
-    localStorage.setItem("roofus-persona", newPersona);
+  // Handle grid toggle
+  const handleToggleGrids = useCallback((show: boolean) => {
+    setShowGrids(show);
   }, []);
 
   // Handle filter application
@@ -135,15 +126,15 @@ export default function Home() {
         hiddenTiers={hiddenTiers}
         onSelectBuilding={handleSelectBuilding}
         grids={grids}
-        persona={persona}
+        showGrids={showGrids}
       />
 
       {/* Floating UI overlays */}
       <Header
         stats={stats}
         onApplyFilters={handleApplyFilters}
-        persona={persona}
-        onPersonaChange={handlePersonaChange}
+        showGrids={showGrids}
+        onToggleGrids={handleToggleGrids}
       />
       <Legend stats={stats} hiddenTiers={hiddenTiers} onToggleTier={handleToggleTier} />
 
@@ -153,7 +144,6 @@ export default function Home() {
           key={selectedBuilding.id}
           building={selectedBuilding}
           onClose={() => setSelectedBuilding(null)}
-          persona={persona}
         />
       )}
 
