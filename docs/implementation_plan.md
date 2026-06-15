@@ -1,4 +1,4 @@
-# Roofus v2 — Multifamily Rooftop Agriculture Platform
+# Roofus — Multifamily Rooftop Agriculture Platform
 
 **Goal:** A dual-sided B2B platform connecting urban agricultural developers with multifamily building owners. Developers discover optimal rooftops; owners unlock passive lease revenue and utility subsidies.
 

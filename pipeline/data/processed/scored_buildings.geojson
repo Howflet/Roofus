@@ -1,0 +1,2050 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4217126,
+              33.6725523
+            ],
+            [
+              -84.4214868,
+              33.6725523
+            ],
+            [
+              -84.4214834,
+              33.6727402
+            ],
+            [
+              -84.4217092,
+              33.6727402
+            ],
+            [
+              -84.4217126,
+              33.6725523
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-001",
+        "address": "195 Pine St, Hapeville, GA 30354",
+        "roof_area_sqft": 4679,
+        "year_built": 1976,
+        "num_units": 12,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Dogwood Gardens LLC",
+        "owner_address": "PO Box 9279, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4811",
+        "owner_email": "mgmt@dogwoodgardens.com",
+        "avg_ghi": 5.18,
+        "in_food_desert": false,
+        "hvac_proxy_score": 50,
+        "estimated_peak_kw": 18.5,
+        "aggregation_grid_id": "GRID-003",
+        "score": 56.2,
+        "score_structural": 50,
+        "score_area": 39,
+        "score_solar": 79,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 3952.0,
+          "total_onetime_value": 19875.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 122.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4052012,
+              33.6706154
+            ],
+            [
+              -84.4048299,
+              33.6706154
+            ],
+            [
+              -84.4048044,
+              33.6709244
+            ],
+            [
+              -84.4051757,
+              33.6709244
+            ],
+            [
+              -84.4052012,
+              33.6706154
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-002",
+        "address": "448 Magnolia Blvd, Hapeville, GA 30354",
+        "roof_area_sqft": 12654,
+        "year_built": 1996,
+        "num_units": 24,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "Hapeville Residential Partners",
+        "owner_address": "PO Box 4527, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3547",
+        "owner_email": "mgmt@hapresidential.com",
+        "avg_ghi": 4.78,
+        "in_food_desert": false,
+        "hvac_proxy_score": 90,
+        "estimated_peak_kw": 31.9,
+        "aggregation_grid_id": "GRID-002",
+        "score": 71.6,
+        "score_structural": 90,
+        "score_area": 100,
+        "score_solar": 52,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 7064.0,
+          "total_onetime_value": 35925.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 107.0,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4201154,
+              33.6652606
+            ],
+            [
+              -84.4198328,
+              33.6652606
+            ],
+            [
+              -84.4198295,
+              33.6654959
+            ],
+            [
+              -84.4201122,
+              33.6654959
+            ],
+            [
+              -84.4201154,
+              33.6652606
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-003",
+        "address": "180 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 7333,
+        "year_built": 2006,
+        "num_units": 20,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "ATL Urban Living Inc.",
+        "owner_address": "PO Box 6925, Atlanta GA 30301",
+        "owner_phone": "(404) 555-5803",
+        "owner_email": "mgmt@atlurbanliving.com",
+        "avg_ghi": 5.31,
+        "in_food_desert": false,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 39.6,
+        "aggregation_grid_id": "GRID-001",
+        "score": 78.0,
+        "score_structural": 100,
+        "score_area": 61,
+        "score_solar": 87,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 8034.0,
+          "total_onetime_value": 39700.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 187.9,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4212365,
+              33.6740963
+            ],
+            [
+              -84.420964,
+              33.6740963
+            ],
+            [
+              -84.4209557,
+              33.6743231
+            ],
+            [
+              -84.4212282,
+              33.6743231
+            ],
+            [
+              -84.4212365,
+              33.6740963
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-004",
+        "address": "479 S Central Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 6814,
+        "year_built": 2022,
+        "num_units": 16,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Peach State Properties",
+        "owner_address": "PO Box 5374, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4432",
+        "owner_email": "mgmt@peachstateprops.com",
+        "avg_ghi": 5.37,
+        "in_food_desert": false,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 29.9,
+        "aggregation_grid_id": "GRID-004",
+        "score": 77.0,
+        "score_structural": 100,
+        "score_area": 57,
+        "score_solar": 91,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 6134.0,
+          "total_onetime_value": 30425.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 185.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4206107,
+              33.6736016
+            ],
+            [
+              -84.420362,
+              33.6736016
+            ],
+            [
+              -84.42035,
+              33.6738086
+            ],
+            [
+              -84.4205987,
+              33.6738086
+            ],
+            [
+              -84.4206107,
+              33.6736016
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-005",
+        "address": "801 N Central Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 5677,
+        "year_built": 1983,
+        "num_units": 48,
+        "num_floors": 4,
+        "zoning": "R-4",
+        "owner_name": "South Metro Apartments LLC",
+        "owner_address": "PO Box 4752, Atlanta GA 30301",
+        "owner_phone": "(404) 555-1916",
+        "owner_email": "mgmt@smetro-apts.com",
+        "avg_ghi": 4.96,
+        "in_food_desert": true,
+        "hvac_proxy_score": 60,
+        "estimated_peak_kw": 84.0,
+        "aggregation_grid_id": "GRID-004",
+        "score": 69.7,
+        "score_structural": 60,
+        "score_area": 47,
+        "score_solar": 64,
+        "score_zoning": 100,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 17460.0,
+          "total_onetime_value": 87000.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 185.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4127211,
+              33.6764971
+            ],
+            [
+              -84.412423,
+              33.6764971
+            ],
+            [
+              -84.4124336,
+              33.6767451
+            ],
+            [
+              -84.4127317,
+              33.6767451
+            ],
+            [
+              -84.4127211,
+              33.6764971
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-006",
+        "address": "371 Maple Dr, Hapeville, GA 30354",
+        "roof_area_sqft": 8155,
+        "year_built": 2013,
+        "num_units": 12,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Skyline Multifamily Group",
+        "owner_address": "PO Box 9830, Atlanta GA 30301",
+        "owner_phone": "(404) 555-5040",
+        "owner_email": "mgmt@skylinemf.com",
+        "avg_ghi": 4.71,
+        "in_food_desert": false,
+        "hvac_proxy_score": 90,
+        "estimated_peak_kw": 20.6,
+        "aggregation_grid_id": "GRID-005",
+        "score": 69.6,
+        "score_structural": 90,
+        "score_area": 68,
+        "score_solar": 47,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 40,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 4299.0,
+          "total_onetime_value": 21450.0,
+          "aggregation_tier": "Below Threshold",
+          "grid_combined_kw": 78.7,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4008281,
+              33.6711837
+            ],
+            [
+              -84.4004764,
+              33.6711837
+            ],
+            [
+              -84.4004827,
+              33.6714764
+            ],
+            [
+              -84.4008343,
+              33.6714764
+            ],
+            [
+              -84.4008281,
+              33.6711837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-007",
+        "address": "911 Virginia Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 11348,
+        "year_built": 1976,
+        "num_units": 20,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "Georgia Green Homes",
+        "owner_address": "PO Box 7304, Atlanta GA 30301",
+        "owner_phone": "(404) 555-2040",
+        "owner_email": "mgmt@gagreenhomes.com",
+        "avg_ghi": 4.99,
+        "in_food_desert": false,
+        "hvac_proxy_score": 60,
+        "estimated_peak_kw": 26.4,
+        "aggregation_grid_id": "GRID-003",
+        "score": 62.9,
+        "score_structural": 60,
+        "score_area": 95,
+        "score_solar": 66,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 5856.0,
+          "total_onetime_value": 29800.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 122.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4096165,
+              33.681111
+            ],
+            [
+              -84.409386,
+              33.681111
+            ],
+            [
+              -84.4094032,
+              33.6813028
+            ],
+            [
+              -84.4096337,
+              33.6813028
+            ],
+            [
+              -84.4096165,
+              33.681111
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-008",
+        "address": "400 Virginia Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 4876,
+        "year_built": 2014,
+        "num_units": 4,
+        "num_floors": 4,
+        "zoning": "R-5",
+        "owner_name": "Hapeville Housing Trust",
+        "owner_address": "PO Box 8433, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3591",
+        "owner_email": "mgmt@haphousing.org",
+        "avg_ghi": 5.18,
+        "in_food_desert": false,
+        "hvac_proxy_score": 55,
+        "estimated_peak_kw": 6.9,
+        "aggregation_grid_id": "GRID-006",
+        "score": 52.4,
+        "score_structural": 55,
+        "score_area": 41,
+        "score_solar": 79,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck"
+          ],
+          "total_annual_value": 1438.0,
+          "total_onetime_value": 7175.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 146.1,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4051176,
+              33.6744721
+            ],
+            [
+              -84.4047377,
+              33.6744721
+            ],
+            [
+              -84.4047321,
+              33.6747883
+            ],
+            [
+              -84.405112,
+              33.6747883
+            ],
+            [
+              -84.4051176,
+              33.6744721
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-009",
+        "address": "265 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 13244,
+        "year_built": 1974,
+        "num_units": 8,
+        "num_floors": 3,
+        "zoning": "R-5",
+        "owner_name": "Magnolia Property Management",
+        "owner_address": "PO Box 1009, Atlanta GA 30301",
+        "owner_phone": "(404) 555-9689",
+        "owner_email": "mgmt@magnoliapm.com",
+        "avg_ghi": 4.8,
+        "in_food_desert": false,
+        "hvac_proxy_score": 60,
+        "estimated_peak_kw": 10.6,
+        "aggregation_grid_id": "GRID-004",
+        "score": 63.9,
+        "score_structural": 60,
+        "score_area": 100,
+        "score_solar": 53,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 2349.0,
+          "total_onetime_value": 11950.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 185.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4196527,
+              33.6689121
+            ],
+            [
+              -84.4193776,
+              33.6689121
+            ],
+            [
+              -84.419371,
+              33.669141
+            ],
+            [
+              -84.4196461,
+              33.669141
+            ],
+            [
+              -84.4196527,
+              33.6689121
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-010",
+        "address": "878 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 6946,
+        "year_built": 1971,
+        "num_units": 16,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Cedar Creek Investments",
+        "owner_address": "PO Box 3103, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3060",
+        "owner_email": "mgmt@cedarcreekinv.com",
+        "avg_ghi": 5.38,
+        "in_food_desert": false,
+        "hvac_proxy_score": 70,
+        "estimated_peak_kw": 25.4,
+        "aggregation_grid_id": "GRID-002",
+        "score": 68.1,
+        "score_structural": 70,
+        "score_area": 58,
+        "score_solar": 92,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 5391.0,
+          "total_onetime_value": 27050.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 107.0,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4184388,
+              33.6798564
+            ],
+            [
+              -84.4180351,
+              33.6798564
+            ],
+            [
+              -84.4180503,
+              33.6801924
+            ],
+            [
+              -84.4184541,
+              33.6801924
+            ],
+            [
+              -84.4184388,
+              33.6798564
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-011",
+        "address": "548 Sylvan Rd, Hapeville, GA 30354",
+        "roof_area_sqft": 14959,
+        "year_built": 2002,
+        "num_units": 24,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "ATL Southside Holdings",
+        "owner_address": "PO Box 2982, Atlanta GA 30301",
+        "owner_phone": "(404) 555-8397",
+        "owner_email": "mgmt@atlsouthside.com",
+        "avg_ghi": 5.19,
+        "in_food_desert": false,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 41.7,
+        "aggregation_grid_id": "GRID-006",
+        "score": 78.5,
+        "score_structural": 100,
+        "score_area": 100,
+        "score_solar": 79,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 8680.0,
+          "total_onetime_value": 43275.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 146.1,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4217873,
+              33.6587599
+            ],
+            [
+              -84.421603,
+              33.6587599
+            ],
+            [
+              -84.4215984,
+              33.6589133
+            ],
+            [
+              -84.4217826,
+              33.6589133
+            ],
+            [
+              -84.4217873,
+              33.6587599
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-012",
+        "address": "172 Sylvan Rd, Hapeville, GA 30354",
+        "roof_area_sqft": 3117,
+        "year_built": 1982,
+        "num_units": 12,
+        "num_floors": 3,
+        "zoning": "R-5",
+        "owner_name": "Urban Core Realty",
+        "owner_address": "PO Box 5562, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4899",
+        "owner_email": "mgmt@urbancorerealty.com",
+        "avg_ghi": 4.57,
+        "in_food_desert": false,
+        "hvac_proxy_score": 50,
+        "estimated_peak_kw": 23.1,
+        "aggregation_grid_id": "GRID-001",
+        "score": 42.4,
+        "score_structural": 50,
+        "score_area": 26,
+        "score_solar": 38,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 4712.0,
+          "total_onetime_value": 23325.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 187.9,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4191956,
+              33.6622993
+            ],
+            [
+              -84.4188534,
+              33.6622993
+            ],
+            [
+              -84.418876,
+              33.6625841
+            ],
+            [
+              -84.4192182,
+              33.6625841
+            ],
+            [
+              -84.4191956,
+              33.6622993
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-013",
+        "address": "520 Atlanta Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 10749,
+        "year_built": 2018,
+        "num_units": 32,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "Fulton Family Properties",
+        "owner_address": "PO Box 2612, Atlanta GA 30301",
+        "owner_phone": "(404) 555-1887",
+        "owner_email": "mgmt@fultonfamily.com",
+        "avg_ghi": 5.31,
+        "in_food_desert": true,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 49.4,
+        "aggregation_grid_id": "GRID-001",
+        "score": 88.4,
+        "score_structural": 100,
+        "score_area": 90,
+        "score_solar": 87,
+        "score_zoning": 60,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 10551.0,
+          "total_onetime_value": 53050.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 187.9,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.403165,
+              33.674628
+            ],
+            [
+              -84.4028066,
+              33.674628
+            ],
+            [
+              -84.4027984,
+              33.6749263
+            ],
+            [
+              -84.4031568,
+              33.6749263
+            ],
+            [
+              -84.403165,
+              33.674628
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-014",
+        "address": "553 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 11786,
+        "year_built": 1980,
+        "num_units": 12,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Heritage Living Co.",
+        "owner_address": "PO Box 1828, Atlanta GA 30301",
+        "owner_phone": "(404) 555-2604",
+        "owner_email": "mgmt@heritageliving.co",
+        "avg_ghi": 4.95,
+        "in_food_desert": false,
+        "hvac_proxy_score": 70,
+        "estimated_peak_kw": 16.8,
+        "aggregation_grid_id": "GRID-004",
+        "score": 71.8,
+        "score_structural": 70,
+        "score_area": 98,
+        "score_solar": 63,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 3672.0,
+          "total_onetime_value": 18600.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 185.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4220186,
+              33.6701303
+            ],
+            [
+              -84.4216731,
+              33.6701303
+            ],
+            [
+              -84.421677,
+              33.6704179
+            ],
+            [
+              -84.4220226,
+              33.6704179
+            ],
+            [
+              -84.4220186,
+              33.6701303
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-015",
+        "address": "499 Magnolia Blvd, Hapeville, GA 30354",
+        "roof_area_sqft": 10956,
+        "year_built": 1994,
+        "num_units": 12,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Clayton-Fulton Apartments",
+        "owner_address": "PO Box 5673, Atlanta GA 30301",
+        "owner_phone": "(404) 555-8454",
+        "owner_email": "mgmt@cfapartments.com",
+        "avg_ghi": 4.98,
+        "in_food_desert": false,
+        "hvac_proxy_score": 90,
+        "estimated_peak_kw": 16.0,
+        "aggregation_grid_id": "GRID-002",
+        "score": 76.5,
+        "score_structural": 90,
+        "score_area": 91,
+        "score_solar": 65,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 3540.0,
+          "total_onetime_value": 18000.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 107.0,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.3984562,
+              33.6801538
+            ],
+            [
+              -84.3981635,
+              33.6801538
+            ],
+            [
+              -84.3981451,
+              33.6803974
+            ],
+            [
+              -84.3984378,
+              33.6803974
+            ],
+            [
+              -84.3984562,
+              33.6801538
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-016",
+        "address": "158 Birch St, Hapeville, GA 30354",
+        "roof_area_sqft": 7861,
+        "year_built": 1980,
+        "num_units": 32,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "Metro South Residences",
+        "owner_address": "PO Box 9238, Atlanta GA 30301",
+        "owner_phone": "(404) 555-8811",
+        "owner_email": "mgmt@metrosouthres.com",
+        "avg_ghi": 4.72,
+        "in_food_desert": true,
+        "hvac_proxy_score": 60,
+        "estimated_peak_kw": 40.0,
+        "aggregation_grid_id": "GRID-006",
+        "score": 65.4,
+        "score_structural": 60,
+        "score_area": 66,
+        "score_solar": 48,
+        "score_zoning": 60,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 9000.0,
+          "total_onetime_value": 46000.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 146.1,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4210213,
+              33.6698919
+            ],
+            [
+              -84.4206485,
+              33.6698919
+            ],
+            [
+              -84.420653,
+              33.6702021
+            ],
+            [
+              -84.4210258,
+              33.6702021
+            ],
+            [
+              -84.4210213,
+              33.6698919
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-017",
+        "address": "352 Forest Pkwy, Hapeville, GA 30354",
+        "roof_area_sqft": 12749,
+        "year_built": 1972,
+        "num_units": 6,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "Dogwood Gardens LLC",
+        "owner_address": "PO Box 2343, Atlanta GA 30301",
+        "owner_phone": "(404) 555-1651",
+        "owner_email": "mgmt@dogwoodgardens.com",
+        "avg_ghi": 4.57,
+        "in_food_desert": false,
+        "hvac_proxy_score": 45,
+        "estimated_peak_kw": 11.7,
+        "aggregation_grid_id": "GRID-002",
+        "score": 56.5,
+        "score_structural": 45,
+        "score_area": 100,
+        "score_solar": 38,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck"
+          ],
+          "total_annual_value": 2380.0,
+          "total_onetime_value": 11775.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 107.0,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4098022,
+              33.6711842
+            ],
+            [
+              -84.4095042,
+              33.6711842
+            ],
+            [
+              -84.4094988,
+              33.6714321
+            ],
+            [
+              -84.4097968,
+              33.6714321
+            ],
+            [
+              -84.4098022,
+              33.6711842
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-018",
+        "address": "869 Elm St, Hapeville, GA 30354",
+        "roof_area_sqft": 8147,
+        "year_built": 2013,
+        "num_units": 12,
+        "num_floors": 4,
+        "zoning": "R-4",
+        "owner_name": "Hapeville Residential Partners",
+        "owner_address": "PO Box 8508, Atlanta GA 30301",
+        "owner_phone": "(404) 555-1152",
+        "owner_email": "mgmt@hapresidential.com",
+        "avg_ghi": 4.74,
+        "in_food_desert": false,
+        "hvac_proxy_score": 90,
+        "estimated_peak_kw": 17.3,
+        "aggregation_grid_id": "GRID-003",
+        "score": 70.5,
+        "score_structural": 90,
+        "score_area": 68,
+        "score_solar": 49,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 3754.0,
+          "total_onetime_value": 18975.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 122.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4199191,
+              33.6707131
+            ],
+            [
+              -84.4196818,
+              33.6707131
+            ],
+            [
+              -84.4196993,
+              33.6709106
+            ],
+            [
+              -84.4199367,
+              33.6709106
+            ],
+            [
+              -84.4199191,
+              33.6707131
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-019",
+        "address": "548 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 5170,
+        "year_built": 1984,
+        "num_units": 12,
+        "num_floors": 3,
+        "zoning": "R-5",
+        "owner_name": "ATL Urban Living Inc.",
+        "owner_address": "PO Box 9666, Atlanta GA 30301",
+        "owner_phone": "(404) 555-5956",
+        "owner_email": "mgmt@atlurbanliving.com",
+        "avg_ghi": 5.43,
+        "in_food_desert": false,
+        "hvac_proxy_score": 60,
+        "estimated_peak_kw": 17.9,
+        "aggregation_grid_id": "GRID-003",
+        "score": 56.9,
+        "score_structural": 60,
+        "score_area": 43,
+        "score_solar": 95,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 3854.0,
+          "total_onetime_value": 19425.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 122.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4151287,
+              33.6768158
+            ],
+            [
+              -84.4149011,
+              33.6768158
+            ],
+            [
+              -84.4149096,
+              33.6770052
+            ],
+            [
+              -84.4151372,
+              33.6770052
+            ],
+            [
+              -84.4151287,
+              33.6768158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-020",
+        "address": "308 Magnolia Blvd, Hapeville, GA 30354",
+        "roof_area_sqft": 4753,
+        "year_built": 1975,
+        "num_units": 8,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Peach State Properties",
+        "owner_address": "PO Box 9004, Atlanta GA 30301",
+        "owner_phone": "(404) 555-9280",
+        "owner_email": "mgmt@peachstateprops.com",
+        "avg_ghi": 5.24,
+        "in_food_desert": true,
+        "hvac_proxy_score": 50,
+        "estimated_peak_kw": 10.9,
+        "aggregation_grid_id": "GRID-005",
+        "score": 68.5,
+        "score_structural": 50,
+        "score_area": 40,
+        "score_solar": 83,
+        "score_zoning": 100,
+        "score_food_desert": 100,
+        "score_aggregation": 40,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 2398.0,
+          "total_onetime_value": 12175.0,
+          "aggregation_tier": "Below Threshold",
+          "grid_combined_kw": 78.7,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4211327,
+              33.6789694
+            ],
+            [
+              -84.420829,
+              33.6789694
+            ],
+            [
+              -84.4208483,
+              33.6792222
+            ],
+            [
+              -84.421152,
+              33.6792222
+            ],
+            [
+              -84.4211327,
+              33.6789694
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-021",
+        "address": "822 Virginia Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 8464,
+        "year_built": 1968,
+        "num_units": 16,
+        "num_floors": 2,
+        "zoning": "R-5",
+        "owner_name": "South Metro Apartments LLC",
+        "owner_address": "PO Box 2832, Atlanta GA 30301",
+        "owner_phone": "(404) 555-1158",
+        "owner_email": "mgmt@smetro-apts.com",
+        "avg_ghi": 5.27,
+        "in_food_desert": false,
+        "hvac_proxy_score": 70,
+        "estimated_peak_kw": 28.7,
+        "aggregation_grid_id": "GRID-005",
+        "score": 65.2,
+        "score_structural": 70,
+        "score_area": 71,
+        "score_solar": 85,
+        "score_zoning": 60,
+        "score_food_desert": 30,
+        "score_aggregation": 40,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 5936.0,
+          "total_onetime_value": 29525.0,
+          "aggregation_tier": "Below Threshold",
+          "grid_combined_kw": 78.7,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4006869,
+              33.6783438
+            ],
+            [
+              -84.4003245,
+              33.6783438
+            ],
+            [
+              -84.4003146,
+              33.6786454
+            ],
+            [
+              -84.400677,
+              33.6786454
+            ],
+            [
+              -84.4006869,
+              33.6783438
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-022",
+        "address": "981 Birch St, Hapeville, GA 30354",
+        "roof_area_sqft": 12052,
+        "year_built": 2005,
+        "num_units": 4,
+        "num_floors": 3,
+        "zoning": "R-5",
+        "owner_name": "Skyline Multifamily Group",
+        "owner_address": "PO Box 4441, Atlanta GA 30301",
+        "owner_phone": "(404) 555-6862",
+        "owner_email": "mgmt@skylinemf.com",
+        "avg_ghi": 4.65,
+        "in_food_desert": true,
+        "hvac_proxy_score": 75,
+        "estimated_peak_kw": 7.7,
+        "aggregation_grid_id": "GRID-005",
+        "score": 77.5,
+        "score_structural": 75,
+        "score_area": 100,
+        "score_solar": 43,
+        "score_zoning": 60,
+        "score_food_desert": 100,
+        "score_aggregation": 40,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER"
+          ],
+          "total_annual_value": 1570.0,
+          "total_onetime_value": 7775.0,
+          "aggregation_tier": "Below Threshold",
+          "grid_combined_kw": 78.7,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4138345,
+              33.6732042
+            ],
+            [
+              -84.4135889,
+              33.6732042
+            ],
+            [
+              -84.4135785,
+              33.6734086
+            ],
+            [
+              -84.4138241,
+              33.6734086
+            ],
+            [
+              -84.4138345,
+              33.6732042
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-023",
+        "address": "522 Dogwood Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 5532,
+        "year_built": 2015,
+        "num_units": 24,
+        "num_floors": 3,
+        "zoning": "R-5",
+        "owner_name": "Georgia Green Homes",
+        "owner_address": "PO Box 6442, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3938",
+        "owner_email": "mgmt@gagreenhomes.com",
+        "avg_ghi": 5.43,
+        "in_food_desert": true,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 44.2,
+        "aggregation_grid_id": "GRID-004",
+        "score": 80.0,
+        "score_structural": 100,
+        "score_area": 46,
+        "score_solar": 95,
+        "score_zoning": 60,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 9093.0,
+          "total_onetime_value": 45150.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 185.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4063209,
+              33.6670158
+            ],
+            [
+              -84.4059236,
+              33.6670158
+            ],
+            [
+              -84.405952,
+              33.6673465
+            ],
+            [
+              -84.4063493,
+              33.6673465
+            ],
+            [
+              -84.4063209,
+              33.6670158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-024",
+        "address": "458 Poplar Way, Hapeville, GA 30354",
+        "roof_area_sqft": 14489,
+        "year_built": 2018,
+        "num_units": 16,
+        "num_floors": 2,
+        "zoning": "R-4",
+        "owner_name": "Hapeville Housing Trust",
+        "owner_address": "PO Box 4652, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4728",
+        "owner_email": "mgmt@haphousing.org",
+        "avg_ghi": 4.61,
+        "in_food_desert": false,
+        "hvac_proxy_score": 90,
+        "estimated_peak_kw": 22.0,
+        "aggregation_grid_id": "GRID-002",
+        "score": 76.1,
+        "score_structural": 90,
+        "score_area": 100,
+        "score_solar": 41,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 4830.0,
+          "total_onetime_value": 24500.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 107.0,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4144975,
+              33.6617888
+            ],
+            [
+              -84.4141459,
+              33.6617888
+            ],
+            [
+              -84.4141703,
+              33.6620814
+            ],
+            [
+              -84.4145219,
+              33.6620814
+            ],
+            [
+              -84.4144975,
+              33.6617888
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-025",
+        "address": "998 Magnolia Blvd, Hapeville, GA 30354",
+        "roof_area_sqft": 11346,
+        "year_built": 2009,
+        "num_units": 16,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Magnolia Property Management",
+        "owner_address": "PO Box 5349, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3925",
+        "owner_email": "mgmt@magnoliapm.com",
+        "avg_ghi": 4.9,
+        "in_food_desert": false,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 31.2,
+        "aggregation_grid_id": "GRID-001",
+        "score": 79.8,
+        "score_structural": 100,
+        "score_area": 95,
+        "score_solar": 60,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 6348.0,
+          "total_onetime_value": 31400.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 187.9,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.414019,
+              33.6715216
+            ],
+            [
+              -84.413788,
+              33.6715216
+            ],
+            [
+              -84.4137904,
+              33.6717138
+            ],
+            [
+              -84.4140214,
+              33.6717138
+            ],
+            [
+              -84.414019,
+              33.6715216
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-026",
+        "address": "632 Lee St, Hapeville, GA 30354",
+        "roof_area_sqft": 4894,
+        "year_built": 2000,
+        "num_units": 24,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Cedar Creek Investments",
+        "owner_address": "PO Box 6967, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4228",
+        "owner_email": "mgmt@cedarcreekinv.com",
+        "avg_ghi": 4.89,
+        "in_food_desert": false,
+        "hvac_proxy_score": 80,
+        "estimated_peak_kw": 42.4,
+        "aggregation_grid_id": "GRID-003",
+        "score": 62.6,
+        "score_structural": 80,
+        "score_area": 41,
+        "score_solar": 59,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 8796.0,
+          "total_onetime_value": 43800.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 122.5,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4002187,
+              33.6799755
+            ],
+            [
+              -84.3999843,
+              33.6799755
+            ],
+            [
+              -84.3999871,
+              33.6801705
+            ],
+            [
+              -84.4002215,
+              33.6801705
+            ],
+            [
+              -84.4002187,
+              33.6799755
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-027",
+        "address": "813 Poplar Way, Hapeville, GA 30354",
+        "roof_area_sqft": 5041,
+        "year_built": 2022,
+        "num_units": 20,
+        "num_floors": 4,
+        "zoning": "R-5",
+        "owner_name": "ATL Southside Holdings",
+        "owner_address": "PO Box 4143, Atlanta GA 30301",
+        "owner_phone": "(404) 555-3085",
+        "owner_email": "mgmt@atlsouthside.com",
+        "avg_ghi": 5.22,
+        "in_food_desert": true,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 30.5,
+        "aggregation_grid_id": "GRID-006",
+        "score": 77.8,
+        "score_structural": 100,
+        "score_area": 42,
+        "score_solar": 81,
+        "score_zoning": 60,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 6532.0,
+          "total_onetime_value": 32875.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 146.1,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4060349,
+              33.6797934
+            ],
+            [
+              -84.4058539,
+              33.6797934
+            ],
+            [
+              -84.4058536,
+              33.679944
+            ],
+            [
+              -84.4060346,
+              33.679944
+            ],
+            [
+              -84.4060349,
+              33.6797934
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-028",
+        "address": "576 Atlanta Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 3006,
+        "year_built": 2003,
+        "num_units": 16,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Urban Core Realty",
+        "owner_address": "PO Box 4501, Atlanta GA 30301",
+        "owner_phone": "(404) 555-8244",
+        "owner_email": "mgmt@urbancorerealty.com",
+        "avg_ghi": 4.8,
+        "in_food_desert": true,
+        "hvac_proxy_score": 70,
+        "estimated_peak_kw": 27.0,
+        "aggregation_grid_id": "GRID-006",
+        "score": 67.0,
+        "score_structural": 70,
+        "score_area": 25,
+        "score_solar": 53,
+        "score_zoning": 100,
+        "score_food_desert": 100,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 5655.0,
+          "total_onetime_value": 28250.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 146.1,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.3993585,
+              33.6761878
+            ],
+            [
+              -84.3989696,
+              33.6761878
+            ],
+            [
+              -84.3989973,
+              33.6765115
+            ],
+            [
+              -84.3993862,
+              33.6765115
+            ],
+            [
+              -84.3993585,
+              33.6761878
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-029",
+        "address": "417 Peach St, Hapeville, GA 30354",
+        "roof_area_sqft": 13876,
+        "year_built": 2000,
+        "num_units": 6,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Fulton Family Properties",
+        "owner_address": "PO Box 3414, Atlanta GA 30301",
+        "owner_phone": "(404) 555-4262",
+        "owner_email": "mgmt@fultonfamily.com",
+        "avg_ghi": 5.13,
+        "in_food_desert": true,
+        "hvac_proxy_score": 65,
+        "estimated_peak_kw": 10.8,
+        "aggregation_grid_id": "GRID-005",
+        "score": 84.9,
+        "score_structural": 65,
+        "score_area": 100,
+        "score_solar": 75,
+        "score_zoning": 100,
+        "score_food_desert": 100,
+        "score_aggregation": 40,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GEFA-HER"
+          ],
+          "total_annual_value": 2232.0,
+          "total_onetime_value": 11100.0,
+          "aggregation_tier": "Below Threshold",
+          "grid_combined_kw": 78.7,
+          "grid_building_count": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4109807,
+              33.6630231
+            ],
+            [
+              -84.4106127,
+              33.6630231
+            ],
+            [
+              -84.4106282,
+              33.6633294
+            ],
+            [
+              -84.4109963,
+              33.6633294
+            ],
+            [
+              -84.4109807,
+              33.6630231
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "BLD-030",
+        "address": "804 Dogwood Ave, Hapeville, GA 30354",
+        "roof_area_sqft": 12431,
+        "year_built": 2008,
+        "num_units": 32,
+        "num_floors": 3,
+        "zoning": "R-4",
+        "owner_name": "Heritage Living Co.",
+        "owner_address": "PO Box 7965, Atlanta GA 30301",
+        "owner_phone": "(404) 555-2746",
+        "owner_email": "mgmt@heritageliving.co",
+        "avg_ghi": 4.69,
+        "in_food_desert": false,
+        "hvac_proxy_score": 100,
+        "estimated_peak_kw": 44.6,
+        "aggregation_grid_id": "GRID-001",
+        "score": 80.5,
+        "score_structural": 100,
+        "score_area": 100,
+        "score_solar": 46,
+        "score_zoning": 100,
+        "score_food_desert": 30,
+        "score_aggregation": 80,
+        "subsidy_summary": {
+          "eligible_programs": [
+            "VPP-Consumer",
+            "VPP-Utility",
+            "TempCheck",
+            "GP-MF-Efficiency"
+          ],
+          "total_annual_value": 9759.0,
+          "total_onetime_value": 49450.0,
+          "aggregation_tier": "VPP",
+          "grid_combined_kw": 187.9,
+          "grid_building_count": 5
+        }
+      }
+    }
+  ]
+}

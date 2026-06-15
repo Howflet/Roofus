@@ -1,0 +1,281 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.423055,
+              33.6577815
+            ],
+            [
+              -84.4134695,
+              33.6618096
+            ],
+            [
+              -84.408887,
+              33.663423
+            ],
+            [
+              -84.4208176,
+              33.6662857
+            ],
+            [
+              -84.4195831,
+              33.6624681
+            ],
+            [
+              -84.423055,
+              33.6577815
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-001",
+        "building_count": 5,
+        "total_units": 112,
+        "total_roof_sqft": 44976,
+        "combined_peak_kw": 187.9,
+        "meets_vpp_threshold": true,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "VPP",
+        "potential_annual_value": 31004,
+        "buildings_needed_for_cl1": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4209697,
+              33.6688966
+            ],
+            [
+              -84.4035589,
+              33.6664975
+            ],
+            [
+              -84.4021202,
+              33.6711629
+            ],
+            [
+              -84.4239995,
+              33.6705184
+            ],
+            [
+              -84.4226853,
+              33.6702232
+            ],
+            [
+              -84.4209697,
+              33.6688966
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-002",
+        "building_count": 5,
+        "total_units": 74,
+        "total_roof_sqft": 57794,
+        "combined_peak_kw": 107.0,
+        "meets_vpp_threshold": true,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "VPP",
+        "potential_annual_value": 17655,
+        "buildings_needed_for_cl1": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.421804,
+              33.6705926
+            ],
+            [
+              -84.4086126,
+              33.6712377
+            ],
+            [
+              -84.3969114,
+              33.6712662
+            ],
+            [
+              -84.4241431,
+              33.6729773
+            ],
+            [
+              -84.414138,
+              33.6716402
+            ],
+            [
+              -84.421804,
+              33.6705926
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-003",
+        "building_count": 5,
+        "total_units": 80,
+        "total_roof_sqft": 34238,
+        "combined_peak_kw": 122.5,
+        "meets_vpp_threshold": true,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "VPP",
+        "potential_annual_value": 20212,
+        "buildings_needed_for_cl1": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4228395,
+              33.673579
+            ],
+            [
+              -84.4140325,
+              33.6730606
+            ],
+            [
+              -84.4026133,
+              33.6747816
+            ],
+            [
+              -84.4000888,
+              33.6749725
+            ],
+            [
+              -84.4236376,
+              33.6742349
+            ],
+            [
+              -84.4228395,
+              33.673579
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-004",
+        "building_count": 5,
+        "total_units": 108,
+        "total_roof_sqft": 43053,
+        "combined_peak_kw": 185.5,
+        "meets_vpp_threshold": true,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "VPP",
+        "potential_annual_value": 30608,
+        "buildings_needed_for_cl1": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4166251,
+              33.6767354
+            ],
+            [
+              -84.4134494,
+              33.6763591
+            ],
+            [
+              -84.396019,
+              33.6760062
+            ],
+            [
+              -84.3977632,
+              33.6787946
+            ],
+            [
+              -84.4243808,
+              33.6795763
+            ],
+            [
+              -84.4166251,
+              33.6767354
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-005",
+        "building_count": 5,
+        "total_units": 46,
+        "total_roof_sqft": 47300,
+        "combined_peak_kw": 78.7,
+        "meets_vpp_threshold": false,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "Below Threshold",
+        "potential_annual_value": 4722,
+        "buildings_needed_for_cl1": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -84.4217824,
+              33.6799448
+            ],
+            [
+              -84.405802,
+              33.6797424
+            ],
+            [
+              -84.3982063,
+              33.680008
+            ],
+            [
+              -84.3958772,
+              33.6802714
+            ],
+            [
+              -84.410426,
+              33.6814821
+            ],
+            [
+              -84.4217824,
+              33.6799448
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "grid_id": "GRID-006",
+        "building_count": 5,
+        "total_units": 96,
+        "total_roof_sqft": 35743,
+        "combined_peak_kw": 146.1,
+        "meets_vpp_threshold": true,
+        "meets_cl1_threshold": false,
+        "aggregation_tier": "VPP",
+        "potential_annual_value": 24106,
+        "buildings_needed_for_cl1": 2
+      }
+    }
+  ]
+}
