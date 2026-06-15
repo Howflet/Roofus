@@ -39,7 +39,9 @@ def get_grid_subsidies(grid_id: str) -> dict[str, Any] | None:
         return None
 
     props = grid["properties"]
-    combined_kw = props.get("combined_peak_kw", 0)
+    # DR thresholds compare against curtailable (sheddable) load, not total peak.
+    combined_kw = props.get("combined_curtailable_kw", props.get("combined_peak_kw", 0))
+    peak_kw = props.get("combined_peak_kw", 0)
     building_count = props.get("building_count", 0)
     tier = props.get("aggregation_tier", "Below Threshold")
 
@@ -96,7 +98,8 @@ def get_grid_subsidies(grid_id: str) -> dict[str, Any] | None:
     return {
         "grid_id": grid_id,
         "aggregation_tier": tier,
-        "combined_peak_kw": combined_kw,
+        "combined_curtailable_kw": combined_kw,
+        "combined_peak_kw": peak_kw,
         "building_count": building_count,
         "total_annual_subsidy_value": round(total_annual),
         "total_onetime_value": round(total_onetime),

@@ -1,0 +1,22 @@
+# Python virtual environment (do not upload)
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor / temp files
+tempCodeRunnerFile.html
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment / secrets (never upload)
+.env
+*.env
