@@ -1,0 +1,97 @@
+.container {
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.stats {
+  margin-bottom: 16px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4px 0;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.statValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Meter */
+.meterContainer {
+  margin-bottom: 16px;
+}
+
+.meterTrack {
+  position: relative;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+  overflow: visible;
+}
+
+.meterFill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 800ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.targetMarker {
+  position: absolute;
+  top: -4px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.targetLine {
+  width: 2px;
+  height: 18px;
+  background: var(--text-primary);
+  border-radius: 1px;
+}
+
+.targetLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meterLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Explainer */
+.explainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.explainerIcon {
+  flex-shrink: 0;
+  font-size: 14px;
+}

@@ -1,9 +1,5 @@
 # Roofus — UI/UX Design Specification
 
-> Use this document as direct input for Figma AI prompts. Each section describes a screen or component with enough visual detail to generate high-fidelity mockups.
-
----
-
 ## Design Language
 
 ### Brand Identity
