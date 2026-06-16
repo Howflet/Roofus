@@ -27,7 +27,7 @@ These are realistic defaults used in calculations. Users can adjust them via sli
 |---|---|---|---|
 | Rooftop lease rate | $8/sq ft/year | $4–$18 | Atlanta commercial rooftop rates |
 | Property value increase | 3.5% | 1–7% | Green roof studies (GSA, EPA) |
-| Energy savings (cooling) | $0.45/sq ft/year | $0.20–$0.80 | Green roof insulation effect; savings calculated from Georgia Power commercial rate ($0.105/kWh) × estimated cooling reduction (~25% for green roof coverage) |
+| Commercial demand-rate savings (GA Power PLM) | $0.05/sq ft/year | $0.03–$0.10 | Grounded in a real Georgia Power commercial bill: 301 North Central Ave (192-unit complex, 338 kW billing demand, 33,308 kWh/mo) returns $7,025/mo (~$75k/yr) from GA Power's own calculator. A green roof cuts whole-building electricity ~3% (EPA/GSA green-roof studies — the roof directly cools only the top floor), and shaves the summer peak that drives the commercial demand charge. Note: in individually-metered complexes most of this benefit accrues to tenants, which helps occupancy. |
 | Tax incentives | $2.50/sq ft (one-time) | $0–$5 | GA urban agriculture credits |
 
 ### Developer Revenue & Costs

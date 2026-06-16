@@ -121,7 +121,12 @@ def calculate_owner_revenue(
     lease_rate: float = 8.0,
     property_value: float = 850_000,
     green_roof_premium_pct: float = 3.5,
-    energy_savings_per_sqft: float = 0.45,
+    # Owner-side electricity savings, grounded in a real Georgia Power commercial
+    # bill. For 301 North Central Ave (192-unit complex, 338 kW demand,
+    # 33,308 kWh/mo) GA Power's own calculator returns $7,025/mo (~$75k/yr).
+    # A green roof cuts whole-building electricity ~3% (EPA/GSA green-roof
+    # studies; the roof directly cools only the top floor) -> ~$0.05/sq ft/yr.
+    energy_savings_per_sqft: float = 0.05,
     tax_incentive_per_sqft: float = 2.50,
 ) -> OwnerRevenueProjection:
     """Owner-side revenue projection: lease income, energy savings, etc."""
