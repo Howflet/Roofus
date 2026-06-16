@@ -89,7 +89,7 @@
         "der_annual_mwh": 399.7,
         "dco1_account_ready": false,
         "der_credit_est_annual": 18713,
-        "aggregation_grid_id": "GRID-012",
+        "aggregation_grid_id": "GRID-011",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -190,7 +190,7 @@
         "der_annual_mwh": 300.9,
         "dco1_account_ready": false,
         "der_credit_est_annual": 14060,
-        "aggregation_grid_id": "GRID-012",
+        "aggregation_grid_id": "GRID-011",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -312,8 +312,8 @@
           "total_annual_value": 18742,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 788.4,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -391,8 +391,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 788.4,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -470,8 +470,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 788.4,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -621,87 +621,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.40757145923197,
-              33.65636163615868
-            ],
-            [
-              -84.40770786657501,
-              33.65619131101004
-            ],
-            [
-              -84.40802909125009,
-              33.65637906002748
-            ],
-            [
-              -84.40788297636057,
-              33.6565495117651
-            ],
-            [
-              -84.40757145923197,
-              33.65636163615868
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-007",
-        "parcel_id": "14 009500010329",
-        "address": "3580 Perkins St, Hapeville, GA 30354",
-        "roof_area_sqft": 3334,
-        "roof_area_basis": "estimated: 35% of real lot (0.22 ac)",
-        "lot_area_sqft": 9527,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Tran Thach Nhat  Et Al",
-        "owner_address": "38 UPPER RIVERDALE RD SW, RIVERDALE GA 30274",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 15.0,
-        "census_tract": "13121010800",
-        "hvac_proxy_score": 39,
-        "estimated_peak_kw": 16.0,
-        "curtailable_kw": 10.0,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 6.0,
-        "solar_capacity_kw": 22,
-        "der_dispatchable_kw": 11,
-        "der_annual_mwh": 30.6,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1431,
-        "aggregation_grid_id": "GRID-007",
-        "score": 51.7,
-        "score_structural": 39,
-        "score_area": 28,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 788.4,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -772,7 +693,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-008",
+        "id": "BLD-007",
         "parcel_id": "14 009600050217",
         "address": "3558 Elm St, Hapeville, GA 30354",
         "roof_area_sqft": 19058,
@@ -817,8 +738,8 @@
           "total_annual_value": 21172,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 798.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 788.4,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -861,7 +782,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-009",
+        "id": "BLD-008",
         "parcel_id": "14 009500080512",
         "address": "437 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 8132,
@@ -891,7 +812,7 @@
         "der_annual_mwh": 75.2,
         "dco1_account_ready": false,
         "der_credit_est_annual": 3514,
-        "aggregation_grid_id": "GRID-013",
+        "aggregation_grid_id": "GRID-012",
         "score": 69.3,
         "score_structural": 71,
         "score_area": 68,
@@ -992,7 +913,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-010",
+        "id": "BLD-009",
         "parcel_id": "14 009500080561",
         "address": "431 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 16313,
@@ -1022,7 +943,7 @@
         "der_annual_mwh": 150.4,
         "dco1_account_ready": false,
         "der_credit_est_annual": 7029,
-        "aggregation_grid_id": "GRID-013",
+        "aggregation_grid_id": "GRID-012",
         "score": 84.7,
         "score_structural": 96,
         "score_area": 100,
@@ -1079,7 +1000,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-011",
+        "id": "BLD-010",
         "parcel_id": "14 009500030087",
         "address": "480 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 5780,
@@ -1178,7 +1099,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-012",
+        "id": "BLD-011",
         "parcel_id": "14 009500030327",
         "address": "484 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 14229,
@@ -1261,7 +1182,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-013",
+        "id": "BLD-012",
         "parcel_id": "14 009500080355",
         "address": "493 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 4873,
@@ -1291,7 +1212,7 @@
         "der_annual_mwh": 44.6,
         "dco1_account_ready": false,
         "der_credit_est_annual": 2084,
-        "aggregation_grid_id": "GRID-013",
+        "aggregation_grid_id": "GRID-012",
         "score": 55.5,
         "score_structural": 48,
         "score_area": 41,
@@ -1368,7 +1289,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-014",
+        "id": "BLD-013",
         "parcel_id": "14 009500030038",
         "address": "508 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 29577,
@@ -1495,7 +1416,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-015",
+        "id": "BLD-014",
         "parcel_id": "14 0127  LL0877",
         "address": "1200 Virginia Ave, Hapeville, GA 30354",
         "roof_area_sqft": 77755,
@@ -1593,7 +1514,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-016",
+        "id": "BLD-015",
         "parcel_id": "14 009500030350",
         "address": "540 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 18062,
@@ -1680,7 +1601,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-017",
+        "id": "BLD-016",
         "parcel_id": "14 009800020317",
         "address": "877 Virginia Ave, Hapeville, GA 30354",
         "roof_area_sqft": 7507,
@@ -1723,87 +1644,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.4130808967432,
-              33.66080326530025
-            ],
-            [
-              -84.4134420960597,
-              33.66044231393447
-            ],
-            [
-              -84.4136252387079,
-              33.660549417110076
-            ],
-            [
-              -84.41324518708853,
-              33.6608993431435
-            ],
-            [
-              -84.4130808967432,
-              33.66080326530025
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-018",
-        "parcel_id": "14 009800060040",
-        "address": "730 South Central Ave, Hapeville, GA 30354",
-        "roof_area_sqft": 3652,
-        "roof_area_basis": "estimated: 35% of real lot (0.24 ac)",
-        "lot_area_sqft": 10433,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Baughman Deborah F",
-        "owner_address": "736 S CENTRAL AVE, ATLANTA GA 30354",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 15.0,
-        "census_tract": "13121010800",
-        "hvac_proxy_score": 41,
-        "estimated_peak_kw": 17.0,
-        "curtailable_kw": 10.6,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 6.6,
-        "solar_capacity_kw": 24,
-        "der_dispatchable_kw": 12,
-        "der_annual_mwh": 33.4,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1562,
-        "aggregation_grid_id": "GRID-004",
-        "score": 52.7,
-        "score_structural": 41,
-        "score_area": 30,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
+          "grid_combined_kw": 463.5,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -1878,7 +1720,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-019",
+        "id": "BLD-017",
         "parcel_id": "14 0127  LL0828",
         "address": "1031 Virginia Ave, Hapeville, GA 30354",
         "roof_area_sqft": 152917,
@@ -1988,7 +1830,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-020",
+        "id": "BLD-018",
         "parcel_id": "14 0127  LL0737",
         "address": "3450 International Blvd, Hapeville, GA 30354",
         "roof_area_sqft": 41713,
@@ -2081,7 +1923,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-021",
+        "id": "BLD-019",
         "parcel_id": "14 0130  LL0112",
         "address": "3450 Bobby Brown Pkwy, Hapeville, GA 30354",
         "roof_area_sqft": 18448,
@@ -2188,7 +2030,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-022",
+        "id": "BLD-020",
         "parcel_id": "14 0130  LL0237",
         "address": "3433 Bobby Brown Pkwy, Hapeville, GA 30354",
         "roof_area_sqft": 18448,
@@ -2347,7 +2189,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-023",
+        "id": "BLD-021",
         "parcel_id": "14 0130  LL0211",
         "address": "3437 Bobby Brown Pkwy, Hapeville, GA 30354",
         "roof_area_sqft": 56410,
@@ -2444,7 +2286,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-024",
+        "id": "BLD-022",
         "parcel_id": "14 009500050382",
         "address": "585 Marina St, Hapeville, GA 30354",
         "roof_area_sqft": 11759,
@@ -2539,7 +2381,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-025",
+        "id": "BLD-023",
         "parcel_id": "14 013000021042",
         "address": "3415 Norman Berry Dr, Hapeville, GA 30354",
         "roof_area_sqft": 22137,
@@ -2730,7 +2572,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-026",
+        "id": "BLD-024",
         "parcel_id": "14 0127  LL1107",
         "address": "3401 International Blvd, Hapeville, GA 30354",
         "roof_area_sqft": 70406,
@@ -2901,7 +2743,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-027",
+        "id": "BLD-025",
         "parcel_id": "14 0127  LL1099",
         "address": "3399 International Blvd, Hapeville, GA 30354",
         "roof_area_sqft": 60527,
@@ -3024,7 +2866,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-028",
+        "id": "BLD-026",
         "parcel_id": "14 009800080196",
         "address": "846 Willingham Dr, Hapeville, GA 30354",
         "roof_area_sqft": 19624,
@@ -3067,8 +2909,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
+          "grid_combined_kw": 463.5,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -3123,7 +2965,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-029",
+        "id": "BLD-027",
         "parcel_id": "14 0127  LL1263",
         "address": "3424 Norman Berry Dr, Hapeville, GA 30354",
         "roof_area_sqft": 9300,
@@ -3222,7 +3064,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-030",
+        "id": "BLD-028",
         "parcel_id": "14 0127  LL0356",
         "address": "3420 Norman Berry Dr, Hapeville, GA 30354",
         "roof_area_sqft": 28967,
@@ -3321,7 +3163,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-031",
+        "id": "BLD-029",
         "parcel_id": "14 013000021034",
         "address": "3405 Bobby Brown Pkwy, Hapeville, GA 30354",
         "roof_area_sqft": 33236,
@@ -3412,7 +3254,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-032",
+        "id": "BLD-030",
         "parcel_id": "14 013000011001",
         "address": "1255 Walker Ave, Hapeville, GA 30354",
         "roof_area_sqft": 12038,
@@ -3587,7 +3429,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-033",
+        "id": "BLD-031",
         "parcel_id": "14 009500070513",
         "address": "3244 North Fulton Ave, Hapeville, GA 30354",
         "roof_area_sqft": 70132,
@@ -3714,7 +3556,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-034",
+        "id": "BLD-032",
         "parcel_id": "14 009800090476",
         "address": "845 North Central Ave, Hapeville, GA 30354",
         "roof_area_sqft": 38115,
@@ -3759,8 +3601,8 @@
           "total_annual_value": 14558,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
+          "grid_combined_kw": 463.5,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -3819,7 +3661,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-035",
+        "id": "BLD-033",
         "parcel_id": "14 0127  LL0455",
         "address": "3400 Norman Berry Dr, Hapeville, GA 30354",
         "roof_area_sqft": 76840,
@@ -3878,252 +3720,6 @@
         "coordinates": [
           [
             [
-              -84.40549094115626,
-              33.664839262149506
-            ],
-            [
-              -84.40549484093629,
-              33.66470796909447
-            ],
-            [
-              -84.40537243575076,
-              33.664705182244816
-            ],
-            [
-              -84.4053364085493,
-              33.664594825470516
-            ],
-            [
-              -84.40596182263214,
-              33.66460271323594
-            ],
-            [
-              -84.40588481885004,
-              33.664841825860336
-            ],
-            [
-              -84.40549094115626,
-              33.664839262149506
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-036",
-        "parcel_id": "14 009500070224",
-        "address": "3214 North Fulton Ave, Hapeville, GA 30354",
-        "roof_area_sqft": 3696,
-        "roof_area_basis": "estimated: 35% of real lot (0.24 ac)",
-        "lot_area_sqft": 10559,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Gomez Mark A",
-        "owner_address": "440 SHERIDAN AVE, SATELLITE BEACH FL 32937",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 15.0,
-        "census_tract": "13121010800",
-        "hvac_proxy_score": 41,
-        "estimated_peak_kw": 17.2,
-        "curtailable_kw": 10.7,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 6.7,
-        "solar_capacity_kw": 24,
-        "der_dispatchable_kw": 12,
-        "der_annual_mwh": 33.4,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1562,
-        "aggregation_grid_id": "GRID-009",
-        "score": 49.9,
-        "score_structural": 41,
-        "score_area": 31,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 40,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "Below Threshold",
-          "grid_combined_kw": 10.7,
-          "grid_building_count": 1
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.4026921901373,
-              33.66723902339074
-            ],
-            [
-              -84.40260898278855,
-              33.66711741386909
-            ],
-            [
-              -84.4026079460165,
-              33.66711526266634
-            ],
-            [
-              -84.40260735752143,
-              33.66711299609612
-            ],
-            [
-              -84.40260723257742,
-              33.66711067904936
-            ],
-            [
-              -84.40260757567742,
-              33.66710837733916
-            ],
-            [
-              -84.40260837621773,
-              33.667106156807556
-            ],
-            [
-              -84.40260961280384,
-              33.66710408061203
-            ],
-            [
-              -84.40261124893463,
-              33.667102208332324
-            ],
-            [
-              -84.40261323838173,
-              33.6671005914517
-            ],
-            [
-              -84.40261552520444,
-              33.667099278766976
-            ],
-            [
-              -84.40261804264166,
-              33.667098305570576
-            ],
-            [
-              -84.40275967400002,
-              33.66705698220855
-            ],
-            [
-              -84.40289854741236,
-              33.66700956507673
-            ],
-            [
-              -84.4029761821563,
-              33.666961596745615
-            ],
-            [
-              -84.40310507021657,
-              33.66715829246466
-            ],
-            [
-              -84.40271050787713,
-              33.66724528475461
-            ],
-            [
-              -84.402707898265,
-              33.667245675651735
-            ],
-            [
-              -84.4027052467031,
-              33.66724571047031
-            ],
-            [
-              -84.40270262328119,
-              33.66724538817477
-            ],
-            [
-              -84.40270009595946,
-              33.66724471765207
-            ],
-            [
-              -84.40269773056366,
-              33.66724371590817
-            ],
-            [
-              -84.40269558755233,
-              33.66724240897599
-            ],
-            [
-              -84.40269372524953,
-              33.667240831007504
-            ],
-            [
-              -84.4026921901373,
-              33.66723902339074
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-037",
-        "parcel_id": "14 009400080430",
-        "address": "441 Dorsey Rd, Hapeville, GA 30354",
-        "roof_area_sqft": 2932,
-        "roof_area_basis": "estimated: 35% of real lot (0.19 ac)",
-        "lot_area_sqft": 8377,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Garva Properties Llc",
-        "owner_address": "3515 ZIP INDUSTRIAL BLVD, ATLANTA GA 30354",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 15.0,
-        "census_tract": "13121010800",
-        "hvac_proxy_score": 38,
-        "estimated_peak_kw": 14.8,
-        "curtailable_kw": 9.3,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 5.3,
-        "solar_capacity_kw": 19,
-        "der_dispatchable_kw": 10,
-        "der_annual_mwh": 26.5,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1271,
-        "aggregation_grid_id": "GRID-014",
-        "score": 47.6,
-        "score_structural": 38,
-        "score_area": 24,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 40,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "Below Threshold",
-          "grid_combined_kw": 9.3,
-          "grid_building_count": 1
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               -84.4179884734191,
               33.671428773895414
             ],
@@ -4151,7 +3747,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-038",
+        "id": "BLD-034",
         "parcel_id": "14 009900010150",
         "address": "3054 Sylvan Rd, Hapeville, GA 30354",
         "roof_area_sqft": 10587,
@@ -4422,7 +4018,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-039",
+        "id": "BLD-035",
         "parcel_id": "14 006700050881",
         "address": "50 Mount Zion Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 123950,
@@ -4452,7 +4048,7 @@
         "der_annual_mwh": 1139.3,
         "dco1_account_ready": true,
         "der_credit_est_annual": 53242,
-        "aggregation_grid_id": "GRID-017",
+        "aggregation_grid_id": "GRID-015",
         "score": 90.4,
         "score_structural": 100,
         "score_area": 100,
@@ -4559,7 +4155,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-040",
+        "id": "BLD-036",
         "parcel_id": "14 0062  LL0015",
         "address": "183 Mount Zion Rd Se, Hapeville, GA 30354",
         "roof_area_sqft": 216646,
@@ -4589,7 +4185,7 @@
         "der_annual_mwh": 1991.8,
         "dco1_account_ready": true,
         "der_credit_est_annual": 93078,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -4749,7 +4345,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-041",
+        "id": "BLD-037",
         "parcel_id": "14 006700050840",
         "address": "50 Mount Zion Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 57325,
@@ -4779,7 +4375,7 @@
         "der_annual_mwh": 526.5,
         "dco1_account_ready": false,
         "der_credit_est_annual": 24604,
-        "aggregation_grid_id": "GRID-017",
+        "aggregation_grid_id": "GRID-015",
         "score": 90.4,
         "score_structural": 100,
         "score_area": 100,
@@ -4844,7 +4440,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-042",
+        "id": "BLD-038",
         "parcel_id": "14 006700050832",
         "address": "50 Mount Zion Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 61137,
@@ -4874,7 +4470,7 @@
         "der_annual_mwh": 562.7,
         "dco1_account_ready": false,
         "der_credit_est_annual": 26296,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 90.4,
         "score_structural": 100,
         "score_area": 100,
@@ -4991,7 +4587,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-043",
+        "id": "BLD-039",
         "parcel_id": "14 006700050857",
         "address": "50 Mount Zion Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 111296,
@@ -5021,7 +4617,7 @@
         "der_annual_mwh": 1023.7,
         "dco1_account_ready": true,
         "der_credit_est_annual": 47873,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 90.4,
         "score_structural": 100,
         "score_area": 100,
@@ -5076,7 +4672,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-044",
+        "id": "BLD-040",
         "parcel_id": "14 006100030707",
         "address": "2990 Macon Dr Se, Hapeville, GA 30354",
         "roof_area_sqft": 9629,
@@ -5106,7 +4702,7 @@
         "der_annual_mwh": 89.1,
         "dco1_account_ready": false,
         "der_credit_est_annual": 4165,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 74.1,
         "score_structural": 74,
         "score_area": 80,
@@ -5191,7 +4787,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-045",
+        "id": "BLD-041",
         "parcel_id": "14 006100030889",
         "address": "40 Mount Zion Rd Se, Hapeville, GA 30354",
         "roof_area_sqft": 54886,
@@ -5221,7 +4817,7 @@
         "der_annual_mwh": 504.2,
         "dco1_account_ready": false,
         "der_credit_est_annual": 23562,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 88.9,
         "score_structural": 100,
         "score_area": 100,
@@ -5278,7 +4874,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-046",
+        "id": "BLD-042",
         "parcel_id": "14 009300041516",
         "address": "2959 Forrest Hills Dr Sw, Hapeville, GA 30354",
         "roof_area_sqft": 20213,
@@ -5308,7 +4904,7 @@
         "der_annual_mwh": 185.2,
         "dco1_account_ready": false,
         "der_credit_est_annual": 8622,
-        "aggregation_grid_id": "GRID-015",
+        "aggregation_grid_id": "GRID-013",
         "score": 85.9,
         "score_structural": 100,
         "score_area": 100,
@@ -5385,7 +4981,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-047",
+        "id": "BLD-043",
         "parcel_id": "14 010000030627",
         "address": "2950 Springdale Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 92848,
@@ -5466,7 +5062,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-048",
+        "id": "BLD-044",
         "parcel_id": "14 009300041300",
         "address": "2929 Forrest Hills Dr Sw, Hapeville, GA 30354",
         "roof_area_sqft": 8680,
@@ -5496,7 +5092,7 @@
         "der_annual_mwh": 79.4,
         "dco1_account_ready": false,
         "der_credit_est_annual": 3676,
-        "aggregation_grid_id": "GRID-015",
+        "aggregation_grid_id": "GRID-013",
         "score": 67.7,
         "score_structural": 68,
         "score_area": 72,
@@ -5553,7 +5149,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-049",
+        "id": "BLD-045",
         "parcel_id": "14 010000030643",
         "address": "2905 Springdale Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 45128,
@@ -5716,7 +5312,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-050",
+        "id": "BLD-046",
         "parcel_id": "14 012500120072",
         "address": "1100 Washington Cir, Hapeville, GA 30354",
         "roof_area_sqft": 73790,
@@ -5759,8 +5355,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 318.5,
-          "grid_building_count": 4
+          "grid_combined_kw": 309.0,
+          "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -5979,7 +5575,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-051",
+        "id": "BLD-047",
         "parcel_id": "14 012500120098",
         "address": "1100 Washington Ave, Hapeville, GA 30354",
         "roof_area_sqft": 125170,
@@ -6024,91 +5620,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 318.5,
-          "grid_building_count": 4
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.42994222615249,
-              33.67625884223569
-            ],
-            [
-              -84.42994333298377,
-              33.67612377040593
-            ],
-            [
-              -84.42994564872305,
-              33.6758411195191
-            ],
-            [
-              -84.43012575286633,
-              33.67584187542004
-            ],
-            [
-              -84.4301223341942,
-              33.676258822698706
-            ],
-            [
-              -84.42994222615249,
-              33.67625884223569
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-052",
-        "parcel_id": "14 013200110801",
-        "address": "1259 East Washington Ave, Hapeville, GA 30354",
-        "roof_area_sqft": 3052,
-        "roof_area_basis": "estimated: 35% of real lot (0.20 ac)",
-        "lot_area_sqft": 8721,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Estella M Calhoun Revocable Trust The",
-        "owner_address": "4875 ERIN RD SW, ATLANTA GA 30331",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 43.7,
-        "census_tract": "13121011000",
-        "hvac_proxy_score": 38,
-        "estimated_peak_kw": 15.2,
-        "curtailable_kw": 9.5,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 5.5,
-        "solar_capacity_kw": 20,
-        "der_dispatchable_kw": 10,
-        "der_annual_mwh": 27.9,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1303,
-        "aggregation_grid_id": "GRID-002",
-        "score": 50.8,
-        "score_structural": 38,
-        "score_area": 25,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 318.5,
-          "grid_building_count": 4
+          "grid_combined_kw": 309.0,
+          "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -6327,7 +5840,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-053",
+        "id": "BLD-048",
         "parcel_id": "14 012500111121",
         "address": "2840 Norman Berry Dr, Hapeville, GA 30354",
         "roof_area_sqft": 159016,
@@ -6372,8 +5885,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 318.5,
-          "grid_building_count": 4
+          "grid_combined_kw": 309.0,
+          "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -6464,7 +5977,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-054",
+        "id": "BLD-049",
         "parcel_id": "14 010000030650",
         "address": "2891 Springdale Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 101233,
@@ -6625,7 +6138,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-055",
+        "id": "BLD-050",
         "parcel_id": "14 006800050187",
         "address": "2786 Old Hapeville Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 154900,
@@ -6655,7 +6168,7 @@
         "der_annual_mwh": 1423.5,
         "dco1_account_ready": true,
         "der_credit_est_annual": 66521,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -6714,7 +6227,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-056",
+        "id": "BLD-051",
         "parcel_id": "14 0068  LL1165",
         "address": "2788 Forrest Hills Dr Nw, Hapeville, GA 30354",
         "roof_area_sqft": 39182,
@@ -6744,7 +6257,7 @@
         "der_annual_mwh": 360.7,
         "dco1_account_ready": false,
         "der_credit_est_annual": 16891,
-        "aggregation_grid_id": "GRID-016",
+        "aggregation_grid_id": "GRID-014",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -6757,8 +6270,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
+          "grid_combined_kw": 555.2,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -6829,7 +6342,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-057",
+        "id": "BLD-052",
         "parcel_id": "14 0068  LL1553",
         "address": "2745 Old Hapeville Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 86292,
@@ -6859,7 +6372,7 @@
         "der_annual_mwh": 793.9,
         "dco1_account_ready": true,
         "der_credit_est_annual": 37100,
-        "aggregation_grid_id": "GRID-019",
+        "aggregation_grid_id": "GRID-017",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -6874,134 +6387,7 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.4220158927628,
-              33.680388751234844
-            ],
-            [
-              -84.42197130811532,
-              33.680356616040484
-            ],
-            [
-              -84.42192214939956,
-              33.680329543208195
-            ],
-            [
-              -84.42186923329453,
-              33.68030798278019
-            ],
-            [
-              -84.42181343875725,
-              33.68029229270142
-            ],
-            [
-              -84.42175374468447,
-              33.68027489026977
-            ],
-            [
-              -84.42169710966125,
-              33.68025140427423
-            ],
-            [
-              -84.42164441699553,
-              33.68022219987403
-            ],
-            [
-              -84.42159648986431,
-              33.68018773342194
-            ],
-            [
-              -84.42231909724818,
-              33.680050031551744
-            ],
-            [
-              -84.42233794863758,
-              33.68011785997603
-            ],
-            [
-              -84.4223637430238,
-              33.680184071772594
-            ],
-            [
-              -84.42239628805537,
-              33.68024817051777
-            ],
-            [
-              -84.42243533966392,
-              33.680309677927255
-            ],
-            [
-              -84.42248060529361,
-              33.68036813204645
-            ],
-            [
-              -84.42208184786409,
-              33.68048169922144
-            ],
-            [
-              -84.4220158927628,
-              33.680388751234844
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-058",
-        "parcel_id": "14 012500030495",
-        "address": "2744 Miles Cir, Hapeville, GA 30354",
-        "roof_area_sqft": 7763,
-        "roof_area_basis": "estimated: 35% of real lot (0.51 ac)",
-        "lot_area_sqft": 22181,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Axe Miles 2024 Trust",
-        "owner_address": "289 TUSTIN FIELD DR, TUSTIN RANCH CA 92782",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 43.7,
-        "census_tract": "13121011000",
-        "hvac_proxy_score": 57,
-        "estimated_peak_kw": 29.3,
-        "curtailable_kw": 18.0,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 14.0,
-        "solar_capacity_kw": 51,
-        "der_dispatchable_kw": 26,
-        "der_annual_mwh": 71.0,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 3352,
-        "aggregation_grid_id": "GRID-003",
-        "score": 61.5,
-        "score_structural": 57,
-        "score_area": 65,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 40,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "Below Threshold",
-          "grid_combined_kw": 70.4,
+          "grid_combined_kw": 300.0,
           "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
@@ -7053,7 +6439,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-059",
+        "id": "BLD-053",
         "parcel_id": "14 006800050500",
         "address": "108 Cleveland Ave Sw, Hapeville, GA 30354",
         "roof_area_sqft": 30224,
@@ -7083,7 +6469,7 @@
         "der_annual_mwh": 277.2,
         "dco1_account_ready": false,
         "der_credit_est_annual": 12987,
-        "aggregation_grid_id": "GRID-019",
+        "aggregation_grid_id": "GRID-017",
         "score": 88.9,
         "score_structural": 100,
         "score_area": 100,
@@ -7096,8 +6482,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 300.0,
+          "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -7256,7 +6642,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-060",
+        "id": "BLD-054",
         "parcel_id": "14 009300011162",
         "address": "532 Cleveland Ave Sw, Hapeville, GA 30354",
         "roof_area_sqft": 289369,
@@ -7286,7 +6672,7 @@
         "der_annual_mwh": 2660.3,
         "dco1_account_ready": true,
         "der_credit_est_annual": 124319,
-        "aggregation_grid_id": "GRID-010",
+        "aggregation_grid_id": "GRID-009",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -7304,587 +6690,6 @@
           "aggregation_tier": "CL-1",
           "grid_combined_kw": 270.0,
           "grid_building_count": 1
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39502308929121,
-              33.68192672240692
-            ],
-            [
-              -84.39476793876278,
-              33.68184862791123
-            ],
-            [
-              -84.39476548714832,
-              33.681750978459355
-            ],
-            [
-              -84.39518278784729,
-              33.68175200903574
-            ],
-            [
-              -84.39518006325055,
-              33.68192761883105
-            ],
-            [
-              -84.39502308929121,
-              33.68192672240692
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-061",
-        "parcel_id": "14 006900060094",
-        "address": "2612 Steele Ave Sw 9, Hapeville, GA 30354",
-        "roof_area_sqft": 2822,
-        "roof_area_basis": "estimated: 35% of real lot (0.19 ac)",
-        "lot_area_sqft": 8063,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments, Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 37,
-        "estimated_peak_kw": 14.5,
-        "curtailable_kw": 9.1,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 5.1,
-        "solar_capacity_kw": 19,
-        "der_dispatchable_kw": 10,
-        "der_annual_mwh": 26.5,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1271,
-        "aggregation_grid_id": "GRID-019",
-        "score": 50.3,
-        "score_structural": 37,
-        "score_area": 24,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39518006325055,
-              33.68192761883105
-            ],
-            [
-              -84.39518278784729,
-              33.68175200903574
-            ],
-            [
-              -84.39541300354433,
-              33.681752583964254
-            ],
-            [
-              -84.39541694773426,
-              33.681752587483395
-            ],
-            [
-              -84.39541741488998,
-              33.68192897492196
-            ],
-            [
-              -84.39518006325055,
-              33.68192761883105
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-062",
-        "parcel_id": "14 006900060110",
-        "address": "2612 Steele Ave Sw 10, Hapeville, GA 30354",
-        "roof_area_sqft": 1657,
-        "roof_area_basis": "estimated: 35% of real lot (0.11 ac)",
-        "lot_area_sqft": 4735,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 33,
-        "estimated_peak_kw": 11.0,
-        "curtailable_kw": 7.0,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 3.0,
-        "solar_capacity_kw": 11,
-        "der_dispatchable_kw": 6,
-        "der_annual_mwh": 15.3,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 749,
-        "aggregation_grid_id": "GRID-016",
-        "score": 47.1,
-        "score_structural": 33,
-        "score_area": 14,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39541741488998,
-              33.68192897492196
-            ],
-            [
-              -84.39541694773426,
-              33.681752587483395
-            ],
-            [
-              -84.39566771060225,
-              33.68175320505166
-            ],
-            [
-              -84.39566426745789,
-              33.68193038418306
-            ],
-            [
-              -84.39541741488998,
-              33.68192897492196
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-063",
-        "parcel_id": "14 006900060128",
-        "address": "2612 Steele Ave Sw 10, Hapeville, GA 30354",
-        "roof_area_sqft": 1657,
-        "roof_area_basis": "estimated: 35% of real lot (0.11 ac)",
-        "lot_area_sqft": 4735,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments, Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 33,
-        "estimated_peak_kw": 11.0,
-        "curtailable_kw": 7.0,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 3.0,
-        "solar_capacity_kw": 11,
-        "der_dispatchable_kw": 6,
-        "der_annual_mwh": 15.3,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 749,
-        "aggregation_grid_id": "GRID-016",
-        "score": 47.1,
-        "score_structural": 33,
-        "score_area": 14,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39566426745789,
-              33.68193038418306
-            ],
-            [
-              -84.39566771060225,
-              33.68175320505166
-            ],
-            [
-              -84.39572231364878,
-              33.68175334009191
-            ],
-            [
-              -84.39588566332782,
-              33.681753742313454
-            ],
-            [
-              -84.39586631285,
-              33.68193153703667
-            ],
-            [
-              -84.39566426745789,
-              33.68193038418306
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-064",
-        "parcel_id": "14 006900060136",
-        "address": "2612 Steele Ave Sw 12, Hapeville, GA 30354",
-        "roof_area_sqft": 1430,
-        "roof_area_basis": "estimated: 35% of real lot (0.09 ac)",
-        "lot_area_sqft": 4086,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Cooper Sanja & Thomas Pierre",
-        "owner_address": "561 MELLVIEW AVE, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 32,
-        "estimated_peak_kw": 10.3,
-        "curtailable_kw": 6.6,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 2.6,
-        "solar_capacity_kw": 9,
-        "der_dispatchable_kw": 4,
-        "der_annual_mwh": 12.5,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 551,
-        "aggregation_grid_id": "GRID-016",
-        "score": 46.4,
-        "score_structural": 32,
-        "score_area": 12,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39595913446905,
-              33.68201765963616
-            ],
-            [
-              -84.39598235789319,
-              33.68184519016394
-            ],
-            [
-              -84.39623364991657,
-              33.68184596068767
-            ],
-            [
-              -84.39622926405879,
-              33.682023892667985
-            ],
-            [
-              -84.39595913446905,
-              33.68201765963616
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-065",
-        "parcel_id": "14 006900060029",
-        "address": "2612 Steele Ave Sw # 1, Hapeville, GA 30354",
-        "roof_area_sqft": 1826,
-        "roof_area_basis": "estimated: 35% of real lot (0.12 ac)",
-        "lot_area_sqft": 5218,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments L L C",
-        "owner_address": "561 MELLVIEW AVE SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 33,
-        "estimated_peak_kw": 11.5,
-        "curtailable_kw": 7.3,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 3.3,
-        "solar_capacity_kw": 12,
-        "der_dispatchable_kw": 6,
-        "der_annual_mwh": 16.7,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 781,
-        "aggregation_grid_id": "GRID-016",
-        "score": 47.3,
-        "score_structural": 33,
-        "score_area": 15,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39477243084036,
-              33.68202749742152
-            ],
-            [
-              -84.39476793876278,
-              33.68184862791123
-            ],
-            [
-              -84.39502308929121,
-              33.68192672240692
-            ],
-            [
-              -84.39501595132833,
-              33.68209918993076
-            ],
-            [
-              -84.39477583832644,
-              33.682163228746774
-            ],
-            [
-              -84.39477243084036,
-              33.68202749742152
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-066",
-        "parcel_id": "14 006900060086",
-        "address": "2612 Steele Ave Sw 7, Hapeville, GA 30354",
-        "roof_area_sqft": 2526,
-        "roof_area_basis": "estimated: 35% of real lot (0.17 ac)",
-        "lot_area_sqft": 7218,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments, Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 36,
-        "estimated_peak_kw": 13.5,
-        "curtailable_kw": 8.5,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 4.5,
-        "solar_capacity_kw": 17,
-        "der_dispatchable_kw": 8,
-        "der_annual_mwh": 23.7,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1073,
-        "aggregation_grid_id": "GRID-019",
-        "score": 49.4,
-        "score_structural": 36,
-        "score_area": 21,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.42010579455282,
-              33.682040992492595
-            ],
-            [
-              -84.42027523054877,
-              33.682046039549206
-            ],
-            [
-              -84.4204723257801,
-              33.68205191049609
-            ],
-            [
-              -84.42066942103612,
-              33.68205778112851
-            ],
-            [
-              -84.42088187053244,
-              33.68206409684244
-            ],
-            [
-              -84.42090585387648,
-              33.68220003928577
-            ],
-            [
-              -84.4201027121457,
-              33.68220383406202
-            ],
-            [
-              -84.42010579455282,
-              33.682040992492595
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-067",
-        "parcel_id": "14 012400120198",
-        "address": "2673 Elsinore St, Hapeville, GA 30354",
-        "roof_area_sqft": 4455,
-        "roof_area_basis": "estimated: 35% of real lot (0.29 ac)",
-        "lot_area_sqft": 12728,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "2673 Elisnore Street Llc",
-        "owner_address": "400 PEACHTREE ST STE 3004, ATLANTA GA 30308",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": false,
-        "low_income_tract": false,
-        "poverty_rate": 6.3,
-        "census_tract": "13121011100",
-        "hvac_proxy_score": 44,
-        "estimated_peak_kw": 19.3,
-        "curtailable_kw": 12.0,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 8.0,
-        "solar_capacity_kw": 29,
-        "der_dispatchable_kw": 14,
-        "der_annual_mwh": 40.4,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1854,
-        "aggregation_grid_id": "GRID-006",
-        "score": 44.5,
-        "score_structural": 44,
-        "score_area": 37,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 30,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 282.0,
-          "grid_building_count": 2
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -7919,7 +6724,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-068",
+        "id": "BLD-055",
         "parcel_id": "14 009200040279",
         "address": "421 Cleveland Ave Sw, Hapeville, GA 30354",
         "roof_area_sqft": 11221,
@@ -7949,7 +6754,7 @@
         "der_annual_mwh": 103.1,
         "dco1_account_ready": false,
         "der_credit_est_annual": 4817,
-        "aggregation_grid_id": "GRID-016",
+        "aggregation_grid_id": "GRID-014",
         "score": 87.7,
         "score_structural": 100,
         "score_area": 94,
@@ -7962,415 +6767,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39477878649062,
-              33.68228063005924
-            ],
-            [
-              -84.39477583832644,
-              33.682163228746774
-            ],
-            [
-              -84.39501595132833,
-              33.68209918993076
-            ],
-            [
-              -84.39516237185144,
-              33.682099157325
-            ],
-            [
-              -84.39515864459743,
-              33.68228104455517
-            ],
-            [
-              -84.39477878649062,
-              33.68228063005924
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-069",
-        "parcel_id": "14 006900060078",
-        "address": "2612 Steele Ave Sw 7, Hapeville, GA 30354",
-        "roof_area_sqft": 2688,
-        "roof_area_basis": "estimated: 35% of real lot (0.18 ac)",
-        "lot_area_sqft": 7680,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments, Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 37,
-        "estimated_peak_kw": 14.0,
-        "curtailable_kw": 8.8,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 4.8,
-        "solar_capacity_kw": 18,
-        "der_dispatchable_kw": 9,
-        "der_annual_mwh": 25.1,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1172,
-        "aggregation_grid_id": "GRID-019",
-        "score": 49.9,
-        "score_structural": 37,
-        "score_area": 22,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39515864459743,
-              33.68228104455517
-            ],
-            [
-              -84.39516237185144,
-              33.682099157325
-            ],
-            [
-              -84.39542144942305,
-              33.68209909729233
-            ],
-            [
-              -84.3954184473208,
-              33.68228132762288
-            ],
-            [
-              -84.39515864459743,
-              33.68228104455517
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-070",
-        "parcel_id": "14 006900060060",
-        "address": "2612 Steele Ave Sw 6, Hapeville, GA 30354",
-        "roof_area_sqft": 1735,
-        "roof_area_basis": "estimated: 35% of real lot (0.11 ac)",
-        "lot_area_sqft": 4957,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments, Llc",
-        "owner_address": "1479 METROPOLITAN PKWY SW, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 33,
-        "estimated_peak_kw": 11.2,
-        "curtailable_kw": 7.1,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 3.1,
-        "solar_capacity_kw": 11,
-        "der_dispatchable_kw": 6,
-        "der_annual_mwh": 15.3,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 749,
-        "aggregation_grid_id": "GRID-016",
-        "score": 47.1,
-        "score_structural": 33,
-        "score_area": 14,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.3954184473208,
-              33.68228132762288
-            ],
-            [
-              -84.39542144942305,
-              33.68209909729233
-            ],
-            [
-              -84.39563963226904,
-              33.68209904667413
-            ],
-            [
-              -84.39563886720215,
-              33.682281567708614
-            ],
-            [
-              -84.3954184473208,
-              33.68228132762288
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-071",
-        "parcel_id": "14 006900060052",
-        "address": "2612 Steele Ave Sw 5, Hapeville, GA 30354",
-        "roof_area_sqft": 1735,
-        "roof_area_basis": "estimated: 35% of real lot (0.11 ac)",
-        "lot_area_sqft": 4957,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments Llc",
-        "owner_address": "1479 METROPOLITAN PKWY, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 33,
-        "estimated_peak_kw": 11.2,
-        "curtailable_kw": 7.1,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 3.1,
-        "solar_capacity_kw": 11,
-        "der_dispatchable_kw": 6,
-        "der_annual_mwh": 15.3,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 749,
-        "aggregation_grid_id": "GRID-016",
-        "score": 47.1,
-        "score_structural": 33,
-        "score_area": 14,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39563886720215,
-              33.682281567708614
-            ],
-            [
-              -84.39563963226904,
-              33.68209904667413
-            ],
-            [
-              -84.395948185365,
-              33.6820989750056
-            ],
-            [
-              -84.39595403020873,
-              33.682281899444234
-            ],
-            [
-              -84.39563886720215,
-              33.682281567708614
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-072",
-        "parcel_id": "14 006900060045",
-        "address": "2612 Steele Ave Sw Apt 24E, Hapeville, GA 30354",
-        "roof_area_sqft": 2261,
-        "roof_area_basis": "estimated: 35% of real lot (0.15 ac)",
-        "lot_area_sqft": 6460,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments Llc",
-        "owner_address": "1479 METROPOLITAN PKWY, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 35,
-        "estimated_peak_kw": 12.8,
-        "curtailable_kw": 8.1,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 4.1,
-        "solar_capacity_kw": 15,
-        "der_dispatchable_kw": 8,
-        "der_annual_mwh": 20.9,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1010,
-        "aggregation_grid_id": "GRID-016",
-        "score": 48.7,
-        "score_structural": 35,
-        "score_area": 19,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.39595403020873,
-              33.682281899444234
-            ],
-            [
-              -84.395948185365,
-              33.6820989750056
-            ],
-            [
-              -84.39595913446905,
-              33.68201765963616
-            ],
-            [
-              -84.39622926405879,
-              33.682023892667985
-            ],
-            [
-              -84.39622418112118,
-              33.68223010577071
-            ],
-            [
-              -84.39622290558623,
-              33.682282187430104
-            ],
-            [
-              -84.39595403020873,
-              33.682281899444234
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-073",
-        "parcel_id": "14 006900060037",
-        "address": "2612 Steele Ave Sw 3, Hapeville, GA 30354",
-        "roof_area_sqft": 2880,
-        "roof_area_basis": "estimated: 35% of real lot (0.19 ac)",
-        "lot_area_sqft": 8228,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "New Path Investments Llc",
-        "owner_address": "1479 METROPOLITAN PKWY, ATLANTA GA 30310",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": true,
-        "low_income_tract": true,
-        "poverty_rate": 30.4,
-        "census_tract": "13121007001",
-        "hvac_proxy_score": 38,
-        "estimated_peak_kw": 14.7,
-        "curtailable_kw": 9.2,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 5.2,
-        "solar_capacity_kw": 19,
-        "der_dispatchable_kw": 10,
-        "der_annual_mwh": 26.5,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1271,
-        "aggregation_grid_id": "GRID-016",
-        "score": 50.6,
-        "score_structural": 38,
-        "score_area": 24,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 100,
-        "score_aggregation": 100,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
+          "grid_combined_kw": 555.2,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -8417,7 +6815,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-074",
+        "id": "BLD-056",
         "parcel_id": "14 009200040691",
         "address": "2657 Beeler Dr Sw, Hapeville, GA 30354",
         "roof_area_sqft": 21000,
@@ -8447,7 +6845,7 @@
         "der_annual_mwh": 193.6,
         "dco1_account_ready": false,
         "der_credit_est_annual": 9081,
-        "aggregation_grid_id": "GRID-016",
+        "aggregation_grid_id": "GRID-014",
         "score": 88.9,
         "score_structural": 100,
         "score_area": 100,
@@ -8460,8 +6858,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
+          "grid_combined_kw": 555.2,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -8516,7 +6914,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-075",
+        "id": "BLD-057",
         "parcel_id": "14 012400080442",
         "address": "2645 Batavia St, Hapeville, GA 30354",
         "roof_area_sqft": 15400,
@@ -8559,8 +6957,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "Below Threshold",
-          "grid_combined_kw": 70.4,
-          "grid_building_count": 3
+          "grid_combined_kw": 43.7,
+          "grid_building_count": 1
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -8607,7 +7005,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-076",
+        "id": "BLD-058",
         "parcel_id": "14 010100030519",
         "address": "2611 Springdale Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 50617,
@@ -8652,8 +7050,8 @@
           "total_annual_value": 16785,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 282.0,
-          "grid_building_count": 2
+          "grid_combined_kw": 270.0,
+          "grid_building_count": 1
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -8740,7 +7138,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-077",
+        "id": "BLD-059",
         "parcel_id": "14 006900020593",
         "address": "2600 Old Hapeville Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 93916,
@@ -8770,7 +7168,7 @@
         "der_annual_mwh": 863.6,
         "dco1_account_ready": true,
         "der_credit_est_annual": 40356,
-        "aggregation_grid_id": "GRID-019",
+        "aggregation_grid_id": "GRID-017",
         "score": 90.4,
         "score_structural": 100,
         "score_area": 100,
@@ -8785,8 +7183,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 326.4,
-          "grid_building_count": 6
+          "grid_combined_kw": 300.0,
+          "grid_building_count": 3
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -8981,7 +7379,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-078",
+        "id": "BLD-060",
         "parcel_id": "14 006900050509",
         "address": "2637 Old Hapeville Rd Sw, Hapeville, GA 30354",
         "roof_area_sqft": 262994,
@@ -9011,7 +7409,7 @@
         "der_annual_mwh": 2418.0,
         "dco1_account_ready": true,
         "der_credit_est_annual": 112995,
-        "aggregation_grid_id": "GRID-016",
+        "aggregation_grid_id": "GRID-014",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -9027,87 +7425,8 @@
           "total_annual_value": 13680,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
-        },
-        "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.42827335095234,
-              33.68473273150939
-            ],
-            [
-              -84.42827418624572,
-              33.68445623622126
-            ],
-            [
-              -84.4285207702937,
-              33.68446407057504
-            ],
-            [
-              -84.42851987504208,
-              33.684740095320755
-            ],
-            [
-              -84.42827335095234,
-              33.68473273150939
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id": "BLD-079",
-        "parcel_id": "14 013300140385",
-        "address": "1210 Jefferson Ave, Hapeville, GA 30354",
-        "roof_area_sqft": 2592,
-        "roof_area_basis": "estimated: 35% of real lot (0.17 ac)",
-        "lot_area_sqft": 7405,
-        "year_built": null,
-        "num_units": 4,
-        "num_floors": null,
-        "zoning": "Land use 2C1",
-        "land_use_code": "2C1",
-        "owner_name": "Bright Richard  Et Al",
-        "owner_address": "1145 LYNHURST DR SW, ATLANTA GA 30311",
-        "owner_phone": null,
-        "owner_email": null,
-        "avg_ghi": 4.77,
-        "in_food_desert": false,
-        "low_income_tract": false,
-        "poverty_rate": 6.3,
-        "census_tract": "13121011100",
-        "hvac_proxy_score": 36,
-        "estimated_peak_kw": 13.8,
-        "curtailable_kw": 8.7,
-        "thermostat_shed_kw": 4.0,
-        "greenhouse_shed_kw": 4.7,
-        "solar_capacity_kw": 17,
-        "der_dispatchable_kw": 8,
-        "der_annual_mwh": 23.7,
-        "dco1_account_ready": false,
-        "der_credit_est_annual": 1073,
-        "aggregation_grid_id": "GRID-003",
-        "score": 36.1,
-        "score_structural": 36,
-        "score_area": 22,
-        "score_solar": 51,
-        "score_zoning": 45,
-        "score_food_desert": 30,
-        "score_aggregation": 40,
-        "subsidy_summary": {
-          "eligible_programs": [],
-          "total_annual_value": 0,
-          "total_onetime_value": 0,
-          "aggregation_tier": "Below Threshold",
-          "grid_combined_kw": 70.4,
-          "grid_building_count": 3
+          "grid_combined_kw": 555.2,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -9158,7 +7477,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-080",
+        "id": "BLD-061",
         "parcel_id": "14 009200040717",
         "address": "2585 Beeler Dr Sw, Hapeville, GA 30354",
         "roof_area_sqft": 33846,
@@ -9188,7 +7507,7 @@
         "der_annual_mwh": 310.6,
         "dco1_account_ready": false,
         "der_credit_est_annual": 14548,
-        "aggregation_grid_id": "GRID-016",
+        "aggregation_grid_id": "GRID-014",
         "score": 88.9,
         "score_structural": 100,
         "score_area": 100,
@@ -9201,8 +7520,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 614.6,
-          "grid_building_count": 13
+          "grid_combined_kw": 555.2,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -9245,7 +7564,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-081",
+        "id": "BLD-062",
         "parcel_id": "14 0091  LL0044",
         "address": "2380 Metropolitan Pkwy Sw, Hapeville, GA 30354",
         "roof_area_sqft": 12197,
@@ -9275,7 +7594,7 @@
         "der_annual_mwh": 112.8,
         "dco1_account_ready": false,
         "der_credit_est_annual": 5238,
-        "aggregation_grid_id": "GRID-011",
+        "aggregation_grid_id": "GRID-010",
         "score": 84.7,
         "score_structural": 96,
         "score_area": 100,
@@ -9348,7 +7667,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-082",
+        "id": "BLD-063",
         "parcel_id": "14 009800110175",
         "address": "3331 Sims St, Hapeville, GA 30354",
         "roof_area_sqft": 13345,
@@ -9391,8 +7710,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
+          "grid_combined_kw": 463.5,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -9463,7 +7782,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-083",
+        "id": "BLD-064",
         "parcel_id": "14 009800110191",
         "address": "801 North Central Ave, Hapeville, GA 30354",
         "roof_area_sqft": 59642,
@@ -9506,8 +7825,8 @@
           "total_annual_value": 0,
           "total_onetime_value": 0,
           "aggregation_tier": "CL-1",
-          "grid_combined_kw": 474.1,
-          "grid_building_count": 6
+          "grid_combined_kw": 463.5,
+          "grid_building_count": 5
         },
         "data_source": "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
       }
@@ -9670,7 +7989,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-084",
+        "id": "BLD-065",
         "parcel_id": "14 0068  LL1405",
         "address": "2951 Macon Dr Sw, Hapeville, GA 30354",
         "roof_area_sqft": 294400,
@@ -9700,7 +8019,7 @@
         "der_annual_mwh": 2706.3,
         "dco1_account_ready": true,
         "der_credit_est_annual": 126502,
-        "aggregation_grid_id": "GRID-018",
+        "aggregation_grid_id": "GRID-016",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,
@@ -9800,7 +8119,7 @@
         ]
       },
       "properties": {
-        "id": "BLD-085",
+        "id": "BLD-066",
         "parcel_id": "14 009600060026",
         "address": "400 King Arnold St, Hapeville, GA 30354",
         "roof_area_sqft": 114924,
@@ -9830,7 +8149,7 @@
         "der_annual_mwh": 1055.8,
         "dco1_account_ready": true,
         "der_credit_est_annual": 49338,
-        "aggregation_grid_id": "GRID-012",
+        "aggregation_grid_id": "GRID-011",
         "score": 92.7,
         "score_structural": 100,
         "score_area": 100,

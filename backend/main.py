@@ -12,6 +12,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.routers import buildings, grids, revenue, subsidies
+from backend.routers import simulation  # optional add-on (greenhouse-network sim)
 from backend.services import geojson_service
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(name)s | %(message)s")
@@ -58,6 +59,7 @@ app.include_router(buildings.router)
 app.include_router(revenue.router)
 app.include_router(subsidies.router)
 app.include_router(grids.router)
+app.include_router(simulation.router)  # optional add-on (greenhouse-network sim)
 
 
 # --- Health check ---

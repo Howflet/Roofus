@@ -105,7 +105,9 @@
   <div id="main">
     <div id="map">
       <div class="ctrls">
+        <!-- Cluster DR Mode hidden from UI (logic kept below). To restore, uncomment:
         <button class="btn" id="modeBtn">🔌 Cluster DR Mode: OFF</button>
+        -->
         <button class="btn" id="ppBtn">☀️ Power-Plant View: OFF</button>
       </div>
       <div class="legend" id="legend">
@@ -114,7 +116,7 @@
         <div class="row"><span class="sw" style="background:#fbbf24"></span> 50–69 · Moderate</div>
         <div class="row"><span class="sw" style="background:#f87171"></span> 0–49 · Weak</div>
       </div>
-      <div id="cluster"></div>
+      <!-- Cluster panel hidden from UI (logic kept). To restore: <div id="cluster"></div> -->
       <div id="toast"></div>
     </div>
     <div id="side"><div class="ph">Click a building on the map to see its viability score, profitability, and subsidy eligibility.</div></div>
@@ -129,8 +131,10 @@ const fmt0 = n => Math.round(n).toLocaleString();
 let buildings = {};      // id -> feature
 let grids = {};          // grid_id -> feature
 let mapMode = "score";   // "score" | "der"
+/* --- Cluster DR feature hidden from UI (logic preserved) ---
 let clusterMode = false;
 let selected = new Set();
+--- end cluster vars --- */
 let activeTab = "profit";
 let currentId = null;
 
@@ -213,6 +217,7 @@ map.on("load", async () => {
   map.on("mouseleave","b-fill", ()=> map.getCanvas().style.cursor="");
 });
 
+/* --- Cluster DR Mode button handler hidden from UI (logic preserved) ---
 document.getElementById("modeBtn").onclick = () => {
   clusterMode = !clusterMode;
   const btn = document.getElementById("modeBtn");
@@ -221,6 +226,7 @@ document.getElementById("modeBtn").onclick = () => {
   if(!clusterMode){ selected.clear(); refreshSel(); document.getElementById("cluster").classList.remove("show"); }
   else { renderCluster(); }
 };
+--- end cluster button handler --- */
 
 document.getElementById("ppBtn").onclick = () => {
   mapMode = mapMode === "der" ? "score" : "der";
@@ -231,19 +237,22 @@ document.getElementById("ppBtn").onclick = () => {
 };
 
 function onPick(id){
-  if(clusterMode){
-    selected.has(id) ? selected.delete(id) : selected.add(id);
-    refreshSel(); renderCluster();
-  } else {
-    currentId = id; renderDetail(id);
-  }
+  // Cluster DR mode hidden from UI (logic preserved). To restore, swap the body
+  // back to the if/clusterMode branch below:
+  //   if(clusterMode){
+  //     selected.has(id) ? selected.delete(id) : selected.add(id);
+  //     refreshSel(); renderCluster();
+  //   } else { currentId = id; renderDetail(id); }
+  currentId = id; renderDetail(id);
 }
 
+/* --- Cluster selection highlight helper hidden from UI (logic preserved) ---
 function refreshSel(){
   map.setFilter("b-sel", ["in","id", ...(selected.size?[...selected]:[""])]);
 }
+--- end refreshSel --- */
 
-/* ---------- CLUSTER DR (the headline moment) ---------- */
+/* ---------- CLUSTER DR (hidden from UI; logic preserved below) ----------
 function renderCluster(){
   const el = document.getElementById("cluster");
   el.classList.add("show");
@@ -268,6 +277,7 @@ function renderCluster(){
        Note: CL-1 is a single-customer program; cross-owner clusters would need an aggregator.</div>`:""}
     <button class="btn cclear" onclick="selected.clear();refreshSel();renderCluster();">Clear selection</button>`;
 }
+--- end Cluster DR (hidden from UI) --- */
 
 /* ---------- DETAIL PANEL ---------- */
 async function renderDetail(id){
@@ -284,6 +294,12 @@ async function renderDetail(id){
       <p class="sub">${meta}</p>
       ${p.parcel_id?`<p class="sub" style="margin-top:3px">Parcel ${p.parcel_id} · ${p.data_source||"public records"}</p>`:""}
     </div>
+    ${p.aggregation_grid_id?`<div class="sec">
+      <a href="simulation.html?grid=${p.aggregation_grid_id}" target="_blank"
+         style="display:block;text-align:center;text-decoration:none;background:var(--emerald);
+                color:#06231a;font-weight:700;padding:11px;border-radius:10px;font-size:13px">
+        🔬 More Insights — network simulation (${p.aggregation_grid_id})
+      </a></div>`:""}
     <div class="sec">
       <div class="gauge">
         <div class="ring" style="--p:${p.score};--c:${tierCol}"><i><b>${p.score.toFixed(0)}</b><span>/100</span></i></div>

@@ -95,41 +95,37 @@
         "coordinates": [
           [
             [
-              -84.4271668,
-              33.6743717
+              -84.4273738,
+              33.6744496
             ],
             [
-              -84.4242348,
-              33.6743948
+              -84.4244418,
+              33.6744727
             ],
             [
-              -84.4280538,
-              33.6755543
+              -84.4282608,
+              33.6756322
             ],
             [
-              -84.4306245,
-              33.6763308
-            ],
-            [
-              -84.4271668,
-              33.6743717
+              -84.4273738,
+              33.6744496
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-002",
-        "building_count": 4,
-        "total_units": 223,
-        "total_roof_sqft": 361028,
-        "combined_peak_kw": 493.7,
-        "combined_curtailable_kw": 318.5,
+        "building_count": 3,
+        "total_units": 219,
+        "total_roof_sqft": 357976,
+        "combined_peak_kw": 478.5,
+        "combined_curtailable_kw": 309.0,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 21021,
+        "potential_annual_value": 20394,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 1192.0,
+        "combined_der_dispatchable_kw": 1182.0,
         "dco1_qualifying_kw": 938.0,
         "dco1_accounts": 2,
         "dco1_cluster_eligible": false
@@ -142,37 +138,41 @@
         "coordinates": [
           [
             [
-              -84.4211346,
-              33.6797274
+              -84.4281011,
+              33.6810656
             ],
             [
-              -84.4290474,
-              33.6851589
+              -84.4251011,
+              33.6810656
             ],
             [
-              -84.4268334,
-              33.6825845
+              -84.4251011,
+              33.6840656
             ],
             [
-              -84.4211346,
-              33.6797274
+              -84.4281011,
+              33.6840656
+            ],
+            [
+              -84.4281011,
+              33.6810656
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-003",
-        "building_count": 3,
-        "total_units": 24,
-        "total_roof_sqft": 25755,
-        "combined_peak_kw": 113.3,
-        "combined_curtailable_kw": 70.4,
+        "building_count": 1,
+        "total_units": 16,
+        "total_roof_sqft": 15400,
+        "combined_peak_kw": 70.2,
+        "combined_curtailable_kw": 43.7,
         "meets_vpp_threshold": false,
         "meets_cl1_threshold": false,
         "aggregation_tier": "Below Threshold",
-        "potential_annual_value": 4224,
-        "buildings_needed_for_cl1": 6,
-        "combined_der_dispatchable_kw": 85.0,
+        "potential_annual_value": 2622,
+        "buildings_needed_for_cl1": 4,
+        "combined_der_dispatchable_kw": 51.0,
         "dco1_qualifying_kw": 0.0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
@@ -185,49 +185,45 @@
         "coordinates": [
           [
             [
-              -84.4188105,
-              33.6584596
+              -84.41758,
+              33.6624029
             ],
             [
-              -84.4126816,
-              33.66034
+              -84.4186879,
+              33.6583877
             ],
             [
-              -84.4139863,
-              33.6637648
+              -84.4138636,
+              33.6636929
             ],
             [
-              -84.4149461,
-              33.6635357
+              -84.4148234,
+              33.6634638
             ],
             [
-              -84.4163615,
-              33.6642503
+              -84.4162388,
+              33.6641784
             ],
             [
-              -84.4177027,
-              33.6624748
-            ],
-            [
-              -84.4188105,
-              33.6584596
+              -84.41758,
+              33.6624029
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-004",
-        "building_count": 6,
-        "total_units": 340,
-        "total_roof_sqft": 141885,
-        "combined_peak_kw": 733.5,
-        "combined_curtailable_kw": 474.1,
+        "building_count": 5,
+        "total_units": 336,
+        "total_roof_sqft": 138233,
+        "combined_peak_kw": 716.5,
+        "combined_curtailable_kw": 463.5,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 31291,
+        "potential_annual_value": 30591,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 469.0,
+        "combined_der_dispatchable_kw": 457.0,
         "dco1_qualifying_kw": 0.0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
@@ -287,41 +283,41 @@
         "coordinates": [
           [
             [
-              -84.4194648,
-              33.6812913
+              -84.4169898,
+              33.6819945
             ],
             [
-              -84.4164648,
-              33.6812913
+              -84.4139898,
+              33.6819945
             ],
             [
-              -84.4164648,
-              33.6842913
+              -84.4139898,
+              33.6849945
             ],
             [
-              -84.4194648,
-              33.6842913
+              -84.4169898,
+              33.6849945
             ],
             [
-              -84.4194648,
-              33.6812913
+              -84.4169898,
+              33.6819945
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-006",
-        "building_count": 2,
-        "total_units": 244,
-        "total_roof_sqft": 55072,
-        "combined_peak_kw": 429.3,
-        "combined_curtailable_kw": 282.0,
+        "building_count": 1,
+        "total_units": 240,
+        "total_roof_sqft": 50617,
+        "combined_peak_kw": 410.0,
+        "combined_curtailable_kw": 270.0,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 18612,
+        "potential_annual_value": 17820,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 181.0,
+        "combined_der_dispatchable_kw": 167.0,
         "dco1_qualifying_kw": 0.0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
@@ -334,49 +330,45 @@
         "coordinates": [
           [
             [
-              -84.4129284,
-              33.6554415
+              -84.4112965,
+              33.6549736
             ],
             [
-              -84.4113345,
-              33.6549335
+              -84.4074225,
+              33.6549228
             ],
             [
-              -84.4074605,
-              33.6548827
+              -84.4063708,
+              33.6552131
             ],
             [
-              -84.4064088,
-              33.655173
+              -84.4053445,
+              33.6564395
             ],
             [
-              -84.4053826,
-              33.6563994
+              -84.4128903,
+              33.6554816
             ],
             [
-              -84.4075625,
-              33.6565692
-            ],
-            [
-              -84.4129284,
-              33.6554415
+              -84.4112965,
+              33.6549736
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-007",
-        "building_count": 6,
-        "total_units": 672,
-        "total_roof_sqft": 135655,
-        "combined_peak_kw": 1218.7,
-        "combined_curtailable_kw": 798.4,
+        "building_count": 5,
+        "total_units": 668,
+        "total_roof_sqft": 132321,
+        "combined_peak_kw": 1202.7,
+        "combined_curtailable_kw": 788.4,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 52694,
+        "potential_annual_value": 52034,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 447.0,
+        "combined_der_dispatchable_kw": 436.0,
         "dco1_qualifying_kw": 0.0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
@@ -444,77 +436,30 @@
         "coordinates": [
           [
             [
-              -84.407076,
-              33.663233
+              -84.4075919,
+              33.677206
             ],
             [
-              -84.404076,
-              33.663233
+              -84.4045919,
+              33.677206
             ],
             [
-              -84.404076,
-              33.666233
+              -84.4045919,
+              33.680206
             ],
             [
-              -84.407076,
-              33.666233
+              -84.4075919,
+              33.680206
             ],
             [
-              -84.407076,
-              33.663233
+              -84.4075919,
+              33.677206
             ]
           ]
         ]
       },
       "properties": {
         "grid_id": "GRID-009",
-        "building_count": 1,
-        "total_units": 4,
-        "total_roof_sqft": 3696,
-        "combined_peak_kw": 17.2,
-        "combined_curtailable_kw": 10.7,
-        "meets_vpp_threshold": false,
-        "meets_cl1_threshold": false,
-        "aggregation_tier": "Below Threshold",
-        "potential_annual_value": 642,
-        "buildings_needed_for_cl1": 18,
-        "combined_der_dispatchable_kw": 12.0,
-        "dco1_qualifying_kw": 0.0,
-        "dco1_accounts": 0,
-        "dco1_cluster_eligible": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -84.4075919,
-              33.677206
-            ],
-            [
-              -84.4045919,
-              33.677206
-            ],
-            [
-              -84.4045919,
-              33.680206
-            ],
-            [
-              -84.4075919,
-              33.680206
-            ],
-            [
-              -84.4075919,
-              33.677206
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "grid_id": "GRID-010",
         "building_count": 1,
         "total_units": 240,
         "total_roof_sqft": 289369,
@@ -561,7 +506,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-011",
+        "grid_id": "GRID-010",
         "building_count": 1,
         "total_units": 24,
         "total_roof_sqft": 12197,
@@ -604,7 +549,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-012",
+        "grid_id": "GRID-011",
         "building_count": 3,
         "total_units": 589,
         "total_roof_sqft": 191154,
@@ -647,7 +592,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-013",
+        "grid_id": "GRID-012",
         "building_count": 3,
         "total_units": 42,
         "total_roof_sqft": 29318,
@@ -671,53 +616,6 @@
         "coordinates": [
           [
             [
-              -84.4041981,
-              33.6656517
-            ],
-            [
-              -84.4011981,
-              33.6656517
-            ],
-            [
-              -84.4011981,
-              33.6686517
-            ],
-            [
-              -84.4041981,
-              33.6686517
-            ],
-            [
-              -84.4041981,
-              33.6656517
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "grid_id": "GRID-014",
-        "building_count": 1,
-        "total_units": 4,
-        "total_roof_sqft": 2932,
-        "combined_peak_kw": 14.8,
-        "combined_curtailable_kw": 9.3,
-        "meets_vpp_threshold": false,
-        "meets_cl1_threshold": false,
-        "aggregation_tier": "Below Threshold",
-        "potential_annual_value": 558,
-        "buildings_needed_for_cl1": 21,
-        "combined_der_dispatchable_kw": 10.0,
-        "dco1_qualifying_kw": 0.0,
-        "dco1_accounts": 0,
-        "dco1_cluster_eligible": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               -84.4011424,
               33.6731082
             ],
@@ -741,7 +639,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-015",
+        "grid_id": "GRID-013",
         "building_count": 2,
         "total_units": 42,
         "total_roof_sqft": 28893,
@@ -765,77 +663,45 @@
         "coordinates": [
           [
             [
-              -84.4048238,
-              33.6818624
+              -84.4041013,
+              33.6818463
             ],
             [
-              -84.3992951,
-              33.6778698
+              -84.3985726,
+              33.6778537
             ],
             [
-              -84.3953161,
-              33.6817834
+              -84.3946568,
+              33.6837411
             ],
             [
-              -84.3950306,
-              33.6818044
+              -84.4022935,
+              33.6851194
             ],
             [
-              -84.3947577,
-              33.6817811
+              -84.4021327,
+              33.6821462
             ],
             [
-              -84.3957256,
-              33.6819184
-            ],
-            [
-              -84.3947146,
-              33.6822412
-            ],
-            [
-              -84.3950189,
-              33.6822414
-            ],
-            [
-              -84.3957225,
-              33.6821981
-            ],
-            [
-              -84.3953396,
-              33.6822416
-            ],
-            [
-              -84.3953794,
-              33.6837573
-            ],
-            [
-              -84.4030161,
-              33.6851356
-            ],
-            [
-              -84.4028552,
-              33.6821623
-            ],
-            [
-              -84.4048238,
-              33.6818624
+              -84.4041013,
+              33.6818463
             ]
           ]
         ]
       },
       "properties": {
-        "grid_id": "GRID-016",
-        "building_count": 13,
-        "total_units": 447,
-        "total_roof_sqft": 383424,
-        "combined_peak_kw": 949.9,
-        "combined_curtailable_kw": 614.6,
+        "grid_id": "GRID-014",
+        "building_count": 5,
+        "total_units": 415,
+        "total_roof_sqft": 368243,
+        "combined_peak_kw": 856.2,
+        "combined_curtailable_kw": 555.2,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 40564,
+        "potential_annual_value": 36643,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 1269.0,
+        "combined_der_dispatchable_kw": 1217.0,
         "dco1_qualifying_kw": 868.0,
         "dco1_accounts": 1,
         "dco1_cluster_eligible": false
@@ -871,7 +737,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-017",
+        "grid_id": "GRID-015",
         "building_count": 2,
         "total_units": 142,
         "total_roof_sqft": 181275,
@@ -930,7 +796,7 @@
         ]
       },
       "properties": {
-        "grid_id": "GRID-018",
+        "grid_id": "GRID-016",
         "building_count": 7,
         "total_units": 792,
         "total_roof_sqft": 902894,
@@ -954,49 +820,37 @@
         "coordinates": [
           [
             [
-              -84.3942394,
-              33.6789441
+              -84.3944919,
+              33.6790454
             ],
             [
-              -84.3916726,
-              33.6800039
+              -84.391925,
+              33.6801052
             ],
             [
-              -84.3920623,
-              33.6843891
+              -84.3923147,
+              33.6844904
             ],
             [
-              -84.3952013,
-              33.6823461
-            ],
-            [
-              -84.3950882,
-              33.6821146
-            ],
-            [
-              -84.3952579,
-              33.6819146
-            ],
-            [
-              -84.3942394,
-              33.6789441
+              -84.3944919,
+              33.6790454
             ]
           ]
         ]
       },
       "properties": {
-        "grid_id": "GRID-019",
-        "building_count": 6,
-        "total_units": 222,
-        "total_roof_sqft": 218468,
-        "combined_peak_kw": 507.0,
-        "combined_curtailable_kw": 326.4,
+        "grid_id": "GRID-017",
+        "building_count": 3,
+        "total_units": 210,
+        "total_roof_sqft": 210432,
+        "combined_peak_kw": 465.0,
+        "combined_curtailable_kw": 300.0,
         "meets_vpp_threshold": true,
         "meets_cl1_threshold": true,
         "aggregation_tier": "CL-1",
-        "potential_annual_value": 21542,
+        "potential_annual_value": 19800,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 722.0,
+        "combined_der_dispatchable_kw": 695.0,
         "dco1_qualifying_kw": 595.0,
         "dco1_accounts": 2,
         "dco1_cluster_eligible": false

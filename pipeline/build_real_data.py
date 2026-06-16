@@ -32,7 +32,9 @@ CENTER_LAT, CENTER_LON = 33.6693, -84.4102
 # Hapeville bounding box (lon/lat) — small city (~2.8 sq mi)
 HAPEVILLE_BBOX = (-84.43, 33.635, -84.385, 33.695)  # minx, miny, maxx, maxy
 
-MIN_UNITS = 3            # multifamily threshold (townhomes + apartments)
+MIN_UNITS = 5            # commercial-class threshold: 5+ units = commercial real estate
+                         # (income property; typically a master-metered C&I utility account,
+                         #  which is what Georgia Power CL-1/DCO-1 demand-response eligibility requires)
 ROOF_COVERAGE = 0.35     # estimated building footprint as share of lot
 SQFT_PER_ACRE = 43560
 CLUSTER_RADIUS_M = 804   # 0.5 mile aggregation radius

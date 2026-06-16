@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+  Greenhouse-Network Simulation — STANDALONE optional page.
+  Separate from index.html so it can be deleted without touching the dashboard.
+  Talks to GET http://127.0.0.1:8000/grids/{id}/simulation
+  (backend: routers/simulation.py + services/network_sim_service.py).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GreenGrid — Greenhouse-Network Simulation</title>
+<style>
+  :root{ --bg:#0d141a; --panel:#141b22; --line:#2a3a47; --txt:#e6edf3; --mut:#9fb0bd;
+         --red:#d9534f; --green:#2e9e6b; --orange:#e8a33d; --blue:#5a82c0; --accent:#34d399; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{padding:18px 24px;border-bottom:1px solid var(--line)}
+  h1{margin:0;font-size:20px}
+  .sub{color:var(--mut);font-size:13px;margin-top:4px}
+  .wrap{max-width:1000px;margin:0 auto;padding:20px 24px}
+  .controls{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+  select{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14px}
+  a.back{color:var(--accent);text-decoration:none;font-size:13px;margin-left:auto}
+  .cards{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:120px}
+  .card b{display:block;font-size:24px}
+  .card.big b{color:var(--accent)}
+  .card.money b{color:#7ee0a6}
+  .card span{color:var(--mut);font-size:12px}
+  .qmark{position:absolute;top:7px;right:7px;width:18px;height:18px;border-radius:50%;
+         border:1px solid var(--line);background:transparent;color:var(--mut);font-size:11px;
+         font-weight:700;cursor:pointer;line-height:16px;padding:0;text-align:center}
+  .qmark:hover{color:var(--accent);border-color:var(--accent)}
+  .help{display:none;margin-top:8px;max-width:230px;font-size:11px;color:var(--mut);
+        line-height:1.45;border-top:1px solid var(--line);padding-top:6px}
+  .card.show-help{outline:1px solid var(--accent)}
+  .card.show-help .help{display:block}
+  .chartbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+  canvas{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:12px;color:var(--mut)}
+  .legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+  .note{color:var(--mut);font-size:12px;margin-top:14px;line-height:1.5;
+        background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .err{color:#f0a;padding:10px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌱 Greenhouse-Network Simulation</h1>
+  <div class="sub">One representative summer day for a cluster — how coordinating solar + battery + greenhouse cooling shaves the evening grid peak. <b>Illustrative.</b></div>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <label for="grid">Cluster:</label>
+    <select id="grid"></select>
+    <a class="back" href="index.html">← back to map</a>
+  </div>
+
+  <div id="status"></div>
+  <div class="cards" id="cards"></div>
+
+  <div class="chartbox">
+    <canvas id="chart" width="940" height="440"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--red)"></i>Net grid demand — no coordination</span>
+      <span><i style="background:var(--green)"></i>Net grid demand — coordinated</span>
+      <span><i style="background:var(--orange)"></i>Solar generation</span>
+      <span><i style="background:var(--blue)"></i>Total load (buildings + greenhouse)</span>
+      <span><i style="background:#ffd28a"></i>Grid peak window</span>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>How to read it:</b> the <span style="color:var(--red)">red</span> line is what the cluster pulls
+    from the grid with no coordination; the <span style="color:var(--green)">green</span> line is with
+    the coordinated network. In the shaded evening window the green line sits below the red — that gap is
+    the demand-response saving.<br><br>
+    <b>Honest labels:</b> sunlight is real (Open-Meteo); the greenhouse cooling is grounded in our GES
+    physics run (it overheats in Atlanta summer → needs afternoon cooling); building load shape, battery
+    rule, and demand-response window are modelled assumptions. Not a precise prediction.
+  </div>
+</div>
+
+<script>
+const API = "http://127.0.0.1:8000";
+const C = { red:"#d9534f", green:"#2e9e6b", orange:"#e8a33d", blue:"#5a82c0",
+            line:"#2a3a47", txt:"#e6edf3", mut:"#9fb0bd", band:"rgba(255,210,138,.10)" };
+
+async function init(){
+  const sel = document.getElementById("grid");
+  let grids;
+  try {
+    const gj = await (await fetch(`${API}/grids`)).json();
+    grids = gj.features
+      .map(f => f.properties)
+      .sort((a,b) => (b.combined_der_dispatchable_kw||0) - (a.combined_der_dispatchable_kw||0));
+  } catch(e){
+    document.getElementById("status").innerHTML =
+      `<div class="err">Cannot reach the API at ${API} — is the backend running?</div>`;
+    return;
+  }
+  grids.forEach(p => {
+    const o = document.createElement("option");
+    o.value = p.grid_id;
+    const cl1 = p.meets_cl1_threshold ? " · CL-1 ✓" : "";
+    o.textContent = `${p.grid_id} — ${p.building_count} buildings${cl1}`;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", () => run(sel.value));
+
+  // click a "?" to toggle that card's explanation
+  document.getElementById("cards").addEventListener("click", e => {
+    if (e.target.classList.contains("qmark")) {
+      e.target.closest(".card").classList.toggle("show-help");
+    }
+  });
+
+  // deep link: ?grid=GRID-016 pre-selects that cluster (from the "More Insights" button)
+  const wanted = new URLSearchParams(location.search).get("grid");
+  if (wanted && grids.some(p => p.grid_id === wanted)) {
+    document.getElementById("grid").value = wanted;
+    run(wanted);
+  } else if (grids.length) {
+    run(grids[0].grid_id);
+  }
+}
+
+async function run(gridId){
+  document.getElementById("status").innerHTML = "";
+  let d;
+  try {
+    d = await (await fetch(`${API}/grids/${gridId}/simulation`)).json();
+  } catch(e){
+    document.getElementById("status").innerHTML = `<div class="err">Simulation failed for ${gridId}.</div>`;
+    return;
+  }
+  renderCards(d);
+  drawChart(document.getElementById("chart"), d);
+}
+
+function renderCards(d){
+  const f = n => (n==null?"–":Number(n).toLocaleString());
+  const card = (cls, value, label, help) => `
+    <div class="card ${cls}">
+      <button class="qmark" title="What's this?">?</button>
+      <b>${value}</b><span>${label}</span>
+      <div class="help">${help}</div>
+    </div>`;
+
+  const credit = d.cl1_eligible
+    ? `$${f(d.est_annual_credit)}/yr`
+    : "not eligible";
+  const creditHelp = d.cl1_eligible
+    ? `Illustrative yearly money from Georgia Power's <b>CL-1</b> program. CL-1 pays for the
+       <b>capacity you can shed on command</b> — about <b>${f(d.curtailable_kw)} kW</b> here —
+       at ~75% of capacity value (~$66/kW-year) minus a $120/month admin fee. This is NOT the
+       12%. The exact rate is negotiated with Georgia Power and not public, so it's an
+       <b>estimate, not a quote</b>. Multi-owner clusters need an aggregator to split it.`
+    : `This cluster's sheddable load (${f(d.curtailable_kw)} kW) is under CL-1's 200 kW minimum,
+       so no CL-1 credit. Pick a larger cluster to see the money.`;
+
+  document.getElementById("cards").innerHTML =
+    card("big", `${d.peak_cut_pct}%`, "evening peak cut",
+      `How much less power the cluster pulls from the grid during the 5-9pm peak when the
+       network coordinates (battery + greenhouse cooling). It's a <b>peak-demand</b> drop in
+       this one-day demo — <b>not</b> energy savings and <b>not</b> the payment.`) +
+    card("money", credit, "est. CL-1 credit / year", creditHelp) +
+    card("", `${f(d.peak_cut_kw)} kW`, "peak demand cut",
+      `The same evening drop, in kilowatts: the cluster's grid draw falls by ~${f(d.peak_cut_kw)} kW.`) +
+    card("", `${d.energy_cut_pct}%`, "peak-window energy cut",
+      `Across the whole 5-9pm window, total energy taken from the grid is ~${d.energy_cut_pct}% lower
+       (the area between the red and green lines), not just the single highest point.`) +
+    card("", f(d.n_buildings), `buildings · ${f(d.units)} units`,
+      `This cluster is ${f(d.n_buildings)} commercial multifamily buildings totalling ${f(d.units)}
+       apartments — from real Fulton County property data.`) +
+    card("", `${f(d.solar_kw)} kW`, "solar",
+      `Estimated rooftop solar capacity for the cluster (on the part of the roof not used by the
+       greenhouse), derived from real roof area.`) +
+    card("", `${f(d.batt_power_kw)} kW`, "battery",
+      `Assumed battery power paired with the solar (sized at 50% of the panels). It stores midday
+       sun and discharges it into the evening peak.`);
+}
+
+function drawChart(cv, d){
+  const ctx = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  const padL=58, padR=16, padT=20, padB=34;
+  const x0=padL, x1=W-padR, y0=H-padB, y1=padT;
+  ctx.clearRect(0,0,W,H);
+
+  const series = [d.total_load, d.solar_gen, d.baseline_net, d.coordinated_net];
+  let lo=0, hi=0;
+  series.forEach(s => s.forEach(v => { lo=Math.min(lo,v); hi=Math.max(hi,v); }));
+  hi = hi*1.08; lo = lo*1.12;
+  const sx = h => x0 + (h/23)*(x1-x0);
+  const sy = v => y0 - ((v-lo)/(hi-lo))*(y0-y1);
+
+  // peak window band
+  ctx.fillStyle = C.band;
+  const pw = d.peak_window;
+  ctx.fillRect(sx(pw[0]-0.5), y1, sx(pw[pw.length-1]+0.5)-sx(pw[0]-0.5), y0-y1);
+
+  // gridlines + y labels
+  ctx.strokeStyle = C.line; ctx.fillStyle = C.mut; ctx.font="11px system-ui"; ctx.lineWidth=1;
+  const ticks = 5;
+  for(let i=0;i<=ticks;i++){
+    const v = lo + (hi-lo)*i/ticks, y = sy(v);
+    ctx.globalAlpha=0.5; ctx.beginPath(); ctx.moveTo(x0,y); ctx.lineTo(x1,y); ctx.stroke(); ctx.globalAlpha=1;
+    ctx.textAlign="right"; ctx.fillText(Math.round(v).toLocaleString(), x0-6, y+3);
+  }
+  // zero line
+  ctx.strokeStyle="#7a8a96"; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.moveTo(x0,sy(0)); ctx.lineTo(x1,sy(0)); ctx.stroke();
+
+  // x labels
+  ctx.fillStyle=C.mut; ctx.textAlign="center";
+  for(let h=0;h<24;h+=3){ ctx.fillText(h, sx(h), y0+16); }
+  ctx.fillText("Hour of day", (x0+x1)/2, H-4);
+
+  function line(arr, color, width, dash){
+    ctx.strokeStyle=color; ctx.lineWidth=width; ctx.setLineDash(dash||[]);
+    ctx.beginPath();
+    arr.forEach((v,h)=>{ const X=sx(h),Y=sy(v); h?ctx.lineTo(X,Y):ctx.moveTo(X,Y); });
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+  line(d.total_load, C.blue, 1.4, [2,3]);
+  line(d.solar_gen, C.orange, 1.6, [6,4]);
+  line(d.baseline_net, C.red, 2.6);
+  line(d.coordinated_net, C.green, 2.6);
+
+  // y axis title
+  ctx.save(); ctx.translate(14,(y0+y1)/2); ctx.rotate(-Math.PI/2);
+  ctx.fillStyle=C.mut; ctx.textAlign="center"; ctx.fillText("kW  (+import / −export)",0,0); ctx.restore();
+}
+
+init();
+</script>
+</body>
+</html>
