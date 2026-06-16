@@ -184,17 +184,17 @@ map.on("load", async () => {
     gjson.features.forEach(f => grids[f.properties.grid_id] = f);
   } catch(e){ /* grids optional */ }
 
-  // stats bar (incl. client-computed DCO-1 power-plant headline)
+  // stats bar — lead with CL-1 (curtailable load); solar/DCO-1 demoted to one trailing stat
   const allB = Object.values(buildings).map(f=>f.properties);
+  const curtailMW = (allB.reduce((s,p)=>s+(p.curtailable_kw||0),0)/1000).toFixed(1);
+  const cl1Clusters = Object.values(grids).filter(f=>f.properties.meets_cl1_threshold).length;
   const solarMW = (allB.reduce((s,p)=>s+(p.solar_capacity_kw||0),0)/1000).toFixed(1);
-  const dco1Ready = allB.filter(p=>p.dco1_account_ready).length;
-  const dco1Clusters = Object.values(grids).filter(f=>f.properties.dco1_cluster_eligible).length;
   document.getElementById("stats").innerHTML = `
     <div class="stat"><b>${stats.total_buildings}</b><span>Buildings</span></div>
     <div class="stat"><b>${stats.total_units}</b><span>Units</span></div>
-    <div class="stat"><b>${solarMW} MW</b><span>Rooftop Solar</span></div>
-    <div class="stat"><b>${dco1Ready}</b><span>DCO-1 Ready</span></div>
-    <div class="stat"><b>${dco1Clusters}</b><span>1 MW Clusters</span></div>`;
+    <div class="stat"><b>${curtailMW} MW</b><span>Curtailable Load</span></div>
+    <div class="stat"><b>${cl1Clusters}</b><span>CL-1 Clusters</span></div>
+    <div class="stat"><b>${solarMW} MW</b><span>Rooftop Solar</span></div>`;
 
   map.addSource("buildings", {type:"geojson", data:bjson});
 
@@ -325,7 +325,7 @@ async function renderDetail(id){
       </div>
       ${p.roof_area_basis?`<div class="flag" style="background:rgba(34,211,238,.08);border-color:rgba(34,211,238,.3);color:var(--cyan)">📐 Roof area ${p.roof_area_basis}. Real lot size from county; footprint estimated.</div>`:""}
     </div>
-    ${derSection(p)}
+    ${cl1Section(p)}
     <div class="tabs">
       <div class="tab ${activeTab==='profit'?'on':''}" onclick="setTab('profit')">🌱 Profitability</div>
       <div class="tab ${activeTab==='subs'?'on':''}" onclick="setTab('subs')">🏢 Subsidies</div>
@@ -343,26 +343,40 @@ async function renderDetail(id){
 function bar(label,v){return `<div class="b"><div class="t"><span>${label}</span><span>${Math.round(v)}</span></div>
   <div class="track"><div class="fill" style="width:${v}%"></div></div></div>`;}
 
-function derSection(p){
-  if(p.der_dispatchable_kw==null) return "";
+// CL-1 (curtailable load) is the core play — shown prominently in the detail panel.
+// DCO-1 / solar is demoted to a single optional line (it competes with the
+// greenhouse for the same roof area, so it is a separate play, not the pitch).
+function cl1Section(p){
+  if(p.curtailable_kw==null) return "";
   const gp = (grids[p.aggregation_grid_id]||{}).properties || {};
-  const ready = p.dco1_account_ready;
-  const clusterOk = !!gp.dco1_cluster_eligible;
-  const acctPill = ready ? `<span class="pill ok">Clears 250 kW</span>` : `<span class="pill warn">Below 250 kW</span>`;
-  const clusPill = clusterOk ? `<span class="pill ok">≥1 MW ✓</span>` : `<span class="pill warn">Under 1 MW</span>`;
+  const gridKw = gp.combined_curtailable_kw || 0;
+  const CL1 = 200;
+  const clears = gridKw >= CL1 || !!gp.meets_cl1_threshold;
+  const pct = Math.min(100, gridKw / CL1 * 100);
+  const clPill = clears ? `<span class="pill ok">Clears 200 kW ✓</span>` : `<span class="pill warn">Under 200 kW</span>`;
+  const shortfall = Math.max(0, CL1 - gridKw);
+  const solarLine = p.der_dispatchable_kw != null
+    ? `<div class="csum" style="margin-top:12px">☀️ <b>Optional separate play:</b> roofs with spare area can also host solar+battery (Georgia Power DCO-1) — ~${fmt0(p.solar_capacity_kw)} kW PV, est. ${fmt(p.der_credit_est_annual)}/yr. Uses the roof area the greenhouse would otherwise take.</div>`
+    : "";
   return `<div class="sec">
-    <h3>☀️ Rooftop Power Plant — Georgia Power DCO-1</h3>
+    <h3>⚡ Demand Response — Georgia Power CL-1 (core play)</h3>
     <div class="kv">
-      <div><span>Solar potential</span><b>${fmt0(p.solar_capacity_kw)} kW</b></div>
-      <div><span>Dispatchable (PV+battery)</span><b>${fmt0(p.der_dispatchable_kw)} kW</b></div>
-      <div><span>Annual generation</span><b>${p.der_annual_mwh} MWh</b></div>
-      <div><span>Est. DCO-1 credit</span><b>${fmt(p.der_credit_est_annual)}/yr</b></div>
+      <div><span>This building — curtailable</span><b>${fmt0(p.curtailable_kw)} kW</b></div>
+      <div><span>of total peak</span><b>${fmt0(p.estimated_peak_kw)} kW</b></div>
+      <div><span>Cluster ${p.aggregation_grid_id} sheddable</span><b>${fmt0(gridKw)} kW</b></div>
+      <div><span>Sites in cluster</span><b>${fmt0(gp.building_count || 0)}</b></div>
     </div>
-    <div class="pl"><span>This building — DCO-1 account floor ${acctPill}</span><b></b></div>
-    <div class="pl"><span>Cluster ${p.aggregation_grid_id} — 1 MW aggregate ${clusPill}</span><b>${fmt0(gp.dco1_qualifying_kw||0)} kW</b></div>
-    <div class="pl tot"><span>${gp.dco1_accounts||0} qualifying account${(gp.dco1_accounts===1)?"":"s"} in this cluster</span><b></b></div>
-    <div class="flag" style="background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3);color:var(--emerald)">
-      ⚡ DCO-1 needs dispatchable solar+battery (firm), not load-shedding. Credit = 75% of negotiated system value; figure shown is illustrative. Requires a Commercial account.</div>
+    <div class="pl"><span>Cluster ${p.aggregation_grid_id} — 200 kW CL-1 floor ${clPill}</span><b>${fmt0(gridKw)} kW</b></div>
+    <div class="thr" style="margin-top:14px">
+      <div class="f" style="width:${pct}%"></div>
+      <div class="mark" style="left:100%"><span>CL-1 200kW</span></div>
+    </div>
+    <div class="csum">${clears
+       ? `Cluster ${p.aggregation_grid_id} clears the 200 kW CL-1 floor.`
+       : `${fmt0(shortfall)} kW more sheddable load needed to reach CL-1.`}
+       Curtailable = smart-thermostat AC cycling + shiftable greenhouse lighting/pumps — near-zero capex, no roof conflict.<br>
+       Note: CL-1 is single-customer; cross-owner clusters would need an aggregator.</div>
+    ${solarLine}
   </div>`;
 }
 
