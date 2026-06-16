@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build REAL Hapeville GeoJSON data for GreenGrid / Roofus.
+"""Build REAL Hapeville GeoJSON data for Roofus.
 
 Replaces generate_mock_data.py. Pulls live, public data — no API keys:
 
@@ -71,7 +71,7 @@ OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
 OUTPUT_DIR = Path(__file__).resolve().parent / "data" / "processed"
 DATA_SOURCE = "Fulton County Tax Assessor + USDA FARA 2019 + Open-Meteo (live, June 2026)"
 
-UA = {"User-Agent": "GreenGrid-Hapeville/1.0 (hackathon)"}
+UA = {"User-Agent": "Roofus-Hapeville/1.0 (hackathon)"}
 
 
 # ---------------------------------------------------------------------------
