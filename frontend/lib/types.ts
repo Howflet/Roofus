@@ -126,6 +126,35 @@ export interface GridCollection {
 }
 
 // ---------------------------------------------------------------------------
+// Greenhouse-network day-simulation (optional add-on)
+// Mirrors GET /grids/{grid_id}/simulation (backend network_sim_service.py).
+// ---------------------------------------------------------------------------
+
+export interface SimulationResult {
+  grid_id: string;
+  n_buildings: number;
+  units: number;
+  solar_kw: number;
+  batt_power_kw: number;
+  batt_energy_kwh: number;
+  gh_area_m2: number;
+  curtailable_kw: number;
+  cl1_eligible: boolean;
+  est_annual_credit: number;
+  peak_window: number[];
+  base_peak_kw: number;
+  coord_peak_kw: number;
+  peak_cut_kw: number;
+  peak_cut_pct: number;
+  energy_cut_pct: number;
+  hours: number[];
+  total_load: number[];
+  solar_gen: number[];
+  baseline_net: number[];
+  coordinated_net: number[];
+}
+
+// ---------------------------------------------------------------------------
 // Score breakdown factor definition
 // ---------------------------------------------------------------------------
 

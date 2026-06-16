@@ -10,6 +10,7 @@ import type {
   RevenueProjection,
   RevenueAssumptions,
   BuildingSubsidyDetail,
+  SimulationResult,
 } from "./types";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -73,6 +74,14 @@ export async function fetchBuildingStats(): Promise<BuildingStats> {
 
 export async function fetchGrids(): Promise<GridCollection> {
   return fetchJSON<GridCollection>("/grids");
+}
+
+// ---------------------------------------------------------------------------
+// Greenhouse-network day-simulation (optional add-on)
+// ---------------------------------------------------------------------------
+
+export async function fetchSimulation(gridId: string): Promise<SimulationResult> {
+  return fetchJSON<SimulationResult>(`/grids/${gridId}/simulation`);
 }
 
 // ---------------------------------------------------------------------------

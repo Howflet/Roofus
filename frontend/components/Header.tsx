@@ -9,6 +9,7 @@ interface HeaderProps {
   onApplyFilters: (filters: FilterState) => void;
   showGrids: boolean;
   onToggleGrids: (show: boolean) => void;
+  onOpenSimulation: () => void;
 }
 
 export interface FilterState {
@@ -47,7 +48,7 @@ function AnimatedNumber({ value, duration = 800 }: { value: number; duration?: n
   return <>{display.toLocaleString()}</>;
 }
 
-export default function Header({ stats, onApplyFilters, showGrids, onToggleGrids }: HeaderProps) {
+export default function Header({ stats, onApplyFilters, showGrids, onToggleGrids, onOpenSimulation }: HeaderProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [leafHover, setLeafHover] = useState(false);
@@ -139,6 +140,15 @@ export default function Header({ stats, onApplyFilters, showGrids, onToggleGrids
             Hide Grids
           </button>
         </div>
+
+        <button
+          className="btn btn-ghost btn-pill"
+          onClick={onOpenSimulation}
+          id="simulation-button"
+          title="Greenhouse-network demand-response simulation"
+        >
+          ⚡ Simulation
+        </button>
 
         <button
           className={`btn btn-ghost btn-pill ${styles.filterBtn}`}

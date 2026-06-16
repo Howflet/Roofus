@@ -8,6 +8,7 @@ import MapView from "@/components/MapView";
 import Header from "@/components/Header";
 import Legend from "@/components/Legend";
 import DetailPanel from "@/components/DetailPanel";
+import SimulationPanel from "@/components/SimulationPanel";
 
 export default function Home() {
   const [buildings, setBuildings] = useState<BuildingCollection | null>(null);
@@ -17,6 +18,7 @@ export default function Home() {
   const [hiddenTiers, setHiddenTiers] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
   const [showGrids, setShowGrids] = useState<boolean>(true);
+  const [showSimulation, setShowSimulation] = useState<boolean>(false);
 
   // Load initial data
   useEffect(() => {
@@ -135,6 +137,7 @@ export default function Home() {
         onApplyFilters={handleApplyFilters}
         showGrids={showGrids}
         onToggleGrids={handleToggleGrids}
+        onOpenSimulation={() => setShowSimulation(true)}
       />
       <Legend stats={stats} hiddenTiers={hiddenTiers} onToggleTier={handleToggleTier} />
 
@@ -145,6 +148,11 @@ export default function Home() {
           building={selectedBuilding}
           onClose={() => setSelectedBuilding(null)}
         />
+      )}
+
+      {/* Greenhouse-network simulation (conditional) */}
+      {showSimulation && (
+        <SimulationPanel grids={grids} onClose={() => setShowSimulation(false)} />
       )}
 
       {/* Error overlay */}
