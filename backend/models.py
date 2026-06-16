@@ -211,30 +211,47 @@ class SubsidyCustomRequest(BaseModel):
 
 
 class CropMix(BaseModel):
-    leafy_greens_pct: float = Field(50.0, ge=0, le=100)
-    herbs_pct: float = Field(30.0, ge=0, le=100)
-    microgreens_pct: float = Field(20.0, ge=0, le=100)
+    # Default leafy-greens-dominant, because at-scale CEA operating data only
+    # exists for leafy greens (BrightFarms/Gotham Greens). Herbs/microgreens
+    # carry premium prices but the addressable volume saturates fast in a small
+    # market, so they default to a minority share. User-adjustable via POST.
+    leafy_greens_pct: float = Field(60.0, ge=0, le=100)
+    herbs_pct: float = Field(25.0, ge=0, le=100)
+    microgreens_pct: float = Field(15.0, ge=0, le=100)
 
 
+# Revenue assumptions calibrated to published greenhouse-CEA operating data,
+# NOT vertical-farm or boutique-retail figures. Primary source: AgFunder's
+# greenhouse-vs-vertical economics breakdown of BrightFarms' actual operations
+# (https://agfundernews.com/the-economics-of-local-vertical-and-greenhouse-farming-are-getting-competitive):
+#   - BrightFarms greenhouse: 2.0M lb/yr over 280,000 sqft  -> ~7.1 lb/sqft/yr
+#   - Capex $65.48/sqft; all-in delivered cost $2.33/lb
+#     (growing $1.52/lb incl. labor $1.10/lb, delivery $0.20/lb, depr. $0.61/lb)
+#   - Greenhouse-grown retail ceiling ~$4/lb (operators sell wholesale below that)
+# Herb price from fresh-basil wholesale $13-22/kg (~$6-10/lb, FrutPlanet/Accio);
+# microgreens from wholesale-at-volume ~$12-16/lb (boutique $25-50/lb does not
+# hold at this production volume). The old defaults (8/5/12 lb yields at
+# $4.50/$18/$30 retail prices) implied an indefensible ~81% margin / 7-mo payback;
+# real greenhouse CEA runs thin contribution margins before SG&A and financing.
 class RevenueAssumptions(BaseModel):
     crop_mix: CropMix = Field(default_factory=CropMix)
     # $/sq ft/year
     lease_rate: float = 8.0
-    construction_cost_per_sqft: float = 45.0
-    structural_cost_per_sqft: float = 12.0
-    electricity_cost_per_sqft: float = 3.20
-    water_cost_per_sqft: float = 1.80
-    gas_cost_per_sqft: float = 0.90
-    labor_cost_per_sqft: float = 5.50
-    supplies_cost_per_sqft: float = 2.60
-    # Crop prices $/lb
-    leafy_greens_price: float = 4.50
-    herbs_price: float = 18.0
-    microgreens_price: float = 30.0
-    # Crop yields lbs/sq ft/year
-    leafy_greens_yield: float = 8.0
-    herbs_yield: float = 5.0
-    microgreens_yield: float = 12.0
+    construction_cost_per_sqft: float = 55.0   # BrightFarms ~$65/sqft, less rooftop structural carve-out below
+    structural_cost_per_sqft: float = 12.0     # rooftop load reinforcement (separate PE scope)
+    electricity_cost_per_sqft: float = 2.50    # greenhouse (daylight + supplemental), well below vertical-farm lighting load
+    water_cost_per_sqft: float = 0.60
+    gas_cost_per_sqft: float = 1.00            # winter heating, Atlanta climate
+    labor_cost_per_sqft: float = 8.00          # ~$1.10/lb x ~7 lb/sqft (AgFunder labor share)
+    supplies_cost_per_sqft: float = 2.50       # seed/media/nutrients + insurance + overhead proxy
+    # Crop prices $/lb (wholesale, not retail)
+    leafy_greens_price: float = 2.75           # operator wholesale below ~$4/lb retail ceiling
+    herbs_price: float = 6.00                  # fresh basil wholesale at foodservice volume
+    microgreens_price: float = 12.00           # wholesale-at-volume, not boutique retail
+    # Crop yields lbs/sq ft/year (whole-footprint basis, matching BrightFarms ops data)
+    leafy_greens_yield: float = 7.0
+    herbs_yield: float = 4.0
+    microgreens_yield: float = 7.0
 
 
 class CropRevenueDetail(BaseModel):

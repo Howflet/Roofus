@@ -35,31 +35,33 @@ These are realistic defaults used in calculations. Users can adjust them via sli
 | Item | Default Value | Range | Source / Rationale |
 |---|---|---|---|
 | **Revenue** | | | |
-| Leafy greens yield | 8 lbs/sq ft/year | 5–12 | USDA greenhouse lettuce benchmarks |
-| Herbs yield | 5 lbs/sq ft/year | 3–8 | Commercial herb greenhouse data |
-| Microgreens yield | 12 lbs/sq ft/year | 8–20 | High-density tray growing |
-| Leafy greens price | $4.50/lb | $3–$7 | Atlanta Farmers Market / wholesale |
-| Herbs price | $18/lb | $12–$30 | Atlanta Farmers Market / retail |
-| Microgreens price | $30/lb | $20–$50 | Atlanta restaurant wholesale |
+| Leafy greens yield | 7 lbs/sq ft/year | 5–12 | BrightFarms actual: 2.0M lb/yr ÷ 280,000 sq ft ≈ 7.1 lb/sq ft ([AgFunder](https://agfundernews.com/the-economics-of-local-vertical-and-greenhouse-farming-are-getting-competitive)) |
+| Herbs yield | 4 lbs/sq ft/year | 3–8 | Commercial herb greenhouse data (lower density than lettuce) |
+| Microgreens yield | 7 lbs/sq ft/year | 8–20 | High-density tray growing, but volume-limited by market |
+| Leafy greens price | $2.75/lb | $2.50–$4 | Operator **wholesale**, below the ~$4/lb greenhouse retail ceiling ([AgFunder](https://agfundernews.com/the-economics-of-local-vertical-and-greenhouse-farming-are-getting-competitive)) |
+| Herbs price | $6.00/lb | $5–$10 | Fresh basil wholesale $13–22/kg at foodservice volume |
+| Microgreens price | $12.00/lb | $10–$50 | **Wholesale-at-volume**; boutique retail $25–50/lb does not hold at this production scale |
 | **Startup Costs** | | | |
-| Greenhouse construction | $45/sq ft (one-time) | $25–$85 | Light commercial greenhouse |
+| Greenhouse construction | $55/sq ft (one-time) | $25–$85 | BrightFarms commercial greenhouse ~$65/sq ft, less rooftop structural carve-out |
 | Structural reinforcement | $12/sq ft (one-time) | $5–$25 | Rooftop load-bearing upgrades |
 | **Annual Operating Costs (Itemized)** | | | |
-| ⚡ Electricity (HVAC, lighting) | $3.20/sq ft/year | $2–$5 | **Georgia Power** commercial rate: $0.105/kWh × ~30 kWh/sq ft/year for greenhouse climate control + supplemental lighting |
-| 💧 Water (irrigation) | $1.80/sq ft/year | $1–$3 | **City of Atlanta Watershed** commercial rate: $10.77/CCF (~$0.0144/gal) × ~125 gal/sq ft/year for hydroponic systems |
-| 🔥 Natural gas (heating) | $0.90/sq ft/year | $0.40–$1.50 | **Atlanta Gas Light** commercial rate: ~$1.05/therm × ~0.85 therms/sq ft/year (mild Atlanta winters reduce this significantly) |
-| 👷 Labor | $5.50/sq ft/year | $3–$9 | 1 FTE per ~2,000 sq ft at Atlanta wages (~$18/hr) |
-| 📦 Supplies & insurance | $2.60/sq ft/year | $1.50–$4 | Seeds, growing media, packaging, pest management, liability insurance |
-| **Total operating costs** | **$14.00/sq ft/year** | **$7.90–$22.50** | **Sum of above** |
+| ⚡ Electricity (HVAC, lighting) | $2.50/sq ft/year | $2–$5 | **Georgia Power** commercial rate; greenhouse (daylight + supplemental) — far below vertical-farm lighting load |
+| 💧 Water (irrigation) | $0.60/sq ft/year | $0.40–$3 | **City of Atlanta Watershed** commercial rate; hydroponic recirculation is water-efficient |
+| 🔥 Natural gas (heating) | $1.00/sq ft/year | $0.40–$1.50 | **Atlanta Gas Light** commercial rate; mild Atlanta winters |
+| 👷 Labor | $8.00/sq ft/year | $3–$9 | ~$1.10/lb (AgFunder) × ~7 lb/sq ft; CEA is labor-intensive |
+| 📦 Supplies & insurance | $2.50/sq ft/year | $1.50–$4 | Seeds, growing media, nutrients, packaging, insurance, overhead proxy |
+| **Total operating costs** | **$14.60/sq ft/year** | **$7.90–$22.50** | **Sum of above** |
 | Lease payment to owner | $8/sq ft/year | $4–$18 | Synced with Owner View lease rate |
+
+> **Honesty note:** these defaults are calibrated to published *greenhouse* CEA operating data (BrightFarms/Gotham Greens), not vertical-farm or boutique-retail figures. They yield a ~**25% contribution margin** and ~**9-year payback** on a median roof — *before* SG&A, financing, shrink, and market-saturation effects, which the sector's history (AeroFarms, AppHarvest, Fifth Season bankruptcies) shows can erase. The earlier defaults (8/5/12 lb yields at $4.50/$18/$30 retail prices) implied an indefensible ~81% margin / 7-month payback. The produce P&L is a *supporting* line; the deal is carried by the stacked owner lease + CL-1 grid services + incentives.
 
 ### Crop Mix Presets
 
 | Preset | Leafy Greens | Herbs | Microgreens | Avg Revenue/sq ft |
 |--------|-------------|-------|-------------|-------------------|
-| **Balanced** | 50% | 30% | 20% | ~$50/sq ft/year |
-| **Premium** | 20% | 30% | 50% | ~$72/sq ft/year |
-| **Volume** | 70% | 20% | 10% | ~$38/sq ft/year |
+| **Balanced** (default) | 60% | 25% | 15% | ~$30/sq ft/year |
+| **Premium** | 20% | 30% | 50% | market-limited — see note |
+| **Volume** | 70% | 20% | 10% | ~$25/sq ft/year |
 | **Custom** | User-defined | User-defined | User-defined | Calculated |
 
 ---
@@ -245,8 +247,8 @@ Appears as a new section in the Detail Panel, below the score breakdown and abov
 │                                     │
 │  ┌─────────────────────────────┐    │
 │  │ NET ANNUAL PROFIT           │    │
-│  │ $427,500                    │    │
-│  │ Margin: 81%                 │    │
+│  │ (illustrative layout —      │    │
+│  │  recalibrated ≈ 25% margin) │    │
 │  └─────────────────────────────┘    │
 │                                     │
 │  ─────────────────────────────────  │
@@ -385,8 +387,8 @@ An "Expand ↗" button in the top-right of the calculator section opens a full-s
 │ │  ─────●──────────────────── (current: $8)            │ │
 │ │                                                      │ │
 │ │  What if crop prices drop 20%?                       │ │
-│ │  Profit: $342,000 (still 66% margin)                 │ │
-│ │  Break-even: 28 months (vs. 24 baseline)             │ │
+│ │  Margin compresses toward break-even (thin sector)   │ │
+│ │  Break-even stretches well past baseline             │ │
 │ └──────────────────────────────────────────────────────┘ │
 │                                                          │
 │          [📄 Download Report (PDF)]                      │

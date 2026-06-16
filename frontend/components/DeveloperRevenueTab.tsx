@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { AlertTriangle, Hammer, Wrench, Minus } from "lucide-react";
 import type { RevenueProjection, CropMix } from "@/lib/types";
 import { fetchRevenue, postRevenue } from "@/lib/api";
 import CropMixSliders from "./CropMixSliders";
@@ -16,9 +17,9 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [cropMix, setCropMix] = useState<CropMix>({
-    leafy_greens_pct: 50,
-    herbs_pct: 30,
-    microgreens_pct: 20,
+    leafy_greens_pct: 60,
+    herbs_pct: 25,
+    microgreens_pct: 15,
   });
 
   // Initial fetch
@@ -63,7 +64,7 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
   if (error || !data) {
     return (
       <div className={styles.error}>
-        <span>⚠️</span>
+        <AlertTriangle size={16} strokeWidth={1.7} className="lucide" />
         <span>{error ?? "Failed to load revenue data"}</span>
       </div>
     );
@@ -111,7 +112,7 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
         </h4>
         {data.operating_costs.map((cost) => (
           <div key={cost.category} className={styles.costRow}>
-            <span className={styles.costIcon}>{cost.icon}</span>
+            <Minus size={14} strokeWidth={1.7} className={`lucide ${styles.costIcon}`} />
             <span className={styles.costLabel}>{cost.category}</span>
             <span className={styles.costAmount}>
               ${cost.amount.toLocaleString()}
@@ -157,14 +158,14 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
           Startup Costs
         </h4>
         <div className={styles.costRow}>
-          <span className={styles.costIcon}>🏗️</span>
+          <Hammer size={14} strokeWidth={1.7} className={`lucide ${styles.costIcon}`} />
           <span className={styles.costLabel}>Greenhouse Build</span>
           <span className={styles.costAmount}>
             ${data.startup_greenhouse.toLocaleString()}
           </span>
         </div>
         <div className={styles.costRow}>
-          <span className={styles.costIcon}>🔧</span>
+          <Wrench size={14} strokeWidth={1.7} className={`lucide ${styles.costIcon}`} />
           <span className={styles.costLabel}>Structural Upgrade</span>
           <span className={styles.costAmount}>
             ${data.startup_structural.toLocaleString()}
