@@ -95,34 +95,46 @@ export default function OwnerContact({ building }: OwnerContactProps) {
       {/* Email */}
       <div className={styles.contactRow}>
         <span className={styles.icon}>📧</span>
-        <a
-          href={`mailto:${building.owner_email}`}
-          className={styles.contactLink}
-        >
-          {building.owner_email}
-        </a>
-        <button
-          className={styles.copyBtn}
-          onClick={() => copyToClipboard(building.owner_email, "Email")}
-          title="Copy email"
-        >
-          📋
-        </button>
+        {building.owner_email ? (
+          <>
+            <a
+              href={`mailto:${building.owner_email}`}
+              className={styles.contactLink}
+            >
+              {building.owner_email}
+            </a>
+            <button
+              className={styles.copyBtn}
+              onClick={() => copyToClipboard(building.owner_email, "Email")}
+              title="Copy email"
+            >
+              📋
+            </button>
+          </>
+        ) : (
+          <span style={{ opacity: 0.7, fontStyle: "italic" }}>Not publicly available</span>
+        )}
       </div>
 
       {/* Phone */}
       <div className={styles.contactRow}>
         <span className={styles.icon}>📞</span>
-        <a href={`tel:${building.owner_phone}`} className={styles.contactLink}>
-          {building.owner_phone}
-        </a>
-        <button
-          className={styles.copyBtn}
-          onClick={() => copyToClipboard(building.owner_phone, "Phone")}
-          title="Copy phone"
-        >
-          📋
-        </button>
+        {building.owner_phone ? (
+          <>
+            <a href={`tel:${building.owner_phone}`} className={styles.contactLink}>
+              {building.owner_phone}
+            </a>
+            <button
+              className={styles.copyBtn}
+              onClick={() => copyToClipboard(building.owner_phone, "Phone")}
+              title="Copy phone"
+            >
+              📋
+            </button>
+          </>
+        ) : (
+          <span style={{ opacity: 0.7, fontStyle: "italic" }}>Not publicly available</span>
+        )}
       </div>
 
       {/* Inline message */}

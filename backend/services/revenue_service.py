@@ -7,9 +7,8 @@ multi-year cash flows for a rooftop greenhouse operation.
 from __future__ import annotations
 
 from backend.models import (
-    CostLineItem,
     CropMix,
-    CropRevenueDetail,
+    CropProductionDetail,
     OwnerRevenueProjection,
     RevenueAssumptions,
     RevenueProjection,
@@ -34,78 +33,29 @@ def calculate_developer_revenue(
     """Build a full developer P&L projection for a single building."""
     a = assumptions or RevenueAssumptions()
 
-    # --- Crop revenues ---
+    # --- Crop yields ---
     crop_mix = a.crop_mix
-    crops: list[CropRevenueDetail] = []
+    crops: list[CropProductionDetail] = []
 
-    for crop_key, pct_field, yield_override, price_override in [
-        ("leafy_greens", crop_mix.leafy_greens_pct, a.leafy_greens_yield, a.leafy_greens_price),
-        ("herbs", crop_mix.herbs_pct, a.herbs_yield, a.herbs_price),
-        ("microgreens", crop_mix.microgreens_pct, a.microgreens_yield, a.microgreens_price),
+    for crop_key, pct_field, yield_override in [
+        ("leafy_greens", crop_mix.leafy_greens_pct, a.leafy_greens_yield),
+        ("herbs", crop_mix.herbs_pct, a.herbs_yield),
+        ("microgreens", crop_mix.microgreens_pct, a.microgreens_yield),
     ]:
         pct = pct_field / 100.0
         area = roof_area_sqft * pct
         yield_lbs = area * yield_override
-        revenue = yield_lbs * price_override
-        crops.append(CropRevenueDetail(
+        crops.append(CropProductionDetail(
             crop=_CROP_DEFAULTS[crop_key]["label"],
             area_sqft=round(area, 0),
             pct=pct_field,
             yield_lbs=round(yield_lbs, 0),
-            price_per_lb=price_override,
-            revenue=round(revenue, 0),
         ))
-
-    total_revenue = sum(c.revenue for c in crops)
-
-    # --- Operating costs ---
-    costs: list[CostLineItem] = [
-        CostLineItem(category="Lease to Owner", icon="🏠", amount=round(roof_area_sqft * a.lease_rate, 0)),
-        CostLineItem(category="Electricity", icon="⚡", amount=round(roof_area_sqft * a.electricity_cost_per_sqft, 0)),
-        CostLineItem(category="Water", icon="💧", amount=round(roof_area_sqft * a.water_cost_per_sqft, 0)),
-        CostLineItem(category="Natural Gas", icon="🔥", amount=round(roof_area_sqft * a.gas_cost_per_sqft, 0)),
-        CostLineItem(category="Labor", icon="👷", amount=round(roof_area_sqft * a.labor_cost_per_sqft, 0)),
-        CostLineItem(category="Supplies & Insurance", icon="📦", amount=round(roof_area_sqft * a.supplies_cost_per_sqft, 0)),
-    ]
-    total_costs = sum(c.amount for c in costs)
-
-    # --- Bottom line ---
-    net_profit = total_revenue - total_costs
-    margin = (net_profit / total_revenue * 100) if total_revenue > 0 else 0
-
-    # --- Startup ---
-    startup_gh = round(roof_area_sqft * a.construction_cost_per_sqft, 0)
-    startup_struct = round(roof_area_sqft * a.structural_cost_per_sqft, 0)
-    startup_total = startup_gh + startup_struct
-
-    # --- ROI / breakeven ---
-    if net_profit > 0:
-        months = int(round(startup_total / (net_profit / 12)))
-    else:
-        months = 0  # never breaks even
-
-    # --- 5-year cash flow (net per year, year 1 includes startup) ---
-    cash_flow: list[float] = []
-    for year in range(1, 6):
-        if year == 1:
-            cash_flow.append(round(net_profit - startup_total, 0))
-        else:
-            cash_flow.append(round(net_profit, 0))
 
     return RevenueProjection(
         building_id=building_id,
         roof_area_sqft=roof_area_sqft,
-        crop_revenues=crops,
-        total_annual_revenue=round(total_revenue, 0),
-        operating_costs=costs,
-        total_annual_costs=round(total_costs, 0),
-        annual_net_profit=round(net_profit, 0),
-        margin_pct=round(margin, 1),
-        startup_greenhouse=startup_gh,
-        startup_structural=startup_struct,
-        startup_total=startup_total,
-        months_to_breakeven=months,
-        five_year_cash_flow=cash_flow,
+        crop_production=crops,
     )
 
 

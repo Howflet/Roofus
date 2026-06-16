@@ -118,8 +118,8 @@ def calculate_subsidy_detail(
         grid_kw = gp.get("combined_curtailable_kw", gp.get("combined_peak_kw", 0))
     grid_count = grid_feat["properties"].get("building_count", 0) if grid_feat else 0
 
-    meets_vpp = grid_kw >= 100
     meets_cl1 = grid_kw >= 200
+    meets_dco1 = grid_kw >= 1000
 
     # --- CL-1 (aggregated, needs 200 kW) ---
     if meets_cl1:
@@ -139,25 +139,27 @@ def calculate_subsidy_detail(
             potential_value_if_eligible="Negotiated — typically $3-8/kW/month",
         )
 
-    # --- DPEC-5 (same threshold as CL-1) ---
-    if meets_cl1:
-        dpec5 = ProgramDetail(
+    # --- DCO-1 (1 MW / 1000 kW threshold) ---
+    if meets_dco1:
+        dco1 = ProgramDetail(
             eligible=True,
-            estimated_annual_value=round(grid_kw * 4.0 * 4, 0),  # summer months only
-            description=f"DPEC-5 Demand Plus Energy — Grid {grid_id} qualifies. Summer credits Jun-Sep.",
-            summer_credit_months="June-September",
+            estimated_annual_value=round(grid_kw * 15 * 12 * 0.75, 0),  # illustrative 75% system value
+            description=f"DCO-1 Customer-owned dispatchable power — Grid {grid_id} qualifies at {grid_kw} kW.",
         )
     else:
-        dpec5 = ProgramDetail(
+        shortfall = round(1000 - grid_kw, 0)
+        needed = max(1, int(shortfall / 30))
+        dco1 = ProgramDetail(
             eligible=False,
-            reason="Same 200 kW threshold as CL-1",
-            summer_credit_months="June-September",
-            potential_value_if_eligible="Monthly demand + energy credits during peak events",
+            reason=f"Grid {grid_id} at {grid_kw} kW — needs 1 MW (1000 kW) for DCO-1 eligibility",
+            kw_shortfall=shortfall,
+            buildings_needed=needed,
+            potential_value_if_eligible="Credited at 75% of the system's value",
         )
 
     demand_response = DemandResponsePrograms(
         cl1_aggregated=cl1,
-        dpec5_aggregated=dpec5,
+        dco1_dispatchable=dco1,
     )
 
     # --- Efficiency rebates ---
@@ -199,16 +201,21 @@ def calculate_subsidy_detail(
         current_tier = grid_props.get("aggregation_tier", "Below Threshold")
         current_value = grid_props.get("potential_annual_value", 0)
 
-        if meets_cl1:
-            next_tier = "Fully Qualified (CL-1)"
+        if meets_dco1:
+            next_tier = "Fully Qualified (DCO-1)"
             kw_to_next = 0
             bldgs_to_next = 0
             next_value = current_value
+        elif meets_cl1:
+            next_tier = "DCO-1 (1 MW)"
+            kw_to_next = round(1000 - grid_kw, 0)
+            bldgs_to_next = max(1, int(kw_to_next / 30))
+            next_value = round(1000 * 15 * 12 * 0.75, 0)
         else:
             next_tier = "CL-1 (200 kW)"
             kw_to_next = round(200 - grid_kw, 0)
             bldgs_to_next = max(1, int(kw_to_next / 30))
-            next_value = round(0.75 * 90 * 200 - 1440, 0)  # illustrative CL-1 credit at threshold
+            next_value = round(200 * 5.5 * 12, 0)
 
         uplift = next_value - current_value
 

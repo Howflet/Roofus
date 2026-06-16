@@ -53,13 +53,15 @@ export default function SubsidiesTab({ buildingId }: SubsidiesTabProps) {
 
   // Calculate totals
   const totalOnetime =
-    (dr?.vpp_utility?.estimated_onetime_value ?? 0) +
     (eff?.gp_multifamily?.total_property_max ?? 0) +
     (eff?.gefa_her?.total_property_estimate ?? 0);
 
   const totalAnnual =
-    (dr?.vpp_consumer?.estimated_annual_value ?? 0) +
-    (dr?.tempcheck?.total_property_value ?? 0);
+    (dr?.dco1_dispatchable?.eligible === true
+      ? dr.dco1_dispatchable.estimated_annual_value ?? 0
+      : dr?.cl1_aggregated?.eligible === true
+      ? dr.cl1_aggregated.estimated_annual_value ?? 0
+      : 0);
 
   return (
     <div className={styles.container}>
@@ -78,24 +80,12 @@ export default function SubsidiesTab({ buildingId }: SubsidiesTabProps) {
         </h4>
 
         <DemandResponseCard
-          name="VPP Pilot (Consumer-Directed)"
-          program={dr.vpp_consumer}
-        />
-        <DemandResponseCard
-          name="VPP Pilot (Utility-Directed)"
-          program={dr.vpp_utility}
-        />
-        <DemandResponseCard
-          name="TempCheck DR"
-          program={dr.tempcheck}
+          name="DCO-1 Dispatchable Power"
+          program={dr.dco1_dispatchable}
         />
         <DemandResponseCard
           name="CL-1 Curtailable Load"
           program={dr.cl1_aggregated}
-        />
-        <DemandResponseCard
-          name="DPEC-5 Demand Plus Energy"
-          program={dr.dpec5_aggregated}
         />
       </div>
 

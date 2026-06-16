@@ -41,7 +41,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
   const renderTabContent = () => {
     switch (activeTab) {
       case "revenue":
-        return <DeveloperRevenueTab buildingId={building.id} />;
+        return <DeveloperRevenueTab building={building} />;
       case "subsidies":
         return <SubsidiesTab buildingId={building.id} />;
     }
@@ -110,7 +110,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           onClick={() => setActiveTab("revenue")}
           id="tab-revenue"
         >
-          🌱 Developer Revenue
+          🌱 Production & Analysis
         </button>
         <button
           className={`${styles.tab} ${activeTab === "subsidies" ? styles.tabActive : ""}`}

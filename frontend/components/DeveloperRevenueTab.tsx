@@ -1,31 +1,38 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import type { RevenueProjection, CropMix } from "@/lib/types";
-import { fetchRevenue, postRevenue } from "@/lib/api";
-import CropMixSliders from "./CropMixSliders";
-import ProjectionChart from "./ProjectionChart";
+import type { RevenueProjection, CropMix, BuildingProperties } from "@/lib/types";
+import { postRevenue } from "@/lib/api";
 import styles from "./DeveloperRevenueTab.module.css";
 
 interface DeveloperRevenueTabProps {
-  buildingId: string;
+  building: BuildingProperties;
 }
 
-export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabProps) {
+export default function DeveloperRevenueTab({ building }: DeveloperRevenueTabProps) {
   const [data, setData] = useState<RevenueProjection | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [cropMix, setCropMix] = useState<CropMix>({
-    leafy_greens_pct: 50,
-    herbs_pct: 30,
-    microgreens_pct: 20,
-  });
+  // Determine recommendation based on solar exposure
+  let recommendedType = "";
+  let recommendedMix: CropMix;
+  
+  if (building.avg_ghi >= 5.0) {
+    recommendedType = "Herbs & Microgreens (High Solar)";
+    recommendedMix = { leafy_greens_pct: 10, herbs_pct: 60, microgreens_pct: 30 };
+  } else if (building.avg_ghi >= 4.5) {
+    recommendedType = "Leafy Greens & Herbs (Moderate Solar)";
+    recommendedMix = { leafy_greens_pct: 50, herbs_pct: 40, microgreens_pct: 10 };
+  } else {
+    recommendedType = "Leafy Greens (Low Solar)";
+    recommendedMix = { leafy_greens_pct: 80, herbs_pct: 10, microgreens_pct: 10 };
+  }
 
-  // Initial fetch
+  // Initial fetch with recommended mix
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetchRevenue(buildingId)
+    postRevenue(building.id, { crop_mix: recommendedMix })
       .then((res) => {
         setData(res);
         setLoading(false);
@@ -34,22 +41,7 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
         setError(err.message);
         setLoading(false);
       });
-  }, [buildingId]);
-
-  // Debounced re-fetch when crop mix changes
-  const handleCropMixChange = useCallback(
-    (newMix: CropMix) => {
-      setCropMix(newMix);
-      // Debounce the API call
-      const timer = setTimeout(() => {
-        postRevenue(buildingId, { crop_mix: newMix })
-          .then(setData)
-          .catch(() => {}); // silently fail on slider updates
-      }, 400);
-      return () => clearTimeout(timer);
-    },
-    [buildingId]
-  );
+  }, [building.id, building.avg_ghi]);
 
   if (loading) {
     return (
@@ -71,136 +63,62 @@ export default function DeveloperRevenueTab({ buildingId }: DeveloperRevenueTabP
 
   return (
     <div className={styles.container}>
-      {/* Crop Mix Sliders */}
-      <CropMixSliders mix={cropMix} onChange={handleCropMixChange} />
-
-      <div className="divider" />
-
-      {/* Crop Revenue Breakdown */}
-      <div className={styles.section}>
-        <h4 className="text-label" style={{ marginBottom: 12 }}>
-          Crop Revenue
+      {/* Recommendation UI */}
+      <div className={styles.section} style={{ backgroundColor: 'var(--bg-card-hover)', padding: '16px', borderRadius: '8px', marginBottom: '16px' }}>
+        <h4 className="text-label" style={{ marginBottom: 8, display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span>☀️</span> Solar Exposure: {building.avg_ghi} GHI
         </h4>
-        {data.crop_revenues.map((crop) => (
+        <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0 }}>
+          Recommended Crop Mix: <strong style={{ color: 'var(--text-primary)' }}>{recommendedType}</strong>
+        </p>
+      </div>
+
+      {/* Production Potential */}
+      <div className={styles.section}>
+
+        {data.crop_production?.map((crop) => (
           <div key={crop.crop} className={styles.cropRow}>
             <div className={styles.cropHeader}>
               <span className={styles.cropName}>{crop.crop}</span>
               <span className={styles.cropRevenue}>
-                ${crop.revenue.toLocaleString()}
+                {crop.yield_lbs.toLocaleString()} lbs
               </span>
             </div>
             <div className={styles.cropMeta}>
-              {crop.area_sqft.toLocaleString()} sq ft ·{" "}
-              {crop.yield_lbs.toLocaleString()} lbs ·{" "}
-              ${crop.price_per_lb.toFixed(2)}/lb
+              {crop.area_sqft.toLocaleString()} sq ft allocated
             </div>
           </div>
         ))}
-        <div className={styles.totalLine}>
-          <span>Total Annual Revenue</span>
-          <span>${data.total_annual_revenue.toLocaleString()}</span>
-        </div>
       </div>
 
       <div className="divider" />
 
-      {/* Operating Costs */}
+      {/* Analysis Resources */}
       <div className={styles.section}>
         <h4 className="text-label" style={{ marginBottom: 12 }}>
-          Operating Costs
+          Financial Analysis Resources
         </h4>
-        {data.operating_costs.map((cost) => (
-          <div key={cost.category} className={styles.costRow}>
-            <span className={styles.costIcon}>{cost.icon}</span>
-            <span className={styles.costLabel}>{cost.category}</span>
-            <span className={styles.costAmount}>
-              ${cost.amount.toLocaleString()}
-            </span>
-          </div>
-        ))}
-        <div className={styles.totalLine} style={{ color: "var(--score-poor)" }}>
-          <span>Total Annual Costs</span>
-          <span>−${data.total_annual_costs.toLocaleString()}</span>
+        <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginBottom: "16px", lineHeight: "1.5" }}>
+          To build an accurate pro-forma, leverage these trusted resources for current pricing, operational benchmarks, and local agricultural insights:
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <a href="https://www.ams.usda.gov/market-news/fruits-vegetables" target="_blank" rel="noreferrer" style={{ padding: "12px", border: "1px solid var(--border-light)", borderRadius: "8px", textDecoration: "none" }}>
+            <strong style={{ display: "block", color: "var(--text-primary)", marginBottom: "4px" }}>USDA AMS Market News</strong>
+            <span style={{ fontSize: "13px", color: "var(--text-secondary)" }}>Current wholesale pricing for specialty crops.</span>
+          </a>
+          <a href="https://cea.cals.cornell.edu/" target="_blank" rel="noreferrer" style={{ padding: "12px", border: "1px solid var(--border-light)", borderRadius: "8px", textDecoration: "none" }}>
+            <strong style={{ display: "block", color: "var(--text-primary)", marginBottom: "4px" }}>Cornell CEA</strong>
+            <span style={{ fontSize: "13px", color: "var(--text-secondary)" }}>Research and enterprise budgets for controlled environments.</span>
+          </a>
+          <a href="https://www.agritecture.com/" target="_blank" rel="noreferrer" style={{ padding: "12px", border: "1px solid var(--border-light)", borderRadius: "8px", textDecoration: "none" }}>
+            <strong style={{ display: "block", color: "var(--text-primary)", marginBottom: "4px" }}>Agritecture</strong>
+            <span style={{ fontSize: "13px", color: "var(--text-secondary)" }}>Urban agriculture consulting and feasibility planning.</span>
+          </a>
+          <a href="https://ceac.arizona.edu/" target="_blank" rel="noreferrer" style={{ padding: "12px", border: "1px solid var(--border-light)", borderRadius: "8px", textDecoration: "none" }}>
+            <strong style={{ display: "block", color: "var(--text-primary)", marginBottom: "4px" }}>Univ. of Arizona CEAC</strong>
+            <span style={{ fontSize: "13px", color: "var(--text-secondary)" }}>Technical resources for intensive greenhouse operations.</span>
+          </a>
         </div>
-      </div>
-
-      <div className="divider" />
-
-      {/* Bottom Line */}
-      <div className={styles.bottomLine}>
-        <div className={styles.profitRow}>
-          <span className={styles.profitLabel}>Annual Net Profit</span>
-          <span
-            className={styles.profitValue}
-            style={{
-              color:
-                data.annual_net_profit >= 0
-                  ? "var(--accent-emerald)"
-                  : "var(--score-poor)",
-            }}
-          >
-            {data.annual_net_profit >= 0 ? "+" : ""}$
-            {data.annual_net_profit.toLocaleString()}
-          </span>
-        </div>
-        <div className={styles.marginRow}>
-          <span>Margin</span>
-          <span>{data.margin_pct.toFixed(1)}%</span>
-        </div>
-      </div>
-
-      <div className="divider" />
-
-      {/* Startup Costs */}
-      <div className={styles.section}>
-        <h4 className="text-label" style={{ marginBottom: 12 }}>
-          Startup Costs
-        </h4>
-        <div className={styles.costRow}>
-          <span className={styles.costIcon}>🏗️</span>
-          <span className={styles.costLabel}>Greenhouse Build</span>
-          <span className={styles.costAmount}>
-            ${data.startup_greenhouse.toLocaleString()}
-          </span>
-        </div>
-        <div className={styles.costRow}>
-          <span className={styles.costIcon}>🔧</span>
-          <span className={styles.costLabel}>Structural Upgrade</span>
-          <span className={styles.costAmount}>
-            ${data.startup_structural.toLocaleString()}
-          </span>
-        </div>
-        <div className={styles.totalLine}>
-          <span>Total Startup</span>
-          <span>${data.startup_total.toLocaleString()}</span>
-        </div>
-      </div>
-
-      <div className="divider" />
-
-      {/* ROI */}
-      <div className={styles.section}>
-        <h4 className="text-label" style={{ marginBottom: 12 }}>
-          Return on Investment
-        </h4>
-        <div className={styles.roiStat}>
-          <span className={styles.roiNumber}>
-            {data.months_to_breakeven}
-          </span>
-          <span className={styles.roiUnit}>months to breakeven</span>
-        </div>
-
-        {/* 5-Year Cash Flow Chart */}
-        {data.five_year_cash_flow.length > 0 && (
-          <div style={{ marginTop: 16 }}>
-            <div className={styles.chartLabel}>5-Year Cumulative Cash Flow</div>
-            <ProjectionChart
-              data={data.five_year_cash_flow}
-              labels={["Y1", "Y2", "Y3", "Y4", "Y5"]}
-              height={160}
-            />
-          </div>
-        )}
       </div>
     </div>
   );

@@ -126,10 +126,10 @@ def generate_buildings(n: int = 30) -> list[dict]:
 
         # Building characteristics
         zoning = random.choice(["R-4", "R-4", "R-4", "R-5", "R-5"])  # bias toward R-4
-        num_units = random.choice([4, 6, 8, 12, 16, 20, 24, 32, 48])
-        num_floors = random.choice([2, 2, 3, 3, 3, 4])
+        num_units = random.choice([20, 40, 60, 100, 150, 250, 400])
+        num_floors = random.choice([2, 3, 4, 5, 8, 12])
         year_built = random.randint(1968, 2022)
-        roof_area = random.randint(3000, 15000)
+        roof_area = random.randint(10000, 80000)
 
         # Solar
         avg_ghi = round(random.uniform(4.5, 5.5), 2)
@@ -180,7 +180,9 @@ def generate_buildings(n: int = 30) -> list[dict]:
         owner_address = f"PO Box {random.randint(1000, 9999)}, Atlanta GA 30301"
 
         # Subsidy summary placeholder (will be enriched by pipeline)
-        programs = ["VPP-Consumer", "VPP-Utility", "TempCheck"]
+        programs = ["CL-1 Curtailable Load"]
+        if peak_kw >= 1000 or (num_units >= 200):
+            programs.append("DCO-1 Dispatchable")
         if in_food_desert:
             programs.append("GEFA-HER")
         if num_units >= 8:
@@ -269,25 +271,25 @@ def assign_grids(buildings: list[dict], n_grids: int = 6) -> list[dict]:
             total_roof += bldg["properties"]["roof_area_sqft"]
 
         combined_kw = round(combined_kw, 1)
-        meets_vpp = combined_kw >= 100
         meets_cl1 = combined_kw >= 200
+        meets_dco1 = combined_kw >= 1000
 
-        if meets_cl1:
+        if meets_dco1:
+            tier = "DCO-1"
+        elif meets_cl1:
             tier = "CL-1"
-        elif meets_vpp:
-            tier = "VPP"
         else:
             tier = "Below Threshold"
 
         # Potential annual value
-        if meets_cl1:
+        if meets_dco1:
+            annual_value = round(combined_kw * 15 * 12 * 0.75)
+        elif meets_cl1:
             annual_value = round(combined_kw * 5.5 * 12)
-        elif meets_vpp:
-            annual_value = round(combined_kw * 15 + combined_kw * 1.50 * 100)
         else:
             annual_value = round(combined_kw * 5 * 12)
 
-        bldgs_needed = max(0, int(math.ceil((200 - combined_kw) / 30))) if not meets_cl1 else 0
+        bldgs_needed = max(0, int(math.ceil((1000 - combined_kw) / 100))) if not meets_dco1 else 0
 
         # Update building subsidy summaries with grid info
         for bldg in members:
@@ -296,9 +298,9 @@ def assign_grids(buildings: list[dict], n_grids: int = 6) -> list[dict]:
             sub["grid_combined_kw"] = combined_kw
             sub["grid_building_count"] = len(members)
             # Update aggregation score component
-            if meets_cl1:
+            if meets_dco1:
                 bldg["properties"]["score_aggregation"] = 100
-            elif meets_vpp:
+            elif meets_cl1:
                 bldg["properties"]["score_aggregation"] = 80
             else:
                 bldg["properties"]["score_aggregation"] = 40
@@ -312,11 +314,11 @@ def assign_grids(buildings: list[dict], n_grids: int = 6) -> list[dict]:
                 "total_units": total_units,
                 "total_roof_sqft": total_roof,
                 "combined_peak_kw": combined_kw,
-                "meets_vpp_threshold": meets_vpp,
                 "meets_cl1_threshold": meets_cl1,
+                "meets_dco1_threshold": meets_dco1,
                 "aggregation_tier": tier,
                 "potential_annual_value": annual_value,
-                "buildings_needed_for_cl1": bldgs_needed,
+                "buildings_needed_for_dco1": bldgs_needed,
             },
         }
         grids.append(grid_feature)
@@ -328,8 +330,10 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Generating mock building data …")
-    buildings = generate_buildings(30)
-    grids = assign_grids(buildings, n_grids=6)
+    # Generate 55 buildings into 15 grids.
+    # ~3-4 buildings per grid on average.
+    buildings = generate_buildings(55)
+    grids = assign_grids(buildings, n_grids=15)
 
     # Remove internal lat/lon fields
     for b in buildings:

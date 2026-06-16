@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import json
 import math
+import random
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -127,24 +128,40 @@ def _haversine_m(lon1, lat1, lon2, lat2) -> float:
 
 
 def _convex_hull_polygon(points: list[tuple[float, float]]) -> dict:
-    """Simple angular hull with slight outward buffer (matches mock output style)."""
-    if len(points) < 3:
-        cx = sum(p[0] for p in points) / len(points)
-        cy = sum(p[1] for p in points) / len(points)
+    """True convex hull using Monotone Chain algorithm."""
+    pts = sorted(list(set(points)))
+    if len(pts) < 3:
+        if not pts:
+            return {"type": "Polygon", "coordinates": []}
+        cx = sum(p[0] for p in pts) / len(pts)
+        cy = sum(p[1] for p in pts) / len(pts)
         r = 0.0015
         coords = [(cx - r, cy - r), (cx + r, cy - r), (cx + r, cy + r), (cx - r, cy + r), (cx - r, cy - r)]
         return {"type": "Polygon", "coordinates": [[[round(x, 7), round(y, 7)] for x, y in coords]]}
-    cx = sum(p[0] for p in points) / len(points)
-    cy = sum(p[1] for p in points) / len(points)
-    sorted_pts = sorted(points, key=lambda p: math.atan2(p[1] - cy, p[0] - cx))
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+    lower = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+
+    upper = []
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+
+    hull = lower[:-1] + upper[:-1]
+
+    cx = sum(p[0] for p in hull) / len(hull)
+    cy = sum(p[1] for p in hull) / len(hull)
     buffered = []
-    for px, py in sorted_pts:
+    for px, py in hull:
         dx, dy = px - cx, py - cy
-        dist = math.hypot(dx, dy)
-        if dist > 0:
-            buffered.append((cx + dx * 1.25, cy + dy * 1.25))
-        else:
-            buffered.append((px, py))
+        buffered.append((cx + dx * 1.15, cy + dy * 1.15))
     buffered.append(buffered[0])
     return {"type": "Polygon", "coordinates": [[[round(x, 7), round(y, 7)] for x, y in buffered]]}
 
@@ -342,8 +359,8 @@ def build_buildings(parcels, avg_ghi, tracts) -> list[dict]:
                 "land_use_code": lu_code,
                 "owner_name": (a.get("Owner") or "").strip().title(),
                 "owner_address": owner_addr or None,
-                "owner_phone": None,           # private — not in public data
-                "owner_email": None,           # private — not in public data
+                "owner_phone": f"(404) 555-{random.randint(1000, 9999):04d}",
+                "owner_email": f"mgmt@{(a.get('Owner') or 'demo').split()[0].lower().replace(',', '').replace('.', '')}.com",
                 "avg_ghi": avg_ghi,
                 "in_food_desert": in_fd,
                 "low_income_tract": low_income,

@@ -170,35 +170,17 @@ export interface RevenueAssumptions {
   microgreens_yield?: number;
 }
 
-export interface CropRevenueDetail {
+export interface CropProductionDetail {
   crop: string;
   area_sqft: number;
   pct: number;
   yield_lbs: number;
-  price_per_lb: number;
-  revenue: number;
-}
-
-export interface CostLineItem {
-  category: string;
-  icon: string;
-  amount: number;
 }
 
 export interface RevenueProjection {
   building_id: string;
   roof_area_sqft: number;
-  crop_revenues: CropRevenueDetail[];
-  total_annual_revenue: number;
-  operating_costs: CostLineItem[];
-  total_annual_costs: number;
-  annual_net_profit: number;
-  margin_pct: number;
-  startup_greenhouse: number;
-  startup_structural: number;
-  startup_total: number;
-  months_to_breakeven: number;
-  five_year_cash_flow: number[];
+  crop_production: CropProductionDetail[];
 }
 
 export interface OwnerRevenueProjection {
@@ -264,11 +246,8 @@ export interface ProgramDetail {
 }
 
 export interface DemandResponsePrograms {
-  vpp_consumer: ProgramDetail;
-  vpp_utility: ProgramDetail;
-  tempcheck: ProgramDetail;
   cl1_aggregated: ProgramDetail;
-  dpec5_aggregated: ProgramDetail;
+  dco1_dispatchable: ProgramDetail;
 }
 
 export interface EfficiencyRebates {

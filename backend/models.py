@@ -19,9 +19,8 @@ class ZoningCode(str, Enum):
 
 
 class AggregationTier(str, Enum):
-    VPP = "VPP"
+    DCO1 = "DCO-1"
     CL1 = "CL-1"
-    DPEC5 = "DPEC-5"
     BELOW = "Below Threshold"
 
 
@@ -104,7 +103,7 @@ class ProgramDetail(BaseModel):
 
 class DemandResponsePrograms(BaseModel):
     cl1_aggregated: ProgramDetail = Field(default_factory=ProgramDetail)
-    dpec5_aggregated: ProgramDetail = Field(default_factory=ProgramDetail)
+    dco1_dispatchable: ProgramDetail = Field(default_factory=ProgramDetail)
 
 
 class EfficiencyRebates(BaseModel):
@@ -237,40 +236,17 @@ class RevenueAssumptions(BaseModel):
     microgreens_yield: float = 12.0
 
 
-class CropRevenueDetail(BaseModel):
+class CropProductionDetail(BaseModel):
     crop: str
     area_sqft: float
     pct: float
     yield_lbs: float
-    price_per_lb: float
-    revenue: float
-
-
-class CostLineItem(BaseModel):
-    category: str
-    icon: str = ""
-    amount: float
 
 
 class RevenueProjection(BaseModel):
     building_id: str
     roof_area_sqft: float
-    # Revenue
-    crop_revenues: list[CropRevenueDetail] = Field(default_factory=list)
-    total_annual_revenue: float = 0
-    # Operating costs
-    operating_costs: list[CostLineItem] = Field(default_factory=list)
-    total_annual_costs: float = 0
-    # Bottom line
-    annual_net_profit: float = 0
-    margin_pct: float = 0
-    # Startup
-    startup_greenhouse: float = 0
-    startup_structural: float = 0
-    startup_total: float = 0
-    # ROI
-    months_to_breakeven: int = 0
-    five_year_cash_flow: list[float] = Field(default_factory=list)
+    crop_production: list[CropProductionDetail] = Field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
