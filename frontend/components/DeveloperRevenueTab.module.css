@@ -1,0 +1,178 @@
+.container {
+  padding: 0;
+  animation: fadeIn 300ms ease-out;
+}
+
+.section {
+  padding: 0;
+}
+
+/* Crop revenue rows */
+.cropRow {
+  margin-bottom: 12px;
+}
+
+.cropHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cropName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.cropRevenue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  font-variant-numeric: tabular-nums;
+}
+
+.cropMeta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Cost rows */
+.costRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.costIcon {
+  font-size: 13px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.costLabel {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.costAmount {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Totals */
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Bottom line */
+.bottomLine {
+  padding: 4px 0;
+}
+
+.profitRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.profitLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.profitValue {
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.marginRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ROI */
+.roiStat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.roiNumber {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-emerald);
+  line-height: 1;
+}
+
+.roiUnit {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.chartLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+/* Loading & error */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent-emerald);
+  border-radius: 50%;
+  animation: spin 600ms linear infinite;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  color: var(--score-poor);
+  font-size: 13px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
