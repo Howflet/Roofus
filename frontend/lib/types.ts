@@ -61,6 +61,7 @@ export interface BuildingProperties {
   in_food_desert: boolean;
   hvac_proxy_score: number;
   estimated_peak_kw: number;
+  solar_capacity_kw: number;
   aggregation_grid_id: string;
   score: number;
   score_structural: number;
@@ -139,6 +140,8 @@ export interface SimulationResult {
   batt_energy_kwh: number;
   gh_area_m2: number;
   curtailable_kw: number;
+  cl1_event_shed_kw: number;
+  solar_peak_contrib_kw: number;
   cl1_eligible: boolean;
   est_annual_credit: number;
   peak_window: number[];
@@ -350,12 +353,6 @@ export function getBuildingScoreFactors(props: BuildingProperties): ScoreFactor[
       label: "Solar Exposure",
       score: props.score_solar,
       rawValue: `${props.avg_ghi} GHI`,
-    },
-    {
-      key: "zoning",
-      label: "Zoning",
-      score: props.score_zoning,
-      rawValue: props.zoning,
     },
     {
       key: "food_desert",

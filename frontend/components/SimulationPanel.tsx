@@ -91,10 +91,11 @@ export default function SimulationPanel({ grids, onClose }: SimulationPanelProps
         </button>
 
         <div className={styles.header}>
-          <h2 className={styles.title}>🌱 Greenhouse-Network Simulation</h2>
+          <h2 className={styles.title}>⚡ CL-1 Demand-Response Event</h2>
           <p className={styles.subtitle}>
-            One representative summer day for a cluster — how coordinating solar + battery +
-            greenhouse cooling shaves the evening grid peak. <strong>Illustrative.</strong>
+            One representative summer day for a cluster. When Georgia Power calls a peak event,
+            the cluster sheds its committed curtailable load (AC-cycling + greenhouse) while solar
+            keeps feeding in — together they collapse the evening grid draw. <strong>Illustrative.</strong>
           </p>
         </div>
 
@@ -129,11 +130,12 @@ export default function SimulationPanel({ grids, onClose }: SimulationPanelProps
                 value={data.cl1_eligible ? `$${fmt(data.est_annual_credit)}/yr` : "n/a"}
                 label="est. CL-1 credit"
               />
+              <Card value={`${fmt(data.cl1_event_shed_kw)} kW`} label="curtailment shed (CL-1)" />
+              <Card value={`${fmt(data.solar_peak_contrib_kw)} kW`} label="solar during event" />
               <Card value={`${fmt(data.peak_cut_kw)} kW`} label="peak demand cut" />
               <Card value={`${data.energy_cut_pct}%`} label="peak-window energy cut" />
               <Card value={fmt(data.n_buildings)} label={`buildings · ${fmt(data.units)} units`} />
-              <Card value={`${fmt(data.solar_kw)} kW`} label="solar" />
-              <Card value={`${fmt(data.batt_power_kw)} kW`} label="battery" />
+              <Card value={`${fmt(data.solar_kw)} kW`} label="solar capacity" />
             </div>
 
             <SimChart data={data} />
@@ -141,15 +143,17 @@ export default function SimulationPanel({ grids, onClose }: SimulationPanelProps
             <div className={styles.note}>
               <strong>How to read it:</strong> the{" "}
               <span style={{ color: COLORS.red }}>red</span> line is what the cluster pulls from the
-              grid with no coordination; the <span style={{ color: COLORS.green }}>green</span> line
-              is with the coordinated network. In the shaded evening window the green line sits below
-              the red — that gap is the demand-response saving.
+              grid on a normal day; the <span style={{ color: COLORS.green }}>green</span> line is
+              during a called CL-1 event. In the shaded window the green line drops far below the red
+              — that gap is the committed curtailment ({fmt(data.cl1_event_shed_kw)} kW shed), helped
+              by the <span style={{ color: COLORS.orange }}>solar</span> still flowing in daylight.
+              That shed capacity is what CL-1 pays for.
               <br />
               <br />
-              <strong>Honest labels:</strong> sunlight is real (Open-Meteo); greenhouse cooling is
-              grounded in the GES physics run (it overheats in Atlanta summer → needs afternoon
-              cooling); building load shape, battery rule, and demand-response window are modelled
-              assumptions. Not a precise prediction.
+              <strong>Honest labels:</strong> sunlight is real (Open-Meteo); the curtailment shed is
+              the cluster&apos;s real <code>combined_curtailable_kw</code> (AC-cycling + greenhouse),
+              capped at the load actually present. Building load shape, battery rule, and the event
+              window are modelled assumptions. Not a precise prediction.
             </div>
           </>
         )}

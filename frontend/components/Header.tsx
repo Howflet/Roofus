@@ -128,16 +128,16 @@ export default function Header({ stats, onApplyFilters, showGrids, onToggleGrids
         {/* Grid Toggle */}
         <div className={styles.personaToggle} id="grid-toggle">
           <button
-            className={`${styles.personaBtn} ${showGrids ? styles.personaBtnActive : ""}`}
-            onClick={() => onToggleGrids(true)}
-          >
-            Show Grids
-          </button>
-          <button
             className={`${styles.personaBtn} ${!showGrids ? styles.personaBtnActive : ""}`}
             onClick={() => onToggleGrids(false)}
           >
             Hide Grids
+          </button>
+          <button
+            className={`${styles.personaBtn} ${showGrids ? styles.personaBtnActive : ""}`}
+            onClick={() => onToggleGrids(true)}
+          >
+            Cross Clusters
           </button>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AlertTriangle } from "lucide-react";
 import type { BuildingSubsidyDetail } from "@/lib/types";
 import { fetchSubsidies } from "@/lib/api";
 import ThresholdMeter from "./ThresholdMeter";
@@ -43,19 +44,16 @@ export default function SubsidiesTab({ buildingId }: SubsidiesTabProps) {
   if (error || !data) {
     return (
       <div className={styles.error}>
-        <span>⚠️</span>
+        <AlertTriangle size={16} strokeWidth={1.7} className="lucide" />
         <span>{error ?? "Failed to load subsidy data"}</span>
       </div>
     );
   }
 
-  const { demand_response_programs: dr, efficiency_rebates: eff } = data;
+  const { demand_response_programs: dr } = data;
 
-  // Calculate totals
-  const totalOnetime =
-    (dr?.vpp_utility?.estimated_onetime_value ?? 0) +
-    (eff?.gp_multifamily?.total_property_max ?? 0) +
-    (eff?.gefa_her?.total_property_estimate ?? 0);
+  // Calculate totals (efficiency rebates excluded — they're tenant-side, not the greenhouse play)
+  const totalOnetime = dr?.vpp_utility?.estimated_onetime_value ?? 0;
 
   const totalAnnual =
     (dr?.vpp_consumer?.estimated_annual_value ?? 0) +
@@ -96,28 +94,6 @@ export default function SubsidiesTab({ buildingId }: SubsidiesTabProps) {
         <DemandResponseCard
           name="DPEC-5 Demand Plus Energy"
           program={dr.dpec5_aggregated}
-        />
-      </div>
-
-      <div className="divider" />
-
-      {/* Section 2b: Efficiency Rebates */}
-      <div className={styles.section}>
-        <h4 className="text-label" style={{ marginBottom: 12 }}>
-          Efficiency Rebates
-        </h4>
-
-        <DemandResponseCard
-          name="GA Power Multifamily Efficiency"
-          program={eff.gp_multifamily}
-        />
-        <DemandResponseCard
-          name="GEFA Home Efficiency Rebates (HER)"
-          program={eff.gefa_her}
-        />
-        <DemandResponseCard
-          name="GEFA Home Electrification (HEAR)"
-          program={eff.gefa_hear}
         />
       </div>
 

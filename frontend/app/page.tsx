@@ -17,7 +17,7 @@ export default function Home() {
   const [selectedBuilding, setSelectedBuilding] = useState<BuildingProperties | null>(null);
   const [hiddenTiers, setHiddenTiers] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
-  const [showGrids, setShowGrids] = useState<boolean>(true);
+  const [showGrids, setShowGrids] = useState<boolean>(false); // default hidden — cross-owner pooling needs a CSP aggregator
   const [showSimulation, setShowSimulation] = useState<boolean>(false);
 
   // Load initial data

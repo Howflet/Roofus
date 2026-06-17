@@ -47,8 +47,8 @@
 </head>
 <body>
 <header>
-  <h1>🌱 Greenhouse-Network Simulation</h1>
-  <div class="sub">One representative summer day for a cluster — how coordinating solar + battery + greenhouse cooling shaves the evening grid peak. <b>Illustrative.</b></div>
+  <h1>⚡ CL-1 Demand-Response Event</h1>
+  <div class="sub">One representative summer day for a cluster — when Georgia Power calls a peak event, the cluster sheds its committed curtailable load (AC-cycling + greenhouse) while solar keeps feeding in, collapsing the evening grid draw. <b>Illustrative.</b></div>
 </header>
 
 <div class="wrap">
@@ -64,8 +64,8 @@
   <div class="chartbox">
     <canvas id="chart" width="940" height="440"></canvas>
     <div class="legend">
-      <span><i style="background:var(--red)"></i>Net grid demand — no coordination</span>
-      <span><i style="background:var(--green)"></i>Net grid demand — coordinated</span>
+      <span><i style="background:var(--red)"></i>Net grid demand — normal day</span>
+      <span><i style="background:var(--green)"></i>Net grid demand — during CL-1 event</span>
       <span><i style="background:var(--orange)"></i>Solar generation</span>
       <span><i style="background:var(--blue)"></i>Total load (buildings + greenhouse)</span>
       <span><i style="background:#ffd28a"></i>Grid peak window</span>
@@ -74,12 +74,13 @@
 
   <div class="note">
     <b>How to read it:</b> the <span style="color:var(--red)">red</span> line is what the cluster pulls
-    from the grid with no coordination; the <span style="color:var(--green)">green</span> line is with
-    the coordinated network. In the shaded evening window the green line sits below the red — that gap is
-    the demand-response saving.<br><br>
-    <b>Honest labels:</b> sunlight is real (Open-Meteo); the greenhouse cooling is grounded in our GES
-    physics run (it overheats in Atlanta summer → needs afternoon cooling); building load shape, battery
-    rule, and demand-response window are modelled assumptions. Not a precise prediction.
+    from the grid on a normal day; the <span style="color:var(--green)">green</span> line is during a
+    called CL-1 event. In the shaded window the green line drops far below the red — that gap is the
+    committed curtailment, helped by the <span style="color:var(--orange)">solar</span> still flowing in
+    daylight. That shed capacity is what CL-1 pays for.<br><br>
+    <b>Honest labels:</b> sunlight is real (Open-Meteo); the curtailment shed is the cluster's real
+    <code>combined_curtailable_kw</code> (AC-cycling + greenhouse), capped at the load actually present.
+    Building load shape, battery rule, and the event window are modelled assumptions. Not a precise prediction.
   </div>
 </div>
 
@@ -163,8 +164,9 @@ function renderCards(d){
 
   document.getElementById("cards").innerHTML =
     card("big", `${d.peak_cut_pct}%`, "evening peak cut",
-      `How much less power the cluster pulls from the grid during the 5-9pm peak when the
-       network coordinates (battery + greenhouse cooling). It's a <b>peak-demand</b> drop in
+      `How much less power the cluster pulls from the grid during the 5-9pm peak during a CL-1
+       event — it sheds ~<b>${f(d.cl1_event_shed_kw)} kW</b> of committed curtailable load
+       (AC-cycling + greenhouse) while solar keeps feeding in. It's a <b>peak-demand</b> drop in
        this one-day demo — <b>not</b> energy savings and <b>not</b> the payment.`) +
     card("money", credit, "est. CL-1 credit / year", creditHelp) +
     card("", `${f(d.peak_cut_kw)} kW`, "peak demand cut",

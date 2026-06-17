@@ -30,8 +30,7 @@ COVER_TRANSMITTANCE = 0.70      # sunlight entering greenhouse as heat
 COOLING_COP = 12.0              # evaporative cooling efficiency (GES-grounded)
 BATTERY_HOURS = 4
 ROUND_TRIP_EFF = 0.90
-PEAK_WINDOW = [17, 18, 19, 20]  # 5-9 pm summer grid peak
-GREENHOUSE_SHED_FRAC = 0.40
+PEAK_WINDOW = [17, 18, 19, 20]  # 5-9 pm summer grid peak (CL-1 event window)
 
 _BLDG_SHAPE = np.array(
     [0.45, 0.40, 0.38, 0.37, 0.38, 0.45, 0.60, 0.72, 0.70, 0.62, 0.58, 0.57,
@@ -80,9 +79,17 @@ def simulate_grid(p: dict) -> dict:
             soc -= dis
             batt_flow[h] = dis
 
+    # --- CL-1 demand-response event -------------------------------------------
+    # During a called event the cluster sheds its COMMITTED curtailable capacity
+    # (combined_curtailable_kw = thermostat AC-cycling across the apartments +
+    # shiftable greenhouse lighting/pumps) — not just the greenhouse's own cooling.
+    # Cap the shed at the load actually present after solar + battery so net grid
+    # demand never goes negative.
+    curtailable_kw = float(p.get("combined_curtailable_kw", 0.0))
     dr_shed = np.zeros(24)
     for h in PEAK_WINDOW:
-        dr_shed[h] = greenhouse_load[h] * GREENHOUSE_SHED_FRAC
+        available = max(0.0, total_load[h] - solar_gen[h] - batt_flow[h])
+        dr_shed[h] = min(curtailable_kw, available)
     coordinated_net = total_load - solar_gen - batt_flow - dr_shed
 
     pw = np.array(PEAK_WINDOW)
@@ -93,11 +100,13 @@ def simulate_grid(p: dict) -> dict:
     be = float(baseline_net[pw].clip(min=0).sum())
     ce = float(coordinated_net[pw].clip(min=0).sum())
     energy_cut_pct = (100 * (be - ce) / be) if be > 0 else 0.0
+    # what each lever contributes during the event window
+    event_shed_kw = float(dr_shed[pw].max())          # CL-1 curtailment dispatched
+    solar_peak_contrib_kw = float(solar_gen[pw].mean())  # solar still flowing during the event
 
     # --- CL-1 money (illustrative) — what the owner(s) could be paid -----------
-    # Pulled straight from the pipeline: CL-1 pays for CURTAILABLE CAPACITY (kW the
-    # cluster can shed on command), NOT the peak-cut %. Rate is illustrative.
-    curtailable_kw = float(p.get("combined_curtailable_kw", 0.0))
+    # CL-1 pays for CURTAILABLE CAPACITY (the kW dispatched above), not the
+    # peak-cut %. curtailable_kw is computed above. Rate is illustrative.
     cl1_eligible = bool(p.get("meets_cl1_threshold", False))
     est_annual_credit = int(p.get("potential_annual_value", 0)) if cl1_eligible else 0
 
@@ -113,6 +122,8 @@ def simulate_grid(p: dict) -> dict:
         "batt_energy_kwh": round(batt_energy_cap),
         "gh_area_m2": round(gh_area_m2),
         "curtailable_kw": round(curtailable_kw),
+        "cl1_event_shed_kw": round(event_shed_kw),
+        "solar_peak_contrib_kw": round(solar_peak_contrib_kw),
         "cl1_eligible": cl1_eligible,
         "est_annual_credit": est_annual_credit,
         "peak_window": PEAK_WINDOW,

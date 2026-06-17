@@ -285,7 +285,7 @@ async function renderDetail(id){
   const tierName = p.score>=70?"Strong candidate":p.score>=50?"Moderate":"Weak";
   const tierCol = p.score>=70?"var(--emerald)":p.score>=50?"var(--amber)":"var(--red)";
   const side = document.getElementById("side");
-  const meta = [p.zoning, `${p.num_units} units`,
+  const meta = [`${p.num_units} units`,
     p.num_floors?`${p.num_floors} floors`:null,
     p.year_built?`built ${p.year_built}`:null].filter(Boolean).join(" · ");
   side.innerHTML = `
@@ -310,7 +310,6 @@ async function renderDetail(id){
         ${bar("Structural (HVAC proxy)",p.score_structural)}
         ${bar("Roof area",p.score_area)}
         ${bar("Solar exposure",p.score_solar)}
-        ${bar("Zoning",p.score_zoning)}
         ${bar("Food desert",p.score_food_desert)}
         ${bar("Aggregation",p.score_aggregation)}
       </div>

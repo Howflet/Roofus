@@ -386,9 +386,12 @@ def build_buildings(parcels, avg_ghi, tracts) -> list[dict]:
 
 def finalize_score(b: dict) -> None:
     p = b["properties"]
+    # Zoning dropped from the score: Hapeville gave us no legal zoning data
+    # (the old s_zoning was just land-use favorability). Its 0.15 weight is
+    # redistributed to the factors that actually vary — structural readiness + roof area.
     p["score"] = round(
-        p["score_structural"] * 0.30 + p["score_area"] * 0.20 + p["score_solar"] * 0.15
-        + p["score_zoning"] * 0.15 + p["score_food_desert"] * 0.15 + p["score_aggregation"] * 0.05,
+        p["score_structural"] * 0.35 + p["score_area"] * 0.30 + p["score_solar"] * 0.15
+        + p["score_food_desert"] * 0.15 + p["score_aggregation"] * 0.05,
         1,
     )
 

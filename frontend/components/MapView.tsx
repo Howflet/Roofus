@@ -294,7 +294,7 @@ export default function MapView({
             </span>
           </div>
           <div className="tooltip-meta">
-            {tooltip.area.toLocaleString()} sq ft · {tooltip.zoning}
+            {tooltip.area.toLocaleString()} sq ft
           </div>
         </div>
       )}

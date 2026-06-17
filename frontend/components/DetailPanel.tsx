@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
+import { MapPin, Building2, Ruler, Hammer, Home, Sprout, Sun, X } from "lucide-react";
 import type { BuildingProperties, Persona } from "@/lib/types";
 import { getBuildingScoreFactors } from "@/lib/types";
 import ScoreGauge from "./ScoreGauge";
@@ -36,7 +37,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
 
   const factors = getBuildingScoreFactors(building);
 
-  const buildingType = building.zoning === "R-4" ? "Multifamily (R-4)" : "Multifamily (R-5)";
+  const buildingType = "Multifamily";
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -56,6 +57,45 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
 
       <div className="divider" />
 
+      {/* Greenhouse spec — what's actually being proposed on this roof */}
+      <div className={styles.propertySection}>
+        <h3 className="text-label" style={{ marginBottom: isMobile ? 12 : 16 }}>
+          Greenhouse
+        </h3>
+        <div className={styles.propertyItem}>
+          <Sprout
+            size={15}
+            strokeWidth={1.7}
+            className={`lucide ${styles.propIcon}`}
+            style={{ color: "var(--accent-emerald)" }}
+          />
+          <span>
+            {building.roof_area_sqft.toLocaleString()} sq ft footprint · ~
+            {Math.round(building.roof_area_sqft * 0.65).toLocaleString()} sq ft growing
+          </span>
+        </div>
+        <div className={styles.propertyItem}>
+          <Building2 size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
+          <span>
+            {building.num_units} units · {building.num_floors} floors · 1 rooftop
+          </span>
+        </div>
+        <div className={styles.propertyItem}>
+          <Sun
+            size={15}
+            strokeWidth={1.7}
+            className={`lucide ${styles.propIcon}`}
+            style={{ color: "var(--accent-amber, #fbbf24)" }}
+          />
+          <span>
+            {building.solar_capacity_kw?.toLocaleString() ?? "—"} kW rooftop solar
+            <span style={{ opacity: 0.6 }}> · optional, over non-growing roof</span>
+          </span>
+        </div>
+      </div>
+
+      <div className="divider" />
+
       {/* Score Breakdown */}
       <ScoreBreakdown factors={factors} />
 
@@ -67,30 +107,35 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           Property Details
         </h3>
         <div className={styles.propertyItem}>
-          <span className={styles.propIcon}>📍</span>
+          <MapPin size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>{building.address}</span>
         </div>
         <div className={styles.propertyItem}>
-          <span className={styles.propIcon}>🏢</span>
+          <Building2 size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>
-            {buildingType} · {building.zoning} Zoning
+            {buildingType} · {building.num_units} units
           </span>
         </div>
         <div className={styles.propertyItem}>
-          <span className={styles.propIcon}>📐</span>
+          <Ruler size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>{building.roof_area_sqft.toLocaleString()} sq ft roof area</span>
         </div>
         <div className={styles.propertyItem}>
-          <span className={styles.propIcon}>🏗️</span>
+          <Hammer size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>Built {building.year_built}</span>
         </div>
         <div className={styles.propertyItem}>
-          <span className={styles.propIcon}>🏠</span>
+          <Home size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>{building.num_units} units · {building.num_floors} floors</span>
         </div>
         {building.in_food_desert && (
           <div className={styles.propertyItem}>
-            <span className={styles.propIcon}>🌾</span>
+            <Sprout
+              size={15}
+              strokeWidth={1.7}
+              className={`lucide ${styles.propIcon}`}
+              style={{ color: "var(--accent-emerald)" }}
+            />
             <span style={{ color: "var(--accent-emerald)" }}>In food desert area</span>
           </div>
         )}
@@ -110,14 +155,16 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           onClick={() => setActiveTab("revenue")}
           id="tab-revenue"
         >
-          🌱 Developer Revenue
+          <Sprout size={15} strokeWidth={1.7} className={styles.tabIcon} />
+          Developer Revenue
         </button>
         <button
           className={`${styles.tab} ${activeTab === "subsidies" ? styles.tabActive : ""}`}
           onClick={() => setActiveTab("subsidies")}
           id="tab-subsidies"
         >
-          🏢 Subsidies
+          <Building2 size={15} strokeWidth={1.7} className={styles.tabIcon} />
+          Subsidies
         </button>
       </div>
 
@@ -131,7 +178,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
   return (
     <>
       {/* Desktop panel */}
-      <div className={styles.panel} ref={panelRef} id="detail-panel">
+      <div className={`${styles.panel} viability-panel`} ref={panelRef} id="detail-panel">
         {/* Close button */}
         <button
           className={styles.closeBtn}
@@ -139,7 +186,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           aria-label="Close detail panel"
           id="detail-panel-close"
         >
-          ✕
+          <X size={16} strokeWidth={1.7} />
         </button>
 
         <div className={styles.content}>
@@ -149,7 +196,7 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
 
       {/* Mobile bottom sheet overlay */}
       <div className={styles.mobileOverlay} onClick={onClose} />
-      <div className={styles.mobileSheet} id="detail-panel-mobile">
+      <div className={`${styles.mobileSheet} viability-panel`} id="detail-panel-mobile">
         <div className={styles.dragHandle}>
           <div className={styles.dragBar} />
         </div>
