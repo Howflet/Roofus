@@ -1,5 +1,5 @@
 """
-GreenGrid — Rough Greenhouse-Network Simulation (ILLUSTRATIVE)
+Roofus — Rough Greenhouse-Network Simulation (ILLUSTRATIVE)
 =============================================================
 
 Purpose

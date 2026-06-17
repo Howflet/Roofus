@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM  GreenGrid Hapeville - one-click launcher
+REM  Roofus Hapeville - one-click launcher
 REM  Starts the backend API + frontend map, then opens browser.
 REM ============================================================
 cd /d "%~dp0"
@@ -15,10 +15,10 @@ if not exist "%PY%" (
 )
 
 echo Starting backend API on http://localhost:8000 ...
-start "GreenGrid Backend" "%PY%" -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+start "Roofus Backend" "%PY%" -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
 
 echo Starting frontend on http://localhost:5173 ...
-start "GreenGrid Frontend" "%PY%" -m http.server 5173 --directory frontend
+start "Roofus Frontend" "%PY%" -m http.server 5173 --directory frontend
 
 echo Waiting for servers to warm up ...
 timeout /t 3 /nobreak >nul
@@ -28,7 +28,7 @@ start "" "http://localhost:5173"
 
 echo.
 echo ============================================================
-echo  GreenGrid is running!
+echo  Roofus is running!
 echo    App:      http://localhost:5173
 echo    API docs: http://localhost:8000/docs
 echo.
