@@ -49,6 +49,7 @@ export interface BuildingProperties {
   id: string;
   address: string;
   roof_area_sqft: number;
+  lot_area_sqft: number;
   year_built: number;
   num_units: number;
   num_floors: number;

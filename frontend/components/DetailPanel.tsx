@@ -70,14 +70,15 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
             style={{ color: "var(--accent-emerald)" }}
           />
           <span>
-            {building.roof_area_sqft.toLocaleString()} sq ft footprint · ~
-            {Math.round(building.roof_area_sqft * 0.65).toLocaleString()} sq ft growing
+            ~{Math.round(building.roof_area_sqft).toLocaleString()} sq ft total roof area (estimated) · ~65% usable for growing
           </span>
         </div>
         <div className={styles.propertyItem}>
           <Building2 size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>
-            {building.num_units} units · {building.num_floors} floors · 1 rooftop
+            {building.num_units} units
+            {building.lot_area_sqft ? ` · ${Math.round(building.lot_area_sqft / 43560)}-acre property` : ""}
+            {" · multiple buildings"}
           </span>
         </div>
         <div className={styles.propertyItem}>
@@ -88,8 +89,8 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
             style={{ color: "var(--accent-amber, #fbbf24)" }}
           />
           <span>
-            {building.solar_capacity_kw?.toLocaleString() ?? "—"} kW rooftop solar
-            <span style={{ opacity: 0.6 }}> · optional, over non-growing roof</span>
+            ~{building.solar_capacity_kw ? Math.round(building.solar_capacity_kw).toLocaleString() : Math.round(building.roof_area_sqft * 0.0066).toLocaleString()} kW rooftop solar potential
+            <span style={{ opacity: 0.6 }}> · over non-growing roof</span>
           </span>
         </div>
       </div>
@@ -117,16 +118,9 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           </span>
         </div>
         <div className={styles.propertyItem}>
-          <Ruler size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
-          <span>{building.roof_area_sqft.toLocaleString()} sq ft roof area</span>
-        </div>
         <div className={styles.propertyItem}>
           <Hammer size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>Built {building.year_built}</span>
-        </div>
-        <div className={styles.propertyItem}>
-          <Home size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
-          <span>{building.num_units} units · {building.num_floors} floors</span>
         </div>
         {building.in_food_desert && (
           <div className={styles.propertyItem}>
