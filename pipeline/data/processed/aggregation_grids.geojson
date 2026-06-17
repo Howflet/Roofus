@@ -82,10 +82,10 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 181724,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 2241.0,
-        "dco1_qualifying_kw": 1014.0,
-        "dco1_accounts": 3,
-        "dco1_cluster_eligible": true
+        "combined_der_dispatchable_kw": 1120,
+        "dco1_qualifying_kw": 252,
+        "dco1_accounts": 1,
+        "dco1_cluster_eligible": false
       }
     },
     {
@@ -125,9 +125,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 20394,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 1182.0,
-        "dco1_qualifying_kw": 938.0,
-        "dco1_accounts": 2,
+        "combined_der_dispatchable_kw": 590,
+        "dco1_qualifying_kw": 262,
+        "dco1_accounts": 1,
         "dco1_cluster_eligible": false
       }
     },
@@ -172,8 +172,8 @@
         "aggregation_tier": "Below Threshold",
         "potential_annual_value": 2622,
         "buildings_needed_for_cl1": 4,
-        "combined_der_dispatchable_kw": 51.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 26,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -223,8 +223,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 30591,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 457.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 227,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -270,9 +270,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 25615,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 824.0,
-        "dco1_qualifying_kw": 640.0,
-        "dco1_accounts": 2,
+        "combined_der_dispatchable_kw": 412,
+        "dco1_qualifying_kw": 0,
+        "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
     },
@@ -317,8 +317,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 17820,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 167.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 84,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -368,8 +368,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 52034,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 436.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 218,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -423,8 +423,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 22519,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 495.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 249,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -470,8 +470,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 17820,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 955.0,
-        "dco1_qualifying_kw": 955.0,
+        "combined_der_dispatchable_kw": 478,
+        "dco1_qualifying_kw": 478,
         "dco1_accounts": 1,
         "dco1_cluster_eligible": false
       }
@@ -517,8 +517,8 @@
         "aggregation_tier": "Below Threshold",
         "potential_annual_value": 2760,
         "buildings_needed_for_cl1": 4,
-        "combined_der_dispatchable_kw": 40.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 20,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -560,9 +560,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 44814,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 631.0,
-        "dco1_qualifying_kw": 379.0,
-        "dco1_accounts": 1,
+        "combined_der_dispatchable_kw": 316,
+        "dco1_qualifying_kw": 0,
+        "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
     },
@@ -603,8 +603,8 @@
         "aggregation_tier": "Below Threshold",
         "potential_annual_value": 5688,
         "buildings_needed_for_cl1": 4,
-        "combined_der_dispatchable_kw": 97.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 49,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -650,8 +650,8 @@
         "aggregation_tier": "Below Threshold",
         "potential_annual_value": 5256,
         "buildings_needed_for_cl1": 3,
-        "combined_der_dispatchable_kw": 94.0,
-        "dco1_qualifying_kw": 0.0,
+        "combined_der_dispatchable_kw": 48,
+        "dco1_qualifying_kw": 0,
         "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
@@ -701,8 +701,8 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 36643,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 1217.0,
-        "dco1_qualifying_kw": 868.0,
+        "combined_der_dispatchable_kw": 606,
+        "dco1_qualifying_kw": 434,
         "dco1_accounts": 1,
         "dco1_cluster_eligible": false
       }
@@ -748,9 +748,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 13332,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 598.0,
-        "dco1_qualifying_kw": 409.0,
-        "dco1_accounts": 1,
+        "combined_der_dispatchable_kw": 298,
+        "dco1_qualifying_kw": 0,
+        "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
     },
@@ -807,9 +807,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 65294,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 2981.0,
-        "dco1_qualifying_kw": 2566.0,
-        "dco1_accounts": 4,
+        "combined_der_dispatchable_kw": 1491,
+        "dco1_qualifying_kw": 1100,
+        "dco1_accounts": 3,
         "dco1_cluster_eligible": true
       }
     },
@@ -850,9 +850,9 @@
         "aggregation_tier": "CL-1",
         "potential_annual_value": 19800,
         "buildings_needed_for_cl1": 0,
-        "combined_der_dispatchable_kw": 695.0,
-        "dco1_qualifying_kw": 595.0,
-        "dco1_accounts": 2,
+        "combined_der_dispatchable_kw": 347,
+        "dco1_qualifying_kw": 0,
+        "dco1_accounts": 0,
         "dco1_cluster_eligible": false
       }
     }

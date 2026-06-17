@@ -43,7 +43,8 @@ CLUSTER_RADIUS_M = 804   # 0.5 mile aggregation radius
 # Solar PV on the roof + battery storage = a dispatchable Distributed Energy
 # Resource. Georgia Power DCO-1 tariff: >=250 kW dispatchable per account,
 # aggregating to >=1 MW per cluster; credit = 75% of projected system value.
-USABLE_ROOF_FRAC = 0.60          # share of roof usable for PV (setbacks, equipment, tilt spacing)
+GREENHOUSE_ROOF_FRAC = 0.50      # share of roof taken by the greenhouse (must match network_sim_service)
+USABLE_ROOF_FRAC = 0.60          # of the NON-greenhouse roof, share usable for PV (setbacks, equipment, tilt spacing)
 PV_KW_PER_SQFT = 0.011           # commercial flat-roof PV power density (~1 kW per 90 ft^2)
 PV_PERFORMANCE_RATIO = 0.80      # real-world derate (inverter, heat, soiling)
 BATTERY_DISPATCH_FRAC = 0.50     # firm dispatchable capacity = battery sized to ~50% of PV
@@ -302,7 +303,9 @@ def build_buildings(parcels, avg_ghi, tracts) -> list[dict]:
         curtailable_kw = round(thermostat_shed + greenhouse_shed, 1)   # what DR can actually shed (<= peak)
 
         # --- Rooftop power-plant (DCO-1) potential ---
-        solar_capacity_kw = round(roof_area * USABLE_ROOF_FRAC * PV_KW_PER_SQFT)
+        # Solar shares the roof with the greenhouse: it gets only the non-greenhouse
+        # area, derated for setbacks/equipment. 50% greenhouse + 30% PV + 20% setbacks.
+        solar_capacity_kw = round(roof_area * (1 - GREENHOUSE_ROOF_FRAC) * USABLE_ROOF_FRAC * PV_KW_PER_SQFT)
         der_dispatchable_kw = round(solar_capacity_kw * BATTERY_DISPATCH_FRAC)
         der_annual_mwh = round(solar_capacity_kw * avg_ghi * 365 * PV_PERFORMANCE_RATIO / 1000, 1)
         dco1_account_ready = der_dispatchable_kw >= DCO1_ACCOUNT_MIN_KW

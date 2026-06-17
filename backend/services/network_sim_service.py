@@ -43,8 +43,10 @@ def simulate_grid(p: dict) -> dict:
 
     roof_m2 = p["total_roof_sqft"] * SQFT_TO_M2
     bldg_peak_kw = p["combined_peak_kw"]
-    full_roof_solar_kw = p["combined_der_dispatchable_kw"] * 2.0
-    solar_kw = full_roof_solar_kw * (1 - GREENHOUSE_ROOF_FRAC)
+    # solar_capacity_kw (= der_dispatchable / BATTERY_DISPATCH_FRAC of 0.5, i.e. x2)
+    # is already sized on the non-greenhouse roof in the pipeline, so do NOT
+    # subtract the greenhouse fraction again here.
+    solar_kw = p["combined_der_dispatchable_kw"] * 2.0
     batt_power_kw = solar_kw * 0.50
     gh_area_m2 = roof_m2 * GREENHOUSE_ROOF_FRAC
 
