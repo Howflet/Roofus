@@ -20,8 +20,7 @@
 }
 
 .icon {
-  flex-shrink: 0;
-  font-size: 14px;
+  margin-top: 1px;
 }
 
 .contactRow {
@@ -44,12 +43,15 @@
 }
 
 .copyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 4px 6px;
+  border-radius: 8px;
+  padding: 5px 7px;
   cursor: pointer;
-  font-size: 12px;
+  color: var(--icon-muted);
   line-height: 1;
   transition: all 150ms ease;
   flex-shrink: 0;
@@ -57,6 +59,7 @@
 
 .copyBtn:hover {
   background: var(--bg-surface-hover);
+  color: var(--text-primary);
 }
 
 .messageSection {
@@ -66,9 +69,11 @@
 }
 
 .attribution {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 16px;
   font-size: 11px;
-  font-style: italic;
   color: var(--text-muted);
   line-height: 1.4;
 }

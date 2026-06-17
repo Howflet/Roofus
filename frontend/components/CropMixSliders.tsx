@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { Salad, Leaf, Sprout } from "lucide-react";
 import type { CropMix } from "@/lib/types";
 import styles from "./CropMixSliders.module.css";
 
@@ -10,9 +11,9 @@ interface CropMixSlidersProps {
 }
 
 const CROPS = [
-  { key: "leafy_greens_pct" as const, label: "Leafy Greens", emoji: "🥬" },
-  { key: "herbs_pct" as const, label: "Herbs", emoji: "🌿" },
-  { key: "microgreens_pct" as const, label: "Microgreens", emoji: "🌱" },
+  { key: "leafy_greens_pct" as const, label: "Leafy Greens", Icon: Salad },
+  { key: "herbs_pct" as const, label: "Herbs", Icon: Leaf },
+  { key: "microgreens_pct" as const, label: "Microgreens", Icon: Sprout },
 ];
 
 export default function CropMixSliders({ mix, onChange }: CropMixSlidersProps) {
@@ -66,7 +67,8 @@ export default function CropMixSliders({ mix, onChange }: CropMixSlidersProps) {
           <div key={crop.key} className={styles.sliderRow}>
             <div className={styles.sliderHeader}>
               <span className={styles.cropLabel}>
-                {crop.emoji} {crop.label}
+                <crop.Icon size={15} strokeWidth={1.7} className="lucide" />
+                {crop.label}
               </span>
               <span className={styles.cropPct}>{Math.round(value)}%</span>
             </div>

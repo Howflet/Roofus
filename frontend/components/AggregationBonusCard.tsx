@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Check, LockOpen } from "lucide-react";
 import type { AggregationBonus } from "@/lib/types";
 import styles from "./AggregationBonusCard.module.css";
 
@@ -73,7 +74,7 @@ export default function AggregationBonusCard({ data }: AggregationBonusCardProps
                   }}
                 >
                   {tier.label}
-                  {reached && " ✓"}
+                  {reached && <Check size={11} strokeWidth={2.2} className="lucide" style={{ color: "inherit", marginLeft: 2, verticalAlign: "middle" }} />}
                 </span>
                 <span className={styles.tierKw}>{tier.kw} kW</span>
               </div>
@@ -100,7 +101,7 @@ export default function AggregationBonusCard({ data }: AggregationBonusCardProps
       {hasNextTier && (
         <div className={styles.unlockSection}>
           <div className={styles.unlockHeader}>
-            <span className={styles.unlockIcon}>🔓</span>
+            <LockOpen size={15} strokeWidth={1.7} className={`lucide ${styles.unlockIcon}`} />
             <span className={styles.unlockTitle}>
               Unlock {data.next_tier}
             </span>

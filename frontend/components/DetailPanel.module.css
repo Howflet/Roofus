@@ -61,17 +61,15 @@
 .propertyItem {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  line-height: 1.5;
+  gap: 13px;
+  font-size: 13px;
+  color: var(--text-body);
+  margin-bottom: 10px;
+  line-height: 1.55;
 }
 
 .propIcon {
-  flex-shrink: 0;
-  font-size: 14px;
-  line-height: 1.5;
+  margin-top: 2px;
 }
 
 /* Tab bar */
@@ -89,9 +87,13 @@
 
 .tab {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   padding: 12px 8px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
   background: transparent;
   border: none;
@@ -100,6 +102,10 @@
   transition: all 200ms ease;
   white-space: nowrap;
   text-align: center;
+}
+
+.tabIcon {
+  color: currentColor;
 }
 
 .tab:hover {

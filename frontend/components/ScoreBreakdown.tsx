@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getScoreColor, type ScoreFactor } from "@/lib/types";
+import { type ScoreFactor } from "@/lib/types";
 import styles from "./ScoreBreakdown.module.css";
 
 interface ScoreBreakdownProps {
   factors: ScoreFactor[];
 }
+
+// Two-color system: good scores read emerald, low/at-risk scores read amber.
+const GOOD_THRESHOLD = 50;
 
 export default function ScoreBreakdown({ factors }: ScoreBreakdownProps) {
   const [mounted, setMounted] = useState(false);
@@ -23,7 +26,11 @@ export default function ScoreBreakdown({ factors }: ScoreBreakdownProps) {
         Score Breakdown
       </h3>
       {factors.map((factor, i) => {
-        const color = getScoreColor(factor.score);
+        const good = factor.score >= GOOD_THRESHOLD;
+        const color = good ? "var(--accent)" : "var(--warn)";
+        const fill = good
+          ? "linear-gradient(90deg, #2BD39A, var(--accent))"
+          : "linear-gradient(90deg, #D98A3A, var(--warn))";
         return (
           <div
             key={factor.key}
@@ -41,7 +48,7 @@ export default function ScoreBreakdown({ factors }: ScoreBreakdownProps) {
                 className={styles.barFill}
                 style={{
                   width: mounted ? `${Math.min(factor.score, 100)}%` : "0%",
-                  backgroundColor: color,
+                  backgroundImage: fill,
                   transitionDelay: `${i * 100}ms`,
                 }}
               />

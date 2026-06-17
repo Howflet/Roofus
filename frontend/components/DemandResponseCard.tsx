@@ -1,5 +1,6 @@
 "use client";
 
+import { CheckCircle2, AlertTriangle, MinusCircle, type LucideIcon } from "lucide-react";
 import type { ProgramDetail } from "@/lib/types";
 import styles from "./DemandResponseCard.module.css";
 
@@ -9,16 +10,17 @@ interface DemandResponseCardProps {
 }
 
 function getStatusInfo(eligible: boolean | string): {
-  icon: string;
+  Icon: LucideIcon;
   borderClass: string;
+  color: string;
 } {
   if (eligible === true) {
-    return { icon: "✅", borderClass: styles.eligible };
+    return { Icon: CheckCircle2, borderClass: styles.eligible, color: "var(--accent)" };
   }
   if (eligible === "income_dependent" || eligible === "conditional") {
-    return { icon: "⚠️", borderClass: styles.conditional };
+    return { Icon: AlertTriangle, borderClass: styles.conditional, color: "var(--warn)" };
   }
-  return { icon: "❌", borderClass: styles.ineligible };
+  return { Icon: MinusCircle, borderClass: styles.ineligible, color: "var(--text-faint)" };
 }
 
 function formatDollars(val: number | undefined): string {
@@ -32,7 +34,7 @@ export default function DemandResponseCard({
 }: DemandResponseCardProps) {
   if (!program) return null;
 
-  const { icon, borderClass } = getStatusInfo(program.eligible);
+  const { Icon, borderClass, color } = getStatusInfo(program.eligible);
 
   // Build value summary lines
   const valueLines: string[] = [];
@@ -83,7 +85,7 @@ export default function DemandResponseCard({
   return (
     <div className={`${styles.card} ${borderClass}`}>
       <div className={styles.header}>
-        <span className={styles.statusIcon}>{icon}</span>
+        <Icon size={16} strokeWidth={1.7} className={styles.statusIcon} style={{ color, flexShrink: 0 }} />
         <span className={styles.programName}>{name}</span>
       </div>
 

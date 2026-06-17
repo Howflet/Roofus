@@ -4,6 +4,7 @@
    =================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* -------------------------------------------------------------------
    1. CSS Custom Properties (Design Tokens)
@@ -583,4 +584,118 @@ body {
     opacity: 0;
     transform: translateX(-50%) translateY(8px);
   }
+}
+
+/* ===================================================================
+   15. Viability panel design language (scoped restyle)
+   ------------------------------------------------------------------
+   Applied only inside `.viability-panel` (the building detail panel).
+   We define the new tokens AND remap the app's existing token names
+   to the new palette, so every nested component adopts the system
+   without touching its own CSS. The score-gauge block is intentionally
+   left on the app theme (see ScoreGauge — not restyled).
+   =================================================================== */
+
+.viability-panel {
+  /* --- new design tokens (the only theme knobs: accent, warn, radius) --- */
+  --bg-canvas: #070B0A;
+  --panel: #0F1614;
+  --inset: #0B1210;
+  --hairline: rgba(255, 255, 255, 0.07);
+  --divider-line: rgba(255, 255, 255, 0.06);
+  --track: rgba(255, 255, 255, 0.08);
+  --icon-muted: #7E8C88;
+  --accent: #35D6A0;
+  --warn: #E7A95A;
+  --radius: 22px;
+  --text-strong: #F2F6F4;
+  --text-body: #C7D0CD;
+  --text-faint: #6A7672;
+
+  /* --- remap the app's existing tokens onto the new system --- */
+  --bg-surface: var(--inset);
+  --bg-surface-glass: var(--panel);
+  --bg-surface-hover: rgba(255, 255, 255, 0.06);
+  --border-subtle: var(--hairline);
+  --border-glow: rgba(53, 214, 160, 0.40);
+  --text-primary: #E6ECEA;
+  --text-secondary: var(--text-body);
+  --text-muted: #9AA7A3;
+  --accent-emerald: var(--accent);
+  --accent-emerald-dark: #2BC692;
+  --accent-cyan: var(--accent); /* fold link color into the single emerald accent */
+  --radius-sm: 12px;
+  --radius-md: var(--radius);
+  --shadow-panel: 0 30px 70px -28px rgba(0, 0, 0, 0.78);
+  --shadow-button: 0 8px 20px -6px rgba(53, 214, 160, 0.45);
+  --gradient-primary: linear-gradient(180deg, #41E1AE, #2BC692);
+
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-body);
+  font-feature-settings: 'tnum' 1; /* tabular figures for data-like numbers */
+}
+
+/* Section header: mono, uppercase, tracked, faint — with a hairline that
+   fills the rest of the row. Restyles the existing `.text-label` in place. */
+.viability-panel .text-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.viability-panel .text-label::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--hairline);
+}
+
+/* Primary button: emerald gradient, near-black text. */
+.viability-panel .btn-primary {
+  color: #06120D;
+  box-shadow: var(--shadow-button);
+}
+
+/* Tonal/secondary button look for outline buttons. */
+.viability-panel .btn-outline {
+  background: rgba(53, 214, 160, 0.12);
+  color: var(--accent);
+  border-color: rgba(53, 214, 160, 0.28);
+}
+.viability-panel .btn-outline:hover {
+  background: rgba(53, 214, 160, 0.18);
+}
+
+/* Inputs: inset bg, calmer focus ring, radius 14. */
+.viability-panel .input,
+.viability-panel .textarea {
+  background: var(--inset);
+  border-radius: 14px;
+}
+.viability-panel .input:focus,
+.viability-panel .textarea:focus {
+  border-color: rgba(53, 214, 160, 0.40);
+  box-shadow: 0 0 0 3px rgba(53, 214, 160, 0.10);
+}
+
+/* Mono helper for tiny technical labels / raw numeric values. */
+.viability-panel .mono {
+  font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+/* Consistent line-icon sizing inside list rows. */
+.viability-panel .lucide {
+  flex-shrink: 0;
+  color: var(--icon-muted);
+}
+
+/* Major section separators: 1px divider line + generous vertical rhythm. */
+.viability-panel .divider {
+  background: var(--divider-line);
+  margin: 24px 0;
 }

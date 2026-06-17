@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { Inbox, Mail, Phone, Copy, Info } from "lucide-react";
 import type { BuildingProperties } from "@/lib/types";
 import styles from "./OwnerContact.module.css";
 
@@ -88,13 +89,13 @@ export default function OwnerContact({ building }: OwnerContactProps) {
 
       {/* Mailing address */}
       <div className={styles.address}>
-        <span className={styles.icon}>📬</span>
+        <Inbox size={15} strokeWidth={1.7} className={`lucide ${styles.icon}`} />
         <span>{building.owner_address}</span>
       </div>
 
       {/* Email */}
       <div className={styles.contactRow}>
-        <span className={styles.icon}>📧</span>
+        <Mail size={15} strokeWidth={1.7} className={`lucide ${styles.icon}`} />
         <a
           href={`mailto:${building.owner_email}`}
           className={styles.contactLink}
@@ -106,13 +107,13 @@ export default function OwnerContact({ building }: OwnerContactProps) {
           onClick={() => copyToClipboard(building.owner_email, "Email")}
           title="Copy email"
         >
-          📋
+          <Copy size={13} strokeWidth={1.7} />
         </button>
       </div>
 
       {/* Phone */}
       <div className={styles.contactRow}>
-        <span className={styles.icon}>📞</span>
+        <Phone size={15} strokeWidth={1.7} className={`lucide ${styles.icon}`} />
         <a href={`tel:${building.owner_phone}`} className={styles.contactLink}>
           {building.owner_phone}
         </a>
@@ -121,13 +122,13 @@ export default function OwnerContact({ building }: OwnerContactProps) {
           onClick={() => copyToClipboard(building.owner_phone, "Phone")}
           title="Copy phone"
         >
-          📋
+          <Copy size={13} strokeWidth={1.7} />
         </button>
       </div>
 
       {/* Inline message */}
       <div className={styles.messageSection}>
-        <label className="text-label" style={{ marginBottom: 8, display: "block" }}>
+        <label className="text-label" style={{ marginBottom: 8 }}>
           Send a Message
         </label>
         <textarea
@@ -155,7 +156,8 @@ export default function OwnerContact({ building }: OwnerContactProps) {
 
       {/* Attribution */}
       <p className={styles.attribution}>
-        ℹ️ Contact info from public Fulton County parcel records
+        <Info size={12} strokeWidth={1.7} className="lucide" />
+        Contact info from public Fulton County parcel records
       </p>
 
       {/* Copy toast */}

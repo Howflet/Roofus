@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Leaf } from "lucide-react";
 import type { ThresholdIndicator as ThresholdIndicatorType } from "@/lib/types";
 import styles from "./ThresholdMeter.module.css";
 
@@ -88,7 +89,7 @@ export default function ThresholdMeter({ data, annualKwh }: ThresholdMeterProps)
 
       {/* Explainer */}
       <div className={styles.explainer}>
-        <span className={styles.explainerIcon}>🌿</span>
+        <Leaf size={15} strokeWidth={1.7} className={`lucide ${styles.explainerIcon}`} />
         <span>
           Greenhouse load-shedding can reduce peak demand by ~
           {Math.round(data.greenhouse_demand_shed_potential_kw)} kW, helping
