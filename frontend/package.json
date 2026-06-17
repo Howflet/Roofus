@@ -25,6 +25,9 @@
     "eslint-config-next": "16.2.9",
     "typescript": "^5"
   },
+  "overrides": {
+    "postcss": "^8.5.10"
+  },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "main": "index.js",
   "directories": {
