@@ -99,7 +99,7 @@ def calculate_subsidy_detail(
     target_kwh = round(annual_kwh * 0.88)
     reduction_needed = annual_kwh - target_kwh
     pct_reduction = round((reduction_needed / annual_kwh) * 100, 0) if annual_kwh > 0 else 0
-    shed_kw = _greenhouse_shed_kw(peak_kw)
+    shed_kw = props.get("greenhouse_shed_kw") or _greenhouse_shed_kw(peak_kw)
 
     threshold = ThresholdIndicator(
         current_tier="Mid" if annual_kwh > target_kwh else "Baseline",
@@ -111,49 +111,15 @@ def calculate_subsidy_detail(
 
     # --- Grid info (for aggregation-dependent programs) ---
     grid_feat = geojson_service.get_grid(grid_id) if grid_id else None
-    grid_kw = grid_feat["properties"].get("combined_peak_kw", 0) if grid_feat else 0
+    # DR thresholds compare against CURTAILABLE (sheddable) load, not total peak.
+    grid_kw = 0
+    if grid_feat:
+        gp = grid_feat["properties"]
+        grid_kw = gp.get("combined_curtailable_kw", gp.get("combined_peak_kw", 0))
     grid_count = grid_feat["properties"].get("building_count", 0) if grid_feat else 0
 
     meets_vpp = grid_kw >= 100
     meets_cl1 = grid_kw >= 200
-
-    # --- VPP Consumer-Directed ---
-    vpp_consumer_annual = round(peak_kw * 15 + peak_kw * 1.50 * 100, 0)  # 100 event hours/year est
-    vpp_consumer = ProgramDetail(
-        eligible=True,
-        upfront_incentive_per_kw=15,
-        performance_incentive_per_kwh=1.50,
-        estimated_annual_value=vpp_consumer_annual,
-        description=(
-            "Georgia Power VPP Pilot — Consumer-Directed. Greenhouse lighting/pump "
-            "loads can be shed during summer peaks."
-        ),
-    )
-
-    # --- VPP Utility-Directed ---
-    upfront_rate = 1000 if is_lmi else 750
-    vpp_utility_onetime = round(peak_kw * upfront_rate, 0)
-    vpp_utility = ProgramDetail(
-        eligible=True,
-        upfront_incentive_per_kw=750,
-        estimated_onetime_value=vpp_utility_onetime,
-        description=(
-            "Georgia Power VPP Pilot — Utility-Directed. Higher upfront incentive "
-            "for LMI-qualifying properties."
-        ),
-    )
-    vpp_utility.upfront_incentive_per_kw_lmi = 1000
-
-    # --- TempCheck DR ---
-    tc_total = units * (50 + 25)
-    tempcheck = ProgramDetail(
-        eligible=True,
-        enrollment_bonus=50,
-        annual_incentive=25,
-        per_unit_value=75,
-        total_property_value=tc_total,
-        description=f"TempCheck thermostat DR. $50 enrollment + $25/year per unit with smart thermostat.",
-    )
 
     # --- CL-1 (aggregated, needs 200 kW) ---
     if meets_cl1:
@@ -190,9 +156,6 @@ def calculate_subsidy_detail(
         )
 
     demand_response = DemandResponsePrograms(
-        vpp_consumer=vpp_consumer,
-        vpp_utility=vpp_utility,
-        tempcheck=tempcheck,
         cl1_aggregated=cl1,
         dpec5_aggregated=dpec5,
     )
@@ -237,20 +200,15 @@ def calculate_subsidy_detail(
         current_value = grid_props.get("potential_annual_value", 0)
 
         if meets_cl1:
-            next_tier = "Fully Qualified"
+            next_tier = "Fully Qualified (CL-1)"
             kw_to_next = 0
             bldgs_to_next = 0
             next_value = current_value
-        elif meets_vpp:
-            next_tier = "CL-1 / DPEC-5"
+        else:
+            next_tier = "CL-1 (200 kW)"
             kw_to_next = round(200 - grid_kw, 0)
             bldgs_to_next = max(1, int(kw_to_next / 30))
-            next_value = round(grid_kw * 1.5 * 5.5 * 12, 0)  # estimated if they hit CL-1
-        else:
-            next_tier = "VPP"
-            kw_to_next = round(100 - grid_kw, 0)
-            bldgs_to_next = max(1, int(kw_to_next / 30))
-            next_value = round(grid_kw * 1.2 * 3.0 * 12, 0)
+            next_value = round(0.75 * 90 * 200 - 1440, 0)  # illustrative CL-1 credit at threshold
 
         uplift = next_value - current_value
 

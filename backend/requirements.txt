@@ -2,3 +2,5 @@ fastapi>=0.111
 uvicorn[standard]
 pydantic>=2.0
 python-dotenv
+numpy>=1.26          # used by the greenhouse-network simulation endpoint
+eval-type-backport   # used to support Python 3.10 union syntax in Python 3.9

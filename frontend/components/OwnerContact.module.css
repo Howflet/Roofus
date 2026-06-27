@@ -1,0 +1,155 @@
+.container {
+  padding: 0;
+}
+
+.ownerName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.icon {
+  margin-top: 1px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.contactLink {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 150ms ease;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 5px 7px;
+  cursor: pointer;
+  color: var(--icon-muted);
+  line-height: 1;
+  transition: all 150ms ease;
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+.messageSection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 600ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success state */
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px;
+  animation: fadeIn 300ms ease-out;
+}
+
+.successCheck {
+  margin-bottom: 16px;
+}
+
+.checkCircle {
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
+  animation: drawCircle 600ms ease-out 100ms forwards;
+}
+
+.checkMark {
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  animation: drawCheck 400ms ease-out 500ms forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.successTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.successText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

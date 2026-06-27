@@ -1,0 +1,185 @@
+.header {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  height: var(--header-height);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 16px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.leafIcon {
+  font-size: 24px;
+  display: inline-block;
+  transition: transform 200ms ease;
+  cursor: default;
+}
+
+.wordmark {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Stats */
+.stats {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.statNumber {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.statText {
+  color: var(--text-secondary);
+}
+
+.statHighlight {
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Persona Toggle */
+.personaToggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.personaBtn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.personaBtn:hover {
+  color: var(--text-secondary);
+}
+
+.personaBtnActive {
+  color: var(--text-primary);
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.filterBtn {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 280px;
+  padding: 20px;
+  animation: dropIn 200ms ease-out;
+  z-index: 310;
+}
+
+.filterGroup {
+  margin-bottom: 20px;
+}
+
+.filterGroup .text-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.filterGroup .checkbox {
+  margin-bottom: 6px;
+}
+
+.filterValue {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filterActions .btn {
+  flex: 1;
+}
+
+.resetBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 150ms ease;
+}
+
+.resetBtn:hover {
+  color: var(--text-primary);
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header {
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  .stats {
+    display: none;
+  }
+
+  .filterBtn span {
+    display: none;
+  }
+}
