@@ -118,7 +118,6 @@ export default function DetailPanel({ building, onClose }: DetailPanelProps) {
           </span>
         </div>
         <div className={styles.propertyItem}>
-        <div className={styles.propertyItem}>
           <Hammer size={15} strokeWidth={1.7} className={`lucide ${styles.propIcon}`} />
           <span>Built {building.year_built}</span>
         </div>
