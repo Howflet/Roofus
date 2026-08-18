@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: roofus-api
+    runtime: python
+    plan: free
+    branch: viviana-greenhouse-implementation
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+    healthCheckPath: /health
